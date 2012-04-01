@@ -1,4 +1,4 @@
-What is Swagger
+What is Swagger?
 ==========
 
 Swagger is a specification and complete framework implementation for describing, producing, 
