@@ -59,4 +59,4 @@ The specification is in two parts--the Resource Listing and the API Description.
 Resource Listing contains an inventory of APIs available on the server as well as paths
 to the description of the APIs.
 
-See [Resource Listing](https://github.com/wordnik/swagger-wiki/wiki/Resource-Listing) and [API Declaration](https://github.com/wordnik/swagger-wiki/wiki/API-Declaration)
+See [Resource Listing](https://github.com/wordnik/swagger-core/wiki/Resource-Listing) and [API Declaration](https://github.com/wordnik/swagger-core/wiki/API-Declaration)
