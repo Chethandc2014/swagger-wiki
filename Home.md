@@ -44,7 +44,7 @@ Some known server implementations include:
 
 [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
-[Restler](https://github.com/Luracast/Restler) PHP framework, swagger supporte planned in 3.0
+[Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [http://github.com/wordnik/swagger-ui](swagger-ui) and [http://github.com/wordnik/swagger-codegen](swagger-codegen) without
