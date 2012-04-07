@@ -3,7 +3,7 @@ Resource Listing
 
 The Resource Listing creates an inventory of all APIs.  For example:
 
-```
+```js
 {
   apiVersion: "0.2",
   swaggerVersion: "1.1",
