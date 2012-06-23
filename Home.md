@@ -42,6 +42,8 @@ Some known server implementations include:
 
 [scala play2](https://github.com/ayush/swagger-play2)
 
+[scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
+
 [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
 [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
