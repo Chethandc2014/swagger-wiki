@@ -1,4 +1,4 @@
-Java + JAX-RS
+Scala + JAX-RS
 ==========
 
 Swagger supports the Jersey framework for integration with JAX-RS.
@@ -63,13 +63,13 @@ Two: If you use a Jersey Application to configure your project, you'll likely ha
 
 and this class:
 ````
-package com.your.project;
+package com.your.project
 
-import com.sun.jersey.api.core.PackagesResourceConfig;
+import com.sun.jersey.api.core.PackagesResourceConfig
 
-public class RESTApplication extends PackagesResourceConfig {
-	public RESTApplication() {
-		super("com.your.project.resources");
+class RESTApplication extends PackagesResourceConfig {
+	def RESTApplication() = {
+		super("com.your.project.resources")
 	}
 }
 ````
@@ -77,17 +77,17 @@ Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don
 to extend the `JavaApiListing` class in the same package as above:
 
 ````
-package com.your.project;
+package com.your.project
 
-import com.wordnik.swagger.annotations.*;
-import com.wordnik.swagger.jaxrs.JavaApiListing;
+import com.wordnik.swagger.annotations._
+import com.wordnik.swagger.jaxrs.JavaApiListing
 
-import javax.ws.rs.*;
+import javax.ws.rs._
 
 @Path("/resources.json")
 @Api("/resources")
-@Produces({"application/json"})
-public class ApiListingResource extends JavaApiListing {}
+@Produces(Array("application/json"))
+class ApiListingResource extends ApiListing
 ````
 
 Now you have one last step before adding APIs-configuring the `basePath` for your application.  Recall that the
@@ -124,16 +124,16 @@ You should be able to add APIs now.  This is done by annotating your APIs like t
 ````
 @Path("/pet.json")
 @Api(value = "/pet", description = "Operations about pets")
-@Produces({"application/json"})
-public class PetResource extends JavaHelp {
+@Produces(Array("application/json"))
+public class PetResource extends Help {
   @GET
   @Path("/{petId}")
   @ApiOperation(value = "Find pet by ID", notes = "Add extra notes here", responseClass = "com.wordnik.swagger.sample.model.Pet")
-    @ApiErrors(value = { @ApiError(code = 400, reason = "Invalid ID supplied"),
-    @ApiError(code = 404, reason = "Pet not found") })
-  public Response getPetById (
-    @ApiParam(value = "ID of pet that needs to be fetched", allowableValues = "range[1,5]", required = true) @PathParam("petId") String petId)
-  throws NotFoundException {
+  @ApiErrors(Array(
+    new ApiError(code = 400, reason = "Invalid ID supplied"),
+    new ApiError(code = 404, reason = "Pet not found")))
+  def getPetById(
+    @ApiParam(value = "ID of pet that needs to be fetched", required = true, allowableValues="range[0,10]")@PathParam("petId") petId: String) = {
     /* your resource logic */
   }
 ```` 
@@ -229,13 +229,11 @@ to an empty string before Swagger warms up:
 ````
 package com.wordnik.swagger.sample;
 
-import com.wordnik.swagger.jaxrs.JaxrsApiReader;
-import javax.servlet.http.HttpServlet;
+import com.wordnik.swagger.jaxrs.JaxrsApiReader
+import javax.servlet.http.HttpServlet
 
-public class Bootstrap extends HttpServlet {
-  static {
-	  JaxrsApiReader.setFormatString("");
-  }
+class Bootstrap extends HttpServlet {
+  JaxrsApiReader.setFormatString("")
 }
 ````
 
@@ -243,17 +241,17 @@ Next, you'll need to override the default `JavaApiListing` class.  You may have 
 Jersey Application, but for completeness, subclass the listing class and set the resource listing to NOT have the `.json` suffix:
 
 ````
-package com.your.project;
+package com.your.project
 
-import com.wordnik.swagger.annotations.*;
-import com.wordnik.swagger.jaxrs.JavaApiListing;
+import com.wordnik.swagger.jaxrs._
+import com.wordnik.swagger.annotations._
 
 import javax.ws.rs.*;
 
 @Path("/resources")
 @Api("/resources")
-@Produces({"application/json"})
-public class ApiListingResource extends JavaApiListing {}
+@Produces(Array("application/json"))
+class ApiListingResourceJSONXML extends ApiListing
 ````
 Finally, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
 
@@ -261,7 +259,7 @@ Finally, in all your APIs, your `@Path` annotations will appropriately not have 
 @Path("/pet")
 @Api(value = "/pet", description = "Operations about pets")
 @Produces({"application/json"})
-public class PetResource extends JavaHelp {
+class PetResource extends Help {
 ````
 
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
@@ -275,7 +273,7 @@ you like.  There are a couple steps to do this.
 First, you need to specify what the listing path should be in your APIs:
 
 ````
-package com.wordnik.swagger.sample.resource;
+package com.wordnik.swagger.sample.resource
 
 import ...
 
@@ -294,13 +292,14 @@ Note in this scenario, you are putting the API listing under this location:  `ht
 Next, you'll need to create a resource to respond to the listing path requests:
 
 ````
+
 @Path("/resources.json/pet")
 @Api(value = "/pet",
   description = "Operations about pets",
   listingPath = "/resources.json/pet",
   listingClass = "com.wordnik.swagger.sample.resource.PetResource")
-@Produces({"application/json"})
-public class PetResourceListing extends JavaHelp {}
+@Produces(Array("application/json"))
+class PetResourceListingJSON extends Help
 ````
 
 In the above code block, you're specifying that the /pet API will be described under `http://localhost:8080/resources.json/pet`.

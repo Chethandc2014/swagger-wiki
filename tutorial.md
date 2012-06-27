@@ -6,3 +6,6 @@ are several scenarios which can be followed for integrating with your environmen
 
 #### [Java + JAX-RS Integration](java-jax-rs)
 
+#### [Scala + JAX-RS Integration](scala-jax-rs)
+
+
