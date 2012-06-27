@@ -7,7 +7,7 @@ Swagger supports the Jersey framework for integration with JAX-RS.
 
 First, include the swagger artifacts in your project.  If using maven, add to your `pom.xml`:
 
-````xml
+````
   <dependencies>
     <dependency>
       <groupId>com.wordnik</groupId>
@@ -26,7 +26,7 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
 
 And with ivy, add to your `ivy.xml`:
 
-````xml
+````
   <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.0.1"/>
   <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.0.1"/>
 ````
@@ -36,7 +36,7 @@ two ways:
 
 One: If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
 
-````xml
+````
   <servlet>
     <servlet-name>jersey</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
@@ -54,7 +54,7 @@ register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagge
 
 Two: If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
 
-````xml
+````
   <init-param>
     <param-name>javax.ws.rs.Application</param-name>
     <param-value>com.your.project.RestApplication</param-value>
@@ -62,7 +62,7 @@ Two: If you use a Jersey Application to configure your project, you'll likely ha
 ````
 
 and this class:
-````java
+````
 package com.your.project;
 
 import com.sun.jersey.api.core.PackagesResourceConfig;
@@ -76,7 +76,7 @@ public class RESTApplication extends PackagesResourceConfig {
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
 to extend the `JavaApiListing` class in the same package as above:
 
-````java
+````
 package com.your.project;
 
 import com.wordnik.swagger.annotations.*;
@@ -164,8 +164,7 @@ This should tell Swagger to scan all the APIs available and produce a listing of
   apiVersion: "1.0",
   swaggerVersion: "1.0",
   basePath: "http://localhost:8080",
-  apis: 
-  [
+  apis: [
     {
       path: "/pet.{format}",
       description: "Operations about pets"
@@ -220,12 +219,55 @@ an example.
 
 #### Other configurations
 
-<li> You might not like the .{format} in the resource listing or in the api itself.  Don't fret!  You can configure this, see
-[scala-jaxrs-no-format](/wordnik/swagger-core/tree/master/samples/scala-jaxrs-no-format) for example.</li>
+You might want to get rid of the `.{format}` in the resource listing and `.json` in your api suffix.  This is done as follows:
+
+Create a bootstrap servlet which will fire on server startup.  The purpose of this servlet is to set the Swagger suffix
+to an empty string before Swagger warms up:
+
+````
+package com.wordnik.swagger.sample;
+
+import com.wordnik.swagger.jaxrs.JaxrsApiReader;
+import javax.servlet.http.HttpServlet;
+
+public class Bootstrap extends HttpServlet {
+  static {
+	  JaxrsApiReader.setFormatString("");
+  }
+}
+````
+
+Next, you'll need to override the default `JavaApiListing` class.  You may have already done this if using a
+Jersey Application, but for completeness, subclass the listing class and set the resource listing to NOT have the `.json` suffix:
+
+````
+package com.your.project;
+
+import com.wordnik.swagger.annotations.*;
+import com.wordnik.swagger.jaxrs.JavaApiListing;
+
+import javax.ws.rs.*;
+
+@Path("/resources")
+@Api("/resources")
+@Produces({"application/json"})
+public class ApiListingResource extends JavaApiListing {}
+````
+Finally, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
+
+````
+@Path("/pet")
+@Api(value = "/pet", description = "Operations about pets")
+@Produces({"application/json"})
+public class PetResource extends JavaHelp {
+````
+
+That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
+if you support `xml` as well.
 
 #### Troubleshooting
 
-<li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the sample:
+<li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the samples:
 
 ````
       <dependency>
