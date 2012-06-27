@@ -68,9 +68,9 @@ package com.your.project
 import com.sun.jersey.api.core.PackagesResourceConfig
 
 class RESTApplication extends PackagesResourceConfig {
-	def RESTApplication() = {
-		super("com.your.project.resources")
-	}
+  def RESTApplication() = {
+    super("com.your.project.resources")
+  }
 }
 ```
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
@@ -114,7 +114,7 @@ Note! This should match the `servlet-mapping` path to your jersey servlet:
     <servlet-name>jersey</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
-```xml
+```
 
 if you, for instance, had your REST api on /api, you would have `http://localhost:8080/api` in the `swagger.api.basepath` and
 `/api/*` in your `url-pattern` config.
