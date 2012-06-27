@@ -7,7 +7,7 @@ Swagger supports the Jersey framework for integration with JAX-RS.
 
 First, include the swagger artifacts in your project.  If using maven, add to your `pom.xml`:
 
-````
+````xml
   <dependencies>
     <dependency>
       <groupId>com.wordnik</groupId>
@@ -26,7 +26,7 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
 
 And with ivy, add to your `ivy.xml`:
 
-````
+````xml
   <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.0.1"/>
   <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.0.1"/>
 ````
@@ -36,7 +36,7 @@ two ways:
 
 One: If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
 
-````
+````xml
   <servlet>
     <servlet-name>jersey</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
@@ -54,7 +54,7 @@ register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagge
 
 Two: If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
 
-````
+````xml
   <init-param>
     <param-name>javax.ws.rs.Application</param-name>
     <param-value>com.your.project.RestApplication</param-value>
@@ -62,7 +62,7 @@ Two: If you use a Jersey Application to configure your project, you'll likely ha
 ````
 
 and this class:
-````
+````java
 package com.your.project;
 
 import com.sun.jersey.api.core.PackagesResourceConfig;
@@ -76,7 +76,7 @@ public class RESTApplication extends PackagesResourceConfig {
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
 to extend the `JavaApiListing` class in the same package as above:
 
-````
+````java
 package com.your.project;
 
 import com.wordnik.swagger.annotations.*;
