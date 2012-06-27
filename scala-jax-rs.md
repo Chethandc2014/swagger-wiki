@@ -7,7 +7,7 @@ Swagger supports the Jersey framework for integration with JAX-RS.
 
 First, include the swagger artifacts in your project.  If using maven, add to your `pom.xml`:
 
-````
+```xml
   <dependencies>
     <dependency>
       <groupId>com.wordnik</groupId>
@@ -22,21 +22,21 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
       <scope>compile</scope>
     </dependency>
   </dependencies>
-````
+```
 
 And with ivy, add to your `ivy.xml`:
 
-````
+```xml
   <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.0.1"/>
   <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.0.1"/>
-````
+```
 
 Next, you need to tell jersey how to find the [Resource Listing](Resource-Listing) class--this is done in one of
 two ways:
 
 One: If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
 
-````
+```xml
   <servlet>
     <servlet-name>jersey</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
@@ -47,22 +47,22 @@ One: If you use your `web.xml` to declare the packages to scan on startup of jer
     </init-param>
   ...
   </servlet>
-````
+```
 
 Note the addition to `com.wordnik.swagger.jaxrs` in the `param-value`.  Why?  Because that tells jersey to scan &
 register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/JavaApiListing.scala), which is in that package in the swagger-jaxrs module.
 
 Two: If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
 
-````
+```xml
   <init-param>
     <param-name>javax.ws.rs.Application</param-name>
     <param-value>com.your.project.RestApplication</param-value>
   </init-param>
-````
+```
 
 and this class:
-````
+```scala
 package com.your.project
 
 import com.sun.jersey.api.core.PackagesResourceConfig
@@ -72,11 +72,11 @@ class RESTApplication extends PackagesResourceConfig {
 		super("com.your.project.resources")
 	}
 }
-````
+```
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
 to extend the `JavaApiListing` class in the same package as above:
 
-````
+```scala
 package com.your.project
 
 import com.wordnik.swagger.annotations._
@@ -88,7 +88,7 @@ import javax.ws.rs._
 @Api("/resources")
 @Produces(Array("application/json"))
 class ApiListingResource extends ApiListing
-````
+```
 
 Now you have one last step before adding APIs-configuring the `basePath` for your application.  Recall that the
 Resource Listing contains references to other APIs in your app--they are based on the `basePath` in your app
@@ -96,7 +96,7 @@ Resource Listing contains references to other APIs in your app--they are based o
 
 In your web.xml:
 
-````
+```xml
   <init-param>
     <param-name>swagger.api.basepath</param-name>
     <param-value>http://localhost:8080</param-value>
@@ -105,23 +105,23 @@ In your web.xml:
     <param-name>api.version</param-name>
     <param-value>1.0</param-value>
   </init-param>
-````
+```
 
 Note! This should match the `servlet-mapping` path to your jersey servlet:
 
-````
+```xml
   <servlet-mapping>
     <servlet-name>jersey</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
-````
+```xml
 
 if you, for instance, had your REST api on /api, you would have `http://localhost:8080/api` in the `swagger.api.basepath` and
 `/api/*` in your `url-pattern` config.
 
 You should be able to add APIs now.  This is done by annotating your APIs like this:
 
-````
+```scala
 @Path("/pet.json")
 @Api(value = "/pet", description = "Operations about pets")
 @Produces(Array("application/json"))
@@ -136,7 +136,7 @@ public class PetResource extends Help {
     @ApiParam(value = "ID of pet that needs to be fetched", required = true, allowableValues="range[0,10]")@PathParam("petId") petId: String) = {
     /* your resource logic */
   }
-```` 
+```
 
 What is this?  First, the `@Path` annotation tells jersey what path to listen to.  You probably already have this.  Next,
 the @Api annotation has a mapping to `/pet`--this is the path without the `.json` suffix.  The Swagger framework will add
@@ -153,13 +153,13 @@ all the input values to the operation.
 
 You should be able to start up your server now.  First thing to verify is that you can hit the Resource Declaration:
 
-````
+```
 http://localhost:8080/resources.json
-````
+```
 
 This should tell Swagger to scan all the APIs available and produce a listing of them:
 
-````
+```json
 {
   apiVersion: "1.0",
   swaggerVersion: "1.0",
@@ -171,17 +171,17 @@ This should tell Swagger to scan all the APIs available and produce a listing of
     }
   ]
 }
-````
+```
 
 Following the link in the resource listing, you can now read the pet resource:
 
-````
+```
 http://localhost:8080/pet.json
-````
+```
 
 This should produce something like this:
 
-````
+```json
 {
   apiVersion: "1.0",
   swaggerVersion: "1.0",
@@ -209,7 +209,7 @@ This should produce something like this:
           }
         ]
         ...
-````
+```
 
 Note!  You can see from above that this example assumes Swagger has the GET method on the root API!  That means,
 you are not using `http://localhost:8080/pet.json` for any other operations.  This may not be the case, in which
@@ -226,7 +226,7 @@ You might want to get rid of the `.{format}` in the resource listing and `.json`
 Create a bootstrap servlet which will fire on server startup.  The purpose of this servlet is to set the Swagger suffix
 to an empty string before Swagger warms up:
 
-````
+```scala
 package com.wordnik.swagger.sample;
 
 import com.wordnik.swagger.jaxrs.JaxrsApiReader
@@ -235,12 +235,12 @@ import javax.servlet.http.HttpServlet
 class Bootstrap extends HttpServlet {
   JaxrsApiReader.setFormatString("")
 }
-````
+```
 
 Next, you'll need to override the default `JavaApiListing` class.  You may have already done this if using a
 Jersey Application, but for completeness, subclass the listing class and set the resource listing to NOT have the `.json` suffix:
 
-````
+```scala
 package com.your.project
 
 import com.wordnik.swagger.jaxrs._
@@ -252,15 +252,15 @@ import javax.ws.rs.*;
 @Api("/resources")
 @Produces(Array("application/json"))
 class ApiListingResourceJSONXML extends ApiListing
-````
+```
 Finally, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
 
-````
+```scala
 @Path("/pet")
 @Api(value = "/pet", description = "Operations about pets")
 @Produces({"application/json"})
 class PetResource extends Help {
-````
+```
 
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
@@ -272,7 +272,7 @@ you like.  There are a couple steps to do this.
 
 First, you need to specify what the listing path should be in your APIs:
 
-````
+```scala
 package com.wordnik.swagger.sample.resource
 
 import ...
@@ -285,14 +285,13 @@ import ...
 public class PetResource {
   ...
 }
-```` 
+```
 
 Note in this scenario, you are putting the API listing under this location:  `http://localhost:8080/resources.json/pet`
 
 Next, you'll need to create a resource to respond to the listing path requests:
 
-````
-
+```scala
 @Path("/resources.json/pet")
 @Api(value = "/pet",
   description = "Operations about pets",
@@ -300,7 +299,7 @@ Next, you'll need to create a resource to respond to the listing path requests:
   listingClass = "com.wordnik.swagger.sample.resource.PetResource")
 @Produces(Array("application/json"))
 class PetResourceListingJSON extends Help
-````
+```
 
 In the above code block, you're specifying that the /pet API will be described under `http://localhost:8080/resources.json/pet`.
 You are also telling it *which* class has the annotations for the description `com.wordnik.swagger.sample.resource.PetResource`.  Finally,
@@ -310,7 +309,7 @@ the noop code is OK--there's nothing to do in this method.
 
 <li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the samples:
 
-````
+```xml
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-core</artifactId>
@@ -329,4 +328,4 @@ the noop code is OK--there's nothing to do in this method.
         <version>${jersey-version}</version>
         <scope>compile</scope>
       </dependency>
-````
+```
