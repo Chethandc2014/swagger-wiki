@@ -309,7 +309,7 @@ the noop code is OK--there's nothing to do in this method.
 
 ## Troubleshooting
 
-<li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the samples:
+<li> Note that jersey 1.10 or greater requires you to add some additional artifacts which are currently not in the samples:
 
 ```xml
       <dependency>
