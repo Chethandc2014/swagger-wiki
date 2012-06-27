@@ -12,13 +12,13 @@ following standard values:
 ```
 Swagger Type     Description
 ----------------------------
-Byte             
-Boolean          
-Int             
-Long             
-Float            
-Double           
-String           
+byte             
+boolean          
+int             
+long             
+float            
+double           
+string           
 Date             a ISO-8601 Date, whih is represented in a String (1970-01-01T00:00:00.000+0000)
 
 ```
