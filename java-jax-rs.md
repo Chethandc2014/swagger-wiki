@@ -270,7 +270,7 @@ if you support `xml` as well.
 #### Changing the listing path
 
 If your API needs to support `GET` on the root resource, you can re-map the Swagger API listing files wherever 
-you like.There are a couple steps to do this.
+you like.  There are a couple steps to do this.
 
 First, you need to specify what the listing path should be in your APIs:
 
