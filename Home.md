@@ -25,7 +25,7 @@ a sandbox UI that gives clear insight into how the API responds to parameters an
 Swagger happily speaks both JSON and XML, with additional formats in the works.
 
 #### How can I make my API Swagger?
-There are a number of different ways.  If you're impatient you can skip directly to the [tutorials](tutorial)
+There are a number of different ways.  If you're impatient you can skip directly to the [tutorials](wiki/tutorial)
 
 You can use the [swagger-core](http://github.com/wordnik/swagger-core) framework,
 which gives you everything you need to implement a Swagger server using node.js, Java or scala 
