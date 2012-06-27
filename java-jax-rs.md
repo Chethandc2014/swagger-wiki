@@ -217,7 +217,9 @@ you need to take an alternative listing scheme.  See [java-alt-resource-listing]
 an example.
 
 
-#### Other configurations
+## Other configurations
+
+#### Removing the .{format} suffix
 
 You might want to get rid of the `.{format}` in the resource listing and `.json` in your api suffix.  This is done as follows:
 
@@ -265,7 +267,47 @@ public class PetResource extends JavaHelp {
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
 
-#### Troubleshooting
+#### Changing the listing path
+
+If your API needs to support `GET` on the root resource, you can re-map the Swagger API listing files wherever 
+you like.There are a couple steps to do this.
+
+First, you need to specify what the listing path should be in your APIs:
+
+````
+package com.wordnik.swagger.sample.resource;
+
+import ...
+
+@Path("/pet")
+@Api(value = "/pet", 
+	description = "Operations about pets",
+	listingPath="/resources.json/pet")
+@Produces({"application/json"})
+public class PetResource {
+  ...
+}
+```` 
+
+Note in this scenario, you are putting the API listing under this location:  `http://localhost:8080/resources.json/pet`
+
+Next, you'll need to create a resource to respond to the listing path requests:
+
+````
+@Path("/resources.json/pet")
+@Api(value = "/pet",
+  description = "Operations about pets",
+  listingPath = "/resources.json/pet",
+  listingClass = "com.wordnik.swagger.sample.resource.PetResource")
+@Produces({"application/json"})
+public class PetResourceListing extends JavaHelp {}
+````
+
+In the above code block, you're specifying that the /pet API will be described under `http://localhost:8080/resources.json/pet`.
+You are also telling it *which* class has the annotations for the description `com.wordnik.swagger.sample.resource.PetResource`.  Finally,
+the noop code is OK--there's nothing to do in this method.
+
+## Troubleshooting
 
 <li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the samples:
 
