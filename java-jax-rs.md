@@ -34,7 +34,7 @@ And with ivy, add to your `ivy.xml`:
 Next, you need to tell jersey how to find the [Resource Listing](Resource-Listing) class--this is done in one of
 two ways:
 
-1.  If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
+One: If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
 
 ````
   <servlet>
@@ -50,9 +50,9 @@ two ways:
 ````
 
 Note the addition to `com.wordnik.swagger.jaxrs` in the `param-value`.  Why?  Because that tells jersey to scan &
-register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/ApiListing.scala), which is in that package in the swagger-jaxrs module.
+register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/JavaApiListing.scala), which is in that package in the swagger-jaxrs module.
 
-2.  If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
+Two: If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
 
 ````
   <init-param>
@@ -72,7 +72,7 @@ public class RESTApplication extends PackagesResourceConfig {
 		super("com.your.project.resources");
 	}
 }
-
+````
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
 to extend the `JavaApiListing` class in the same package as above:
 
@@ -223,3 +223,27 @@ an example.
 <li> You might not like the .{format} in the resource listing or in the api itself.  Don't fret!  You can configure this, see
 [scala-jaxrs-no-format](/wordnik/swagger-core/tree/master/samples/scala-jaxrs-no-format) for example.</li>
 
+#### Troubleshooting
+
+<li> Note that jersey 1.10 or greater requires you to add some additional artifacts than what are currently in the sample:
+
+````
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-core</artifactId>
+        <version>${jersey-version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>${jersey-version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.jersey</groupId>
+        <artifactId>jersey-servlet</artifactId>
+        <version>${jersey-version}</version>
+        <scope>compile</scope>
+      </dependency>
+````
