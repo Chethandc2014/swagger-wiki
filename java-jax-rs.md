@@ -271,8 +271,6 @@ First, you need to specify what the listing path should be in your APIs:
 ```java
 package com.wordnik.swagger.sample.resource;
 
-import ...
-
 @Path("/resources/pet")
 @Api(value = "/pet", 
 	description = "Operations about pets",
