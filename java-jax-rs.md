@@ -268,7 +268,7 @@ you like.  There are a couple steps to do this.
 
 First, you need to specify what the listing path should be in your APIs:
 
-```java
+```
 package com.wordnik.swagger.sample.resource;
 
 @Path("/resources/pet")
