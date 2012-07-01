@@ -268,7 +268,7 @@ you like.  There are a couple steps to do this.
 
 First, you need to specify what the listing path should be in your APIs:
 
-```
+```java
 package com.wordnik.swagger.sample.resource;
 
 @Path("/resources/pet")
@@ -279,8 +279,7 @@ package com.wordnik.swagger.sample.resource;
 public class PetResource {
   /* do something here */
 }
-
-``` 
+```
 
 Note in this scenario, you are putting the API listing under this location:  `http://localhost:8080/resources.json/pet`
 
