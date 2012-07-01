@@ -15,12 +15,6 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
       <version>1.0.1</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.wordnik</groupId>
-      <artifactId>swagger-core_2.9.1</artifactId>
-      <version>1.0.1</version>
-      <scope>compile</scope>
-    </dependency>
   </dependencies>
 ```
 
@@ -285,7 +279,7 @@ import ...
 	listingPath="/resources.json/pet")
 @Produces({"application/json"})
 public class PetResource {
-  ...
+  /* do something here */
 }
 ``` 
 
