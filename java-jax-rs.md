@@ -281,6 +281,7 @@ import ...
 public class PetResource {
   /* do something here */
 }
+
 ``` 
 
 Note in this scenario, you are putting the API listing under this location:  `http://localhost:8080/resources.json/pet`
