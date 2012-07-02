@@ -307,6 +307,47 @@ the noop code is OK--there's nothing to do in this method.
 
 ## Troubleshooting
 
+
+If you are accessing a swagger-powered API from browser (via javascript), it is likely that you need to set a cross-origin filter in your service.  Specifically the UI, if not deployed on the same host as the API will receive an error when attempting to make AJAX calls to the server.
+
+You can test your cross-origin server settings by the following:
+
+```
+# example: curl -i http://api.wordnik.com/v4/resources.json
+
+curl -i http://YOUR_SERVER/PATH_TO_RESOURCE_LISTING
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport, *
+Access-Control-Allow-Methods: POST, GET, OPTIONS , PUT
+**Access-Control-Allow-Origin: ***
+Access-Control-Request-Headers: Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport,  *
+Content-Type: application/json
+Date: Mon, 02 Jul 2012 19:23:14 GMT
+Wordnik-API-Version: 4.11.7
+Content-Length: 319
+Connection: keep-alive
+```
+
+Note the `Access-Control-Allow-Origin: *` line from the server.  You can add a filter to return this header as follows:
+
+Creating a filter:
+
+https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs/src/main/java/com/wordnik/swagger/sample/util/ApiOriginFilter.java
+
+Adding the filter to the web service:
+
+```xml
+  <filter>
+    <filter-name>ApiOriginFilter</filter-name>
+    <filter-class>com.wordnik.swagger.sample.util.ApiOriginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ApiOriginFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+```
+
 <li> Note that jersey 1.10 or greater requires you to add some additional artifacts which are currently not in the samples:
 
 ```xml
