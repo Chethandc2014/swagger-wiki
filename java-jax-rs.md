@@ -3,7 +3,7 @@ Java + JAX-RS
 
 Swagger supports the Jersey framework for integration with JAX-RS.
 
-#### Integration Steps
+# Integration Steps
 
 First, include the swagger artifacts in your project.  If using maven, add to your `pom.xml`:
 
@@ -28,7 +28,8 @@ And with ivy, add to your `ivy.xml`:
 Next, you need to tell jersey how to find the [Resource Listing](Resource-Listing) class--this is done in one of
 two ways:
 
-One: If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
+## Method #1
+If you use your `web.xml` to declare the packages to scan on startup of jersey, you will have something like this:
 
 ```xml
   <servlet>
@@ -46,7 +47,8 @@ One: If you use your `web.xml` to declare the packages to scan on startup of jer
 Note the addition to `com.wordnik.swagger.jaxrs` in the `param-value`.  Why?  Because that tells jersey to scan &
 register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/JavaApiListing.scala), which is in that package in the swagger-jaxrs module.
 
-Two: If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
+## Method #2
+If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
 
 ```xml
   <init-param>
@@ -113,7 +115,7 @@ Note! This should match the `servlet-mapping` path to your jersey servlet:
 if you, for instance, had your REST api on /api, you would have `http://localhost:8080/api` in the `swagger.api.basepath` and
 `/api/*` in your `url-pattern` config.
 
-You should be able to add APIs now.  This is done by annotating your APIs like this:
+You should be able to add APIs now.  This is done by making them inherit `JavaHelp` and annotating your APIs like this:
 
 ```java
 @Path("/pet.json")
@@ -143,7 +145,7 @@ of the return model--this lets Swagger automatically scan the model and turn it 
 The `@ApiError` annotations let you tell the user what the API might return for errors.  Finally the `@ApiParam` declares
 all the input values to the operation.
 
-#### Testing
+# Testing
 
 You should be able to start up your server now.  First thing to verify is that you can hit the Resource Declaration:
 
@@ -211,9 +213,9 @@ you need to take an alternative listing scheme.  See [java-alt-resource-listing]
 an example.
 
 
-## Other configurations
+# Other configurations
 
-#### Removing the .{format} suffix
+## Removing the .{format} suffix
 
 You might want to get rid of the `.{format}` in the resource listing and `.json` in your api suffix.  This is done as follows:
 
@@ -261,7 +263,7 @@ public class PetResource extends JavaHelp {
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
 
-#### Changing the listing path
+## Changing the listing path
 
 If your API needs to support `GET` on the root resource, you can re-map the Swagger API listing files wherever 
 you like.  There are a couple steps to do this.
@@ -299,7 +301,7 @@ In the above code block, you're specifying that the /pet API will be described u
 You are also telling it *which* class has the annotations for the description `com.wordnik.swagger.sample.resource.PetResource`.  Finally,
 the noop code is OK--there's nothing to do in this method.
 
-## Troubleshooting
+# Troubleshooting
 
 If you are accessing a swagger-powered API from browser (via javascript), it is likely that you need to set a cross-origin filter in your service.  Specifically the UI, if not deployed on the same host as the API will receive an error when attempting to make AJAX calls to the server.
 
