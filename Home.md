@@ -46,6 +46,8 @@ Some known server implementations include:
 
 [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
+[Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
+
 [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
 
 You can generate or manually write simple, static JSON documents which describe your existing 
