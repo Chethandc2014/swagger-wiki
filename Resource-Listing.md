@@ -17,8 +17,7 @@ The Resource Listing creates an inventory of all APIs.  For example:
       path: "/user.{format}",
       description: "Operations about user"
     }
-  ],
-  models [ ... ]
+  ]
 }
 ```
 
