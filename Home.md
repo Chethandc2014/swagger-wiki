@@ -46,7 +46,11 @@ Some known server implementations include:
 
 [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
+[Swagger.net](https://github.com/miketrionfo/Swagger.Net) .net integration from Mike Trionfo
+
 [Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
+
+[Symfony-2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
 
 [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
 
