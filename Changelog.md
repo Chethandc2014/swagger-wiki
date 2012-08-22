@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-1.1 (DRAFT).  This version contains mostly clarifications to ambiguous portions of the spec, including:
+1.1.  This version contains mostly clarifications to ambiguous portions of the spec, including:
 
 * Clarify supported primitives, case normalization of models.
 
