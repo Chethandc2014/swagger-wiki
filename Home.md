@@ -40,7 +40,7 @@ Some known server implementations include:
 
 [scala play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
 
-[scala play2](https://github.com/ayush/swagger-play2)
+[scala play2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
 
 [scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
 
