@@ -44,6 +44,8 @@ Some known server implementations include:
 
 [scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
 
+[spring-MVC](https://github.com/martypitt/swagger-springmvc)
+
 [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
 [Swagger.net](https://github.com/miketrionfo/Swagger.Net) .net integration from Mike Trionfo
