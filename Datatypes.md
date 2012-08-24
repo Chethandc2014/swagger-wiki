@@ -35,11 +35,11 @@ for declaring a complex type follows `JSON Schema` and is shown in the following
     Tag: {
       properties:{
         id:{
-          type: "Long",
+          type: "long",
           description: "unique identifier for the tag"
         },
         name:{
-          type: "String"
+          type: "string"
         }
       },
       id:"Tag"
