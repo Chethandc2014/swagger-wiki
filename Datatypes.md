@@ -19,7 +19,7 @@ long
 float            
 double           
 string           
-Date             a ISO-8601 Date, whih is represented in a String (1970-01-01T00:00:00.000+0000)
+Date             a ISO-8601 Date, which is represented in a String (1970-01-01T00:00:00.000+0000)
 
 ```
 
