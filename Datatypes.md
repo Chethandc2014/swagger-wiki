@@ -84,19 +84,19 @@ a `List` of values or a numeric `Range`.  For example:
           type:"String",
           description:"pet status in the store",
           allowableValues:{
+            valueType:"LIST",
             values:[
               "available",
               "pending",
               "sold"
-            ],
-            valueType:"List"
+            ]
           }
         },
         happiness: {
           type: "Int",
           description: "how happy the Pet appears to be, where 10 is 'extremely happy'",
           allowableValues: {
-            valueType: "Range",
+            valueType: "RANGE",
             min: 1,
             max: 10
           }
