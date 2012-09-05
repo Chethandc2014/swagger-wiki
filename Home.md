@@ -57,7 +57,7 @@ Some known server implementations include:
 [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
 
 You can generate or manually write simple, static JSON documents which describe your existing 
-API.  That means you can benefit from the [http://github.com/wordnik/swagger-ui](swagger-ui) and [http://github.com/wordnik/swagger-codegen](swagger-codegen) without
+API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
 doing anything to your server other creating some files.  They don't even need to exist on the same
 server.  One example of a swagger-spec generator is here:
 
