@@ -21,7 +21,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
               allowableValues: {
                 max: 10,
                 min: 0,
-                valueType: "Range"
+                valueType: "RANGE"
               },
               allowMultiple: false
             }
