@@ -238,6 +238,13 @@ public class Bootstrap extends HttpServlet {
 Next, you'll need to override the default `JavaApiListing` class.  You may have already done this if using a
 Jersey Application, but for completeness, subclass the listing class and set the resource listing to NOT have the `.json` suffix:
 
+Make sure that you also fire up the bootstrap before Jersey in your web.xml:
+    <servlet>
+        <servlet-name>Bootstrap</servlet-name>
+        <servlet-class>com.wordnik.swagger.sample.Bootstrap</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
 ```java
 package com.your.project;
 
