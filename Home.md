@@ -65,7 +65,7 @@ server.  One example of a swagger-spec generator is here:
 
 ### Anatomy of the Spec
 
-The specification is in two parts--the Resource Listing and the API Description.  The
+The specification is in two parts--the Resource Listing and the API Declaration.  The
 Resource Listing contains an inventory of APIs available on the server as well as paths
 to the description of the APIs.
 
