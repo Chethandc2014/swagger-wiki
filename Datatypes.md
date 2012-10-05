@@ -28,7 +28,7 @@ Note that `primitive` and `complex` names are case-sensitive.
 #### Complex Types
 
 The specification supports any complex type as long as it is declared in the `models` section.  The format
-for declaring a complex type follows `JSON Schema` and is shown in the following example:
+for declaring a complex type follows [JSON Schema](http://json-schema.org/) and is shown in the following example:
 
 ```
 
