@@ -12,7 +12,7 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
     <dependency>
       <groupId>com.wordnik</groupId>
       <artifactId>swagger-jaxrs_2.9.1</artifactId>
-      <version>1.0.1</version>
+      <version>1.1.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
