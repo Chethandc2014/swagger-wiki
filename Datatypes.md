@@ -78,6 +78,7 @@ a `List` of values or a numeric `Range`.  For example:
 ```
 
     Pet:{
+      id:"Pet",
       properties:{
       ...
         status:{
@@ -118,5 +119,20 @@ Containers can hold `primitive` or `complex` datatypes.  The supported list of c
 
 `Array`.  An unordered list of values
 
-Containers must hold primitive or complex datatypes--nested containers are not supported
- 
+Containers must hold primitive or complex datatypes--nested containers are not supported.  Containers are defined in the json description as follows:
+
+```
+    Pet:{
+      id: "Pet",
+      properties:{
+      ...
+        categories:{
+          type:"List",
+          description:"categories that the Pet belongs to",
+          items:{
+             $ref:"Category"
+          }
+        }
+```
+
+In this case, the `Pet` has an attribute called `categories` which is of type `List of Category` objects.
