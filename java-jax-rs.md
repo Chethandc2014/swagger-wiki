@@ -12,7 +12,7 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
     <dependency>
       <groupId>com.wordnik</groupId>
       <artifactId>swagger-jaxrs_2.9.1</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -21,8 +21,8 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
 And with ivy, add to your `ivy.xml`:
 
 ```xml
-  <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.0.1"/>
-  <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.0.1"/>
+  <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.2.0"/>
+  <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.2.0"/>
 ```
 
 Next, you need to tell jersey how to find the [Resource Listing](Resource-Listing) class--this is done in one of
@@ -38,14 +38,14 @@ If you use your `web.xml` to declare the packages to scan on startup of jersey, 
     </servlet-class>
     <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>com.your.project;com.wordnik.swagger.jaxrs</param-value>
+      <param-value>com.your.project;com.wordnik.swagger.jaxrs.listing</param-value>
     </init-param>
   ...
   </servlet>
 ```
 
-Note the addition to `com.wordnik.swagger.jaxrs` in the `param-value`.  Why?  Because that tells jersey to scan &
-register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/JavaApiListing.scala), which is in that package in the swagger-jaxrs module.
+Note the addition to `com.wordnik.swagger.jaxrs.listing` in the `param-value`.  Why?  Because that tells jersey to scan &
+register the [resource listing](/wordnik/swagger-core/blob/master/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/listing/ApiListing.scala), which is in that package in the swagger-jaxrs module.
 
 ## Method #2
 If you use a Jersey Application to configure your project, you'll likely have something like this in your `web.xml`:
@@ -115,7 +115,7 @@ Note! This should match the `servlet-mapping` path to your jersey servlet:
 if you, for instance, had your REST api on /api, you would have `http://localhost:8080/api` in the `swagger.api.basepath` and
 `/api/*` in your `url-pattern` config.
 
-You should be able to add APIs now.  This is done by making them inherit `JavaHelp` and annotating your APIs like this:
+You should be able to add APIs now.  This is done by making them annotating your APIs like this:
 
 ```java
 @Path("/pet.json")
@@ -150,7 +150,7 @@ all the input values to the operation.
 You should be able to start up your server now.  First thing to verify is that you can hit the Resource Declaration:
 
 ```
-http://localhost:8080/resources.json
+http://localhost:8080/api-docs.json
 ```
 
 This should tell Swagger to scan all the APIs available and produce a listing of them:
@@ -162,7 +162,7 @@ This should tell Swagger to scan all the APIs available and produce a listing of
   basePath: "http://localhost:8080",
   apis: [
     {
-      path: "/pet.{format}",
+      path: "/api-docs.{format}/pet",
       description: "Operations about pets"
     }
   ]
@@ -172,7 +172,7 @@ This should tell Swagger to scan all the APIs available and produce a listing of
 Following the link in the resource listing, you can now read the pet resource:
 
 ```
-http://localhost:8080/pet.json
+http://localhost:8080/api-docs.json/pet
 ```
 
 This should produce something like this:
@@ -207,12 +207,6 @@ This should produce something like this:
         ...
 ```
 
-Note!  You can see from above that this example assumes Swagger has the GET method on the root API!  That means,
-you are not using `http://localhost:8080/pet.json` for any other operations.  This may not be the case, in which
-you need to take an alternative listing scheme.  See [java-alt-resource-listing](/wordnik/swagger-core/tree/master/samples/java-alt-resource-listing) for
-an example.
-
-
 # Other configurations
 
 ## Removing the .{format} suffix
@@ -230,7 +224,7 @@ import javax.servlet.http.HttpServlet;
 
 public class Bootstrap extends HttpServlet {
   static {
-	  JaxrsApiReader.setFormatString("");
+    JaxrsApiReader.setFormatString("");
   }
 }
 ```
@@ -242,14 +236,14 @@ Jersey Application, but for completeness, subclass the listing class and set the
 package com.your.project;
 
 import com.wordnik.swagger.annotations.*;
-import com.wordnik.swagger.jaxrs.JavaApiListing;
+import com.wordnik.swagger.jaxrs.listing.ApiListing;
 
 import javax.ws.rs.*;
 
 @Path("/resources")
 @Api("/resources")
 @Produces({"application/json"})
-public class ApiListingResource extends JavaApiListing {}
+public class ApiListingResource extends ApiListing {}
 ```
 Finally, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
 
@@ -269,44 +263,6 @@ Make sure that you also fire up the bootstrap before Jersey in your web.xml:
 ```
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
-
-## Changing the listing path
-
-If your API needs to support `GET` on the root resource, you can re-map the Swagger API listing files wherever 
-you like.  There are a couple steps to do this.
-
-First, you need to specify what the listing path should be in your APIs:
-
-```java
-package com.wordnik.swagger.sample.resource;
-
-@Path("/resources/pet")
-@Api(value = "/pet", 
-	description = "Operations about pets",
-	listingPath="/resources.json/pet")
-@Produces({"application/json"})
-public class PetResource {
-  /* do something here */
-}
-```
-
-Note in this scenario, you are putting the API listing under this location:  `http://localhost:8080/resources.json/pet`
-
-Next, you'll need to create a resource to respond to the listing path requests:
-
-```java
-@Path("/resources.json/pet")
-@Api(value = "/pet",
-  description = "Operations about pets",
-  listingPath = "/resources.json/pet",
-  listingClass = "com.wordnik.swagger.sample.resource.PetResource")
-@Produces({"application/json"})
-public class PetResourceListing extends JavaHelp {}
-```
-
-In the above code block, you're specifying that the /pet API will be described under `http://localhost:8080/resources.json/pet`.
-You are also telling it *which* class has the annotations for the description `com.wordnik.swagger.sample.resource.PetResource`.  Finally,
-the noop code is OK--there's nothing to do in this method.
 
 # Troubleshooting
 
