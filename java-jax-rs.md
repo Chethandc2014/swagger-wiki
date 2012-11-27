@@ -228,24 +228,7 @@ public class Bootstrap extends HttpServlet {
   }
 }
 ```
-
-Next, you'll need to override the default `JavaApiListing` class.  You may have already done this if using a
-Jersey Application, but for completeness, subclass the listing class and set the resource listing to NOT have the `.json` suffix:
-
-```java
-package com.your.project;
-
-import com.wordnik.swagger.annotations.*;
-import com.wordnik.swagger.jaxrs.listing.ApiListing;
-
-import javax.ws.rs.*;
-
-@Path("/resources")
-@Api("/resources")
-@Produces({"application/json"})
-public class ApiListingResource extends ApiListing {}
-```
-Finally, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
+Next, in all your APIs, your `@Path` annotations will appropriately not have the `.json` suffix:
 
 ```java
 @Path("/pet")
