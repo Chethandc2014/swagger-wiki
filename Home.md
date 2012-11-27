@@ -38,6 +38,10 @@ Some known server implementations include:
 
 [java/scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
 
+[RESTEasy](http://www.jboss.org/resteasy)
+
+[Grails2](http://grails.org)
+
 [scala play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
 
 [scala play2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
@@ -54,7 +58,7 @@ Some known server implementations include:
 
 [Symfony-2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
 
-[Restler](https://github.com/Luracast/Restler) PHP framework, swagger support planned in 3.0
+[Restler](https://github.com/Luracast/Restler) PHP framework, swagger support in 3.0
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
