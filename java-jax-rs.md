@@ -64,9 +64,9 @@ package com.your.project;
 import com.sun.jersey.api.core.PackagesResourceConfig;
 
 public class RESTApplication extends PackagesResourceConfig {
-	public RESTApplication() {
-		super("com.your.project.resources");
-	}
+  public RESTApplication() {
+    super("com.your.project.resources");
+  }
 }
 ```
 Note!  There is no `com.sun.jersey.config.property.packages` configuration.  Don't add one!  If this is your setup, you have
@@ -121,7 +121,7 @@ You should be able to add APIs now.  This is done by making them annotating your
 @Path("/pet.json")
 @Api(value = "/pet", description = "Operations about pets")
 @Produces({"application/json"})
-public class PetResource extends JavaHelp {
+public class PetResource {
   @GET
   @Path("/{petId}")
   @ApiOperation(value = "Find pet by ID", notes = "Add extra notes here", responseClass = "com.wordnik.swagger.sample.model.Pet")
