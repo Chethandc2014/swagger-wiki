@@ -1,7 +1,7 @@
 Resource Listing
 ==========
 
-The Resource Listing creates an inventory of all APIs.  For example:
+The Resource Listing creates an inventory of all APIs and is provided by default at the `/api-docs.json` path.  For example:
 
 ```js
 {
