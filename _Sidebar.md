@@ -1,2 +1,2 @@
 ## <font color="green">Navigation</font>
-* [API Declaration](API-Declaration)
+* [API Declaration](wiki/API-Declaration)
