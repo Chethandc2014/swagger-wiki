@@ -30,19 +30,19 @@ Note that `primitive` and `complex` names are case-sensitive.
 The specification supports any complex type as long as it is declared in the `models` section.  The format
 for declaring a complex type follows [JSON Schema](http://json-schema.org/) and is shown in the following example:
 
-```
+```json
 
-    Tag: {
-      properties:{
-        id:{
-          type: "long",
-          description: "unique identifier for the tag"
+    "Tag": {
+      "properties":{
+        "id":{
+          "type": "long",
+          "description": "unique identifier for the tag"
         },
-        name:{
-          type: "string"
+        "name":{
+          "type": "string"
         }
       },
-      id:"Tag"
+      "id":"Tag"
     }
 
 ```
@@ -54,15 +54,15 @@ The `property` has an optional human-readable `description`.  It can also contai
 the `model` description should be flat: that is, references to complex types are valid but 
 they should be declared in the `models` array.  For example:
 
-```
+```json
 
-    Pet:{
-      properties:{
-        tag:{
-          type:"Tag",
+    "Pet":{
+      "properties":{
+        "tag":{
+          "type":"Tag",
         },
-        id:{
-          type:"Long"
+        "id":{
+          "type":"Long"
         },
         ...
     }
@@ -75,31 +75,31 @@ Some model properties may be restricted to a fixed set of values.  To support th
 case, the property field can have an optional `allowableValues` property, which supports both
 a `List` of values or a numeric `Range`.  For example:
 
-```
+```json
 
-    Pet:{
-      id:"Pet",
-      properties:{
+    "Pet":{
+      "id":"Pet",
+      "properties":{
       ...
-        status:{
-          type:"String",
-          description:"pet status in the store",
-          allowableValues:{
-            valueType:"LIST",
-            values:[
+        "status":{
+          "type":"String",
+          "description":"pet status in the store",
+          "allowableValues":{
+            "valueType":"LIST",
+            "values":[
               "available",
               "pending",
               "sold"
             ]
           }
         },
-        happiness: {
-          type: "Int",
-          description: "how happy the Pet appears to be, where 10 is 'extremely happy'",
-          allowableValues: {
-            valueType: "RANGE",
-            min: 1,
-            max: 10
+        "happiness": {
+          "type": "Int",
+          "description": "how happy the Pet appears to be, where 10 is 'extremely happy'",
+          "allowableValues": {
+            "valueType": "RANGE",
+            "min": 1,
+            "max": 10
           }
         },
         ...
@@ -121,16 +121,16 @@ Containers can hold `primitive` or `complex` datatypes.  The supported list of c
 
 Containers must hold primitive or complex datatypes--nested containers are not supported.  Containers are defined in the json description as follows:
 
-```
-    Pet:{
-      id: "Pet",
-      properties:{
+```json
+    "Pet":{
+      "id": "Pet",
+      "properties":{
       ...
-        categories:{
-          type:"List",
-          description:"categories that the Pet belongs to",
-          items:{
-             $ref:"Category"
+        "categories":{
+          "type":"List",
+          "description":"categories that the Pet belongs to",
+          "items":{
+             "$ref":"Category"
           }
         }
 ```
