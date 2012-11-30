@@ -9,15 +9,15 @@ ambiguous and can benefit from some documentation.
 
 The `errorResponse` object contains just two fields, as shown below:
 
-```
-errorResponses:[
+```json
+"errorResponses":[
   {
-    code: 400,
-    reason: "Raised if a user supplies an invalid username format"
+    "code": 400,
+    "reason": "Raised if a user supplies an invalid username format"
   },
   {
-    code: 404,
-    reason: "The user cannot be found"
+    "code": 404,
+    "reason": "The user cannot be found"
   }
 ],
 
