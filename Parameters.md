@@ -3,27 +3,27 @@ Parameters
 
 Parameters describe the inputs into an API operation.  They live in the `operation` object:
 
-```
+```json
 
-  apis:[
+  "apis":[
     {
-      path: "/pet.{format}/{petId}",
-      description: "Operations about pets",
-      operations: [
+      "path": "/pet.{format}/{petId}",
+      "description": "Operations about pets",
+      "operations": [
         {
-          parameters:[
+          "parameters":[
             {
-              paramType: "path",
-              name: "petId",
-              description: "ID of pet that needs to be fetched",
-              dataType: "String",
-              required: true,
-              allowableValues: {
-                max: 10,
-                min: 0,
-                valueType: "RANGE"
+              "paramType": "path",
+              "name": "petId",
+              "description": "ID of pet that needs to be fetched",
+              "dataType": "String",
+              "required": true,
+              "allowableValues": {
+                "max": 10,
+                "min": 0,
+                "valueType": "RANGE"
               },
-              allowMultiple: false
+              "allowMultiple": false
             }
           ],
           ...
