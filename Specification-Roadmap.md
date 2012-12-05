@@ -12,3 +12,7 @@ A minor version shall be introduced when major functionality is provided
 **3.0 Authorization**.  Describing the requirements to access the API through API Key, oAuth, etc. will be described in the specification, and will be inherited from resource listing to api declaration to operation.
 
 ## Milestones
+
+**1.1**. Aug 2012 spec clarifications
+
+**1.0**. Aug 2011 initial release
