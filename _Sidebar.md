@@ -10,8 +10,14 @@ Tutorials
 * [Java JAX-RS](https://github.com/wordnik/swagger-core/wiki/java-jax-rs)
 * [Scala JAX-RS](https://github.com/wordnik/swagger-core/wiki/scala-jax-rs)
 
+Roadmap
+* [Swagger Specification Roadmap](https://github.com/wordnik/swagger-core/wiki/Specification-Roadmap)
+
 History
 * [Change Log](https://github.com/wordnik/swagger-core/wiki/Changelog)
+
+Deployments
+* [Known Deployments](https://github.com/wordnik/swagger-core/wiki/Deployments)
 
 Live Demo
 * [Swagger Petstore](http://petstore.swagger.wordnik.com)
