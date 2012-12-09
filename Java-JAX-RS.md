@@ -244,6 +244,17 @@ Make sure that you also fire up the bootstrap before Jersey in your web.xml:
         <load-on-startup>1</load-on-startup>
 </servlet>
 ```
+
+Finally, since the `com.wordnik.swagger.jaxrs.listing` already defines the resource listing path to be `/api-docs.json`:
+
+```
+import com.wordnik.swagger.jaxrs.listing.ApiListing;
+
+@Path("/api-docs")
+@Api("/api-docs")
+@Produces({"application/json"})
+public class ApiListingResourceJSON extends ApiListing {}
+```
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
 
