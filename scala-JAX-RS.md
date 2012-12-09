@@ -233,6 +233,18 @@ Now, in all your APIs, your `@Path` annotations will appropriately not have the 
 class PetResource extends Help {
 ```
 
+
+Finally, since the `com.wordnik.swagger.jaxrs.listing` already defines the resource listing path to be `/api-docs.json`:
+
+```
+import com.wordnik.swagger.jaxrs.listing.ApiListing
+
+@Path("/api-docs")
+@Api("/api-docs")
+@Produces(Array("application/json"))
+class ApiListingResourceJSON extends ApiListing
+```
+
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
 
