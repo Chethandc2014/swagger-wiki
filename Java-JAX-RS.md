@@ -234,7 +234,7 @@ Next, in all your APIs, your `@Path` annotations will appropriately not have the
 @Path("/pet")
 @Api(value = "/pet", description = "Operations about pets")
 @Produces({"application/json"})
-public class PetResource extends JavaHelp {
+public class PetResource {
 ```
 Make sure that you also fire up the bootstrap before Jersey in your web.xml:
 ``` xml
