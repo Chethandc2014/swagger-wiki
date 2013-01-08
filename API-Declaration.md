@@ -78,7 +78,7 @@ there are no required or optional `parameters` for an operation, an empty array 
 `errorResponses`.  An array describing the `error` cases returned by the operation.  See the [errors](errors) section for more detail
 on this object.
 
-Alongside the `apis` is a `models` array.  This contains a listing of all `non-primitive` datatypes required by ALL
+Alongside the `apis` is a `models` hash.  This contains a listing of all `non-primitive` datatypes required by ALL
 apis described in this particular API Declaration.  Note!  Models declarations may repeat across different API Declarations.
 Each declaration should function in a stand-alone fashion and provide all information necessary.
 
