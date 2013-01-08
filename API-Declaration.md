@@ -16,7 +16,7 @@ While it might seem repetitive, it's important to include the following base ser
   ...
 
   apis: [...]
-  models: [...]  
+  models: {...}
 }
 ```
 
