@@ -327,7 +327,7 @@ Adding the filter to the web service:
 
 Note that the JAX-RS swagger support lets you use different JSON mappers.  If you do so, there are things to be aware of:
 
-1.  You're best off not writing `null` values.  If you (like most others) use Jackson from FasterXML, you can do so as follows:
+1)  You're best off not writing `null` values.  If you (like most others) use Jackson from FasterXML, you can do so as follows:
 
 ```java
 ObjectMapper mapper = new ObjectMapper();
@@ -340,4 +340,4 @@ mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 ```
 Why?  Well, returning `null` in json is nasty, and it can clog up your clients, be it swagger-ui, codegen or other.
 
-2.  Very, very old versions of Jersey will incorrectly turn single-element arrays into objects, which defies almost all reason and will make you crazy.  If you create a JSON mapper, as in all swagger samples in this project, you won't have this issue.
+2)  Very, very old versions of Jersey will incorrectly turn single-element arrays into objects, which defies almost all reason and will make you crazy.  If you create a JSON mapper, as in all swagger samples in this project, you won't have this issue.
