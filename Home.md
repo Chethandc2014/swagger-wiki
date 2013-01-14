@@ -63,9 +63,10 @@ Some known server implementations include:
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
 doing anything to your server other creating some files.  They don't even need to exist on the same
-server.  Examples of swagger-spec generators:
+server.  Some known implementations include:
 
 [Ruby](https://github.com/solso/source2swagger)
+
 [JAX-RS & Javadoc] (https://github.com/ryankennedy/swagger-jaxrs-doclet)
 
 ### Anatomy of the Spec
