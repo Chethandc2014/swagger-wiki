@@ -16,6 +16,9 @@ Roadmap
 History
 * [Change Log](https://github.com/wordnik/swagger-core/wiki/Changelog)
 
+Downloads
+* [Download Links](https://github.com/wordnik/swagger-core/wiki/Downloads)
+
 Deployments
 * [Known Deployments](https://github.com/wordnik/swagger-core/wiki/Deployments)
 
