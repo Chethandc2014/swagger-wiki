@@ -63,8 +63,8 @@ package com.your.project;
 
 import com.sun.jersey.api.core.PackagesResourceConfig;
 
-public class RESTApplication extends PackagesResourceConfig {
-  public RESTApplication() {
+public class RestApplication extends PackagesResourceConfig {
+  public RestApplication() {
     super("com.your.project.resources");
   }
 }
