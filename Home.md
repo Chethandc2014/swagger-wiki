@@ -34,40 +34,42 @@ using several different REST frameworks.
 You can use or develop a framework for automatically generating the Swagger specification.
 Some known server implementations include:
 
-[node.js](https://github.com/wordnik/swagger-node-express) with express framework
+- [node.js](https://github.com/wordnik/swagger-node-express) with express framework
 
-[java/scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
+- [java/scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
 
-[RESTEasy](http://www.jboss.org/resteasy)
+- [RESTEasy](http://www.jboss.org/resteasy)
 
-[Grails2](http://grails.org)
+- [Grails2](http://grails.org)
 
-[scala play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
+- [scala play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
 
-[scala play2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
+- [scala play2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
 
-[scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
+- [scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
 
-[spring-MVC](https://github.com/martypitt/swagger-springmvc)
+- [spring-MVC](https://github.com/martypitt/swagger-springmvc)
 
-[fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
+- [ServiceStack](https://github.com/ServiceStack/ServiceStack) .net/MONO
 
-[Swagger.net](https://github.com/miketrionfo/Swagger.Net) .net integration from Mike Trionfo
+- [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
-[Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
+- [Swagger.net](https://github.com/miketrionfo/Swagger.Net) .net integration from Mike Trionfo
 
-[Symfony-2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
+- [Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
 
-[Restler](https://github.com/Luracast/Restler) PHP framework, swagger support in 3.0
+- [Symfony-2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
+
+- [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support in 3.0
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
 doing anything to your server other creating some files.  They don't even need to exist on the same
 server.  Some known implementations include:
 
-[Ruby](https://github.com/solso/source2swagger)
+- [Ruby](https://github.com/solso/source2swagger)
 
-[JAX-RS & Javadoc] (https://github.com/ryankennedy/swagger-jaxrs-doclet)
+- [JAX-RS & Javadoc] (https://github.com/ryankennedy/swagger-jaxrs-doclet)
 
 ### Anatomy of the Spec
 
