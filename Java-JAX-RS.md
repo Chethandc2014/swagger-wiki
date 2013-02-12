@@ -272,7 +272,7 @@ curl -i http://YOUR_SERVER/PATH_TO_RESOURCE_LISTING
 HTTP/1.1 200 OK
 Access-Control-Allow-Headers: Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport, *
 Access-Control-Allow-Methods: POST, GET, OPTIONS , PUT
-**Access-Control-Allow-Origin: ***
+Access-Control-Allow-Origin: *
 Access-Control-Request-Headers: Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type, X-Atmosphere-Transport,  *
 Content-Type: application/json
 Date: Mon, 02 Jul 2012 19:23:14 GMT
