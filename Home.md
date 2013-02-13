@@ -36,19 +36,19 @@ Some known server implementations include:
 
 - [node.js](https://github.com/wordnik/swagger-node-express) with express framework
 
-- [java/scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
+- [Java/Scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
 
 - [RESTEasy](http://www.jboss.org/resteasy)
 
-- [Grails2](http://grails.org)
+- [Grails 2](http://grails.org)
 
-- [scala play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
+- [Scala Play 1.4](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play)
 
-- [scala play2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
+- [Scala Play 2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
 
-- [scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
+- [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
 
-- [spring-MVC](https://github.com/martypitt/swagger-springmvc)
+- [Spring MVC](https://github.com/martypitt/swagger-springmvc)
 
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack) .net/MONO
 
@@ -58,9 +58,13 @@ Some known server implementations include:
 
 - [Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
 
-- [Symfony-2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
+- [Symfony 2](https://github.com/nelmio/NelmioApiDocBundle) Bundle
 
 - [Restler](https://github.com/Luracast/Restler) PHP framework, swagger support in 3.0
+
+- [grape-swagger](https://github.com/tim-vandecasteele/grape-swagger) for Ruby
+
+- [Swaggerator](https://github.com/myfreeweb/swaggerator) for Clojure
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
