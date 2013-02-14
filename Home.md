@@ -64,6 +64,8 @@ Some known server implementations include:
 
 - [grape-swagger](https://github.com/tim-vandecasteele/grape-swagger) for Ruby
 
+- [django-tastypie-swagger](https://github.com/minism/django-tastypie-swagger) for Python/Django
+
 - [Swaggerator](https://github.com/myfreeweb/swaggerator) for Clojure
 
 You can generate or manually write simple, static JSON documents which describe your existing 
