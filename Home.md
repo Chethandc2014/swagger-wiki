@@ -46,7 +46,7 @@ Some known server implementations include:
 
 - [Scala Play 2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
 
-- [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger)
+- [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger), see [Swagger Guide](http://www.scalatra.org/2.2/guides/swagger.html)
 
 - [Spring MVC](https://github.com/martypitt/swagger-springmvc)
 
