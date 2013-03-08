@@ -21,7 +21,7 @@ While it might seem repetitive, it's important to include the following base ser
 ```
 
 Note in the above example there is a `resourcePath` element which is essentially the relative path
-to the the declaration being shown.  The `basePath` field is very important--while it's very common
+to the declaration being shown.  The `basePath` field is very important--while it's very common
 to have the Resource Listing and API Declarations on the server providing the APIs themselves, it
 is NOT required--in fact, for situations where the server does not automatically generate the Swagger
 Specification, a complete set of declarations can be provided as static files.  One can even
