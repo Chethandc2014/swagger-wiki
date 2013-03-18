@@ -77,6 +77,10 @@ server.  Some known implementations include:
 
 - [JAX-RS & Javadoc] (https://github.com/ryankennedy/swagger-jaxrs-doclet)
 
+Besides, you can generate your custom API documents without starting any servers, just during **build phase** by using a simple maven plugin:
+
+- [Swagger maven plugin](https://github.com/kongchen/swagger-maven-plugin)
+
 ### Anatomy of the Spec
 
 The specification is in two parts--the Resource Listing and the API Declaration.  The
