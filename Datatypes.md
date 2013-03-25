@@ -62,7 +62,7 @@ they should be declared in the `models` array.  For example:
           "type":"Tag",
         },
         "id":{
-          "type":"Long"
+          "type":"long"
         },
         ...
     }
