@@ -88,3 +88,7 @@ Resource Listing contains an inventory of APIs available on the server as well a
 to the description of the APIs.
 
 See [Resource Listing](https://github.com/wordnik/swagger-core/wiki/Resource-Listing) and [API Declaration](https://github.com/wordnik/swagger-core/wiki/API-Declaration)
+
+### License
+
+Swagger is available under the [Apache 2.0 license] (http://www.apache.org/licenses/LICENSE-2.0.html).
