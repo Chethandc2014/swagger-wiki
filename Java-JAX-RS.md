@@ -12,7 +12,7 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
     <dependency>
       <groupId>com.wordnik</groupId>
       <artifactId>swagger-jaxrs_2.9.1</artifactId>
-      <version>1.2.0</version>
+      <version>1.2.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -21,8 +21,8 @@ First, include the swagger artifacts in your project.  If using maven, add to yo
 And with ivy, add to your `ivy.xml`:
 
 ```xml
-  <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.2.0"/>
-  <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.2.0"/>
+  <dependency org="com.wordnik" name="swagger-jaxrs_2.9.1" rev="1.2.1"/>
+  <dependency org="com.wordnik" name="swagger-core_2.9.1" rev="1.2.1"/>
 ```
 
 Next, you need to tell jersey how to find the [Resource Listing](Resource-Listing) class--this is done in one of
