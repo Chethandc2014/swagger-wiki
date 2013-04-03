@@ -258,6 +258,55 @@ public class ApiListingResourceJSON extends ApiListing {}
 That's it--note that taking the format suffix away will likely cause other issues for your clients, especially
 if you support `xml` as well.
 
+# Custom configuration readers
+
+Configuration via web.xml is not always great, especially when you have hostnames, etc between dev and production builds.  You can handle your own configuration values programmatically however you like.  Just tell Swagger what config reader implementation to use in your web.xml or application bootstrap:
+
+```xml
+<init-param>
+  <param-name>swagger.config.reader</param-name>
+  <param-value>com.wordnik.swagger.sample.CustomConfigReader</param-value>
+</init-param>
+```
+
+```java
+package com.wordnik.swagger.sample;
+
+import com.wordnik.swagger.jaxrs.ConfigReader;
+
+import javax.servlet.ServletConfig;
+
+public class CustomConfigReader extends ConfigReader {
+	public CustomConfigReader(ServletConfig config) {}
+
+  // use whatever logic you like to set the base path
+  @Override public String basePath() {
+    return "http://localhost:8080/api";
+  }
+
+  @Override public String swaggerVersion() {
+    return com.wordnik.swagger.core.SwaggerSpec.version();
+  }
+
+  // set your api version here
+  @Override public String apiVersion() {
+    return "1.2.3";
+  }
+
+  // if you only want to scan certain model packages, you can include them in a CSV-formatted string
+  // like com.myapp.models,com.yourapp.stuff
+  // otherwise, return null
+  @Override public String modelPackages() {
+    return null;
+  }
+
+  // if you have a filter class to handle access to apis, return it as a string
+  @Override public String apiFilterClassName() {
+    return null;
+  } 
+}
+```
+
 # Troubleshooting
 
 If you are accessing a swagger-powered API from browser (via javascript), it is likely that you need to set a cross-origin filter in your service.  Specifically the UI, if not deployed on the same host as the API will receive an error when attempting to make AJAX calls to the server.
