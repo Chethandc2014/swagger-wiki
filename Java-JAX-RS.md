@@ -269,6 +269,8 @@ Configuration via web.xml is not always great, especially when you have hostname
 </init-param>
 ```
 
+And the accompanying implementation:
+
 ```java
 package com.wordnik.swagger.sample;
 
