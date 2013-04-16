@@ -3,6 +3,7 @@
 * [Singly](https://singly.com)
 
 ## Sites and Applications ##
+* [API2Cart](https://api2cart.3scale.net/)
 * [GroupDocs](https://api.groupdocs.com/v2.0/spec/)
 * [Klout](http://www.klout.com)
 * [IGN](http://www.ign.com)
