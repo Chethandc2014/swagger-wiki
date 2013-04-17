@@ -1,6 +1,7 @@
 ## Service Providers and Infrastructure Providers ##
 * [3Scale Networks](http://3scale.net)
 * [Singly](https://singly.com)
+* [APIHub](http://www.apihub.com/)
 
 ## Sites and Applications ##
 * [Sensr.net](https://sensr.net/)
@@ -10,6 +11,7 @@
 * [Klout](http://www.klout.com)
 * [IGN](http://www.ign.com)
 * [Wordnik](http://developer.wordnik.com)
+* [Facebook Graph API](http://www.apihub.com/api/facebook-graph-api) (via APIHub)
 
 ## Products ##
 * [Apache Apollo](http://activemq.apache.org/apollo/)
