@@ -94,7 +94,7 @@ a `List` of values or a numeric `Range`.  For example:
           }
         },
         "happiness": {
-          "type": "Int",
+          "type": "int",
           "description": "how happy the Pet appears to be, where 10 is 'extremely happy'",
           "allowableValues": {
             "valueType": "RANGE",
