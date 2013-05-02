@@ -16,7 +16,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
               "paramType": "path",
               "name": "petId",
               "description": "ID of pet that needs to be fetched",
-              "dataType": "String",
+              "dataType": "string",
               "required": true,
               "allowableValues": {
                 "max": 10,
