@@ -33,7 +33,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
 The `parameters` array may be empty if the `operation` requires no parameters.  The fields are:
 
 `paramType`.  This is the type of the parameter.  It can be only one of the following: 
-`path`, `query`, `body`, or `header`.
+`path`, `query`, `body`, `header` or `form`.
 
 A description of the fields is:
 
