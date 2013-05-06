@@ -66,7 +66,7 @@ Some known server implementations include:
 
 - [django-tastypie-swagger](https://github.com/concentricsky/django-tastypie-swagger) for Python/Django
 
-- [Swaggerator](https://github.com/myfreeweb/swaggerator) for Clojure
+- [Octohipster](https://github.com/myfreeweb/octohipster) for Clojure
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
