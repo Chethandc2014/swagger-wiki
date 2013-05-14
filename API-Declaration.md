@@ -8,15 +8,15 @@ While it might seem repetitive, it's important to include the following base ser
 
 ```
 {
-  apiVersion: "0.2",
-  swaggerVersion: "1.1",
-  basePath: "http://petstore.swagger.wordnik.com/api",
-  resourcePath: "/pet.{format}"
+  "apiVersion": "0.2",
+  "swaggerVersion": "1.1",
+  "basePath": "http://petstore.swagger.wordnik.com/api",
+  "resourcePath": "/pet.{format}"
   
   ...
 
-  apis: [...]
-  models: {...}
+  "apis" : [...]
+  "models" : {...}
 }
 ```
 
@@ -38,19 +38,19 @@ operations.
 An example api is below, with some sections omitted:
 
 ```
-  apis:[
+  "apis":[
     {
-      path:"/pet.{format}/{petId}",
-      description:"Operations about pets",
-      operations:[
+      "path":"/pet.{format}/{petId}",
+      "description":"Operations about pets",
+      "operations":[
         {
-          httpMethod:"GET",
-          nickname:"getPetById",
-          responseClass:"Pet",
-          parameters:[ ... ]
-          summary:"Find pet by its unique ID"
-          notes: "Only Pets which you have permission to see will be returned",
-          errorResponses:[ ... ]
+          "httpMethod":"GET",
+          "nickname":"getPetById",
+          "responseClass":"Pet",
+          "parameters":[ ... ]
+          "summary":"Find pet by its unique ID"
+          "notes": "Only Pets which you have permission to see will be returned",
+          "errorResponses":[ ... ]
         }
       ]
     }
