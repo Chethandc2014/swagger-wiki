@@ -36,6 +36,7 @@ for declaring a complex type follows [JSON Schema](http://json-schema.org/) and 
       "properties":{
         "id":{
           "type": "long",
+          "required": true,
           "description": "unique identifier for the tag"
         },
         "name":{
@@ -48,7 +49,7 @@ for declaring a complex type follows [JSON Schema](http://json-schema.org/) and 
 ```
 
 In the simple `model` above, the `Tag` model has two fields--`id` of type `Long` and `name` of type `String`.  
-The `id` field in the model provides the `model` name, in this case `Tag`.
+The `id` field in the model provides the `model` name, in this case `Tag`.  Note that `id` is required.
 
 The `property` has an optional human-readable `description`.  It can also contain complex types--however
 the `model` description should be flat: that is, references to complex types are valid but 
