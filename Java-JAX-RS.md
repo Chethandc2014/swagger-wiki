@@ -351,6 +351,10 @@ Adding the filter to the web service:
   </filter-mapping>
 ```
 
+<li>My jaxb class is not shown properly as a *responseClass* type
+This happens if you have specified the name of the *XmlRootElement* to be lowercase. Try to uppercase the first letter so for example 
+*pet -> Pet*
+
 <li> Note that jersey 1.10 or greater requires you to add some additional artifacts which are currently not in the samples:
 
 ```xml
