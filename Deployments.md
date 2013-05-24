@@ -4,6 +4,7 @@
 * [APIHub](http://www.apihub.com/)
 
 ## Sites and Applications ##
+* [NPR](http://composer.nprstations.org/api/)
 * [Sensr.net](https://sensr.net/)
 * [SublteData](http://developers.subtledata.com/api/)
 * [API2Cart](https://api2cart.3scale.net/)
