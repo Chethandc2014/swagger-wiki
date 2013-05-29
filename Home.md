@@ -89,6 +89,8 @@ to the description of the APIs.
 
 See [Resource Listing](https://github.com/wordnik/swagger-core/wiki/Resource-Listing) and [API Declaration](https://github.com/wordnik/swagger-core/wiki/API-Declaration)
 
+The swagger software and specification are both licensed under the Apache License, Version 2.0.
+
 ### License
 
 Copyright 2013 Reverb Technologies, Inc.
