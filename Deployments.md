@@ -1,5 +1,5 @@
 ## Service Providers and Infrastructure Providers ##
-* [SoapUI by SmartBear](http://smartbear.com/)
+* [SoapUI](http://smartbear.com/) (by SmartBear Software)
 * [3Scale Networks](http://3scale.net)
 * [Singly](https://singly.com)
 * [APIHub](http://www.apihub.com/)
