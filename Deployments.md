@@ -1,5 +1,4 @@
 ## Service Providers and Infrastructure Providers ##
-* [SoapUI](http://smartbear.com/) (by SmartBear Software)
 * [3Scale Networks](http://3scale.net)
 * [Singly](https://singly.com)
 * [APIHub](http://www.apihub.com/)
@@ -17,4 +16,5 @@
 * [Facebook Graph API](http://www.apihub.com/api/facebook-graph-api) (via APIHub)
 
 ## Products ##
+* [SoapUI](http://smartbear.com/) (by SmartBear Software)
 * [Apache Apollo](http://activemq.apache.org/apollo/)
