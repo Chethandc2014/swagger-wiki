@@ -9,6 +9,7 @@ Swagger Structure
 Tutorials
 * [Java JAX-RS](https://github.com/wordnik/swagger-core/wiki/java-jax-rs)
 * [Scala JAX-RS](https://github.com/wordnik/swagger-core/wiki/scala-jax-rs)
+* [Overriding Models](https://github.com/wordnik/swagger-core/wiki/overriding-models)
 
 Roadmap
 * [Swagger Specification Roadmap](https://github.com/wordnik/swagger-core/wiki/Specification-Roadmap)
