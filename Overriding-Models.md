@@ -70,15 +70,15 @@ public class DateSerializer {
     try{
       String jsonString = "\n" +
         "{\n" +
-        "  \"name\": \"Date\",\n" +
-        "  \"fields\": [\n" +
+        "  \\"name\\": \\"Date\\",\n" +
+        "  \\"fields\\": [\n" +
         "    {\n" +
-        "      \"name\": \"value\",\n" +
-        "      \"description\": \"Date in ISO-8601 format\",\n" +
-        "      \"notes\": \"Add any notes you like here\",\n" +
-        "      \"paramType\": \"string\",\n" +
-        "      \"required\": true,\n" +
-        "      \"allowMultiple\": false\n" +
+        "      \\"name\\": \\"value\\",\n" +
+        "      \\"description\\": \\"Date in milliseconds since epoch\\",\n" +
+        "      \\"notes\\": \\"Add any notes you like here\\",\n" +
+        "      \\"paramType\\": \\"long\\",\n" +
+        "      \\"required\\": true,\n" +
+        "      \\"allowMultiple\\": false\n" +
         "    }\n" +
         "  ]\n" +
         "}\n";
