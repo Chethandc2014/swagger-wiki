@@ -63,7 +63,7 @@ This can be done by telling the model introspector to avoid reflecting over `jav
 import com.wordnik.swagger.converter.{ ModelConverters, OverrideConverter }
 
 val jsonString = """
-"Date": {
+{
   "id": "Date",
   "properties": {
     "value": {
