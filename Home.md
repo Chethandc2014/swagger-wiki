@@ -48,6 +48,8 @@ Some known server implementations include:
 
 - [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger), see [Swagger Guide](http://www.scalatra.org/2.2/guides/swagger.html)
 
+- [Django](https://github.com/marcgibbons/django-rest-swagger)
+
 - [Spring MVC](https://github.com/martypitt/swagger-springmvc)
 
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack) .net/MONO
