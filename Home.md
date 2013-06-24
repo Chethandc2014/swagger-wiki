@@ -34,6 +34,8 @@ using several different REST frameworks.
 You can use or develop a framework for automatically generating the Swagger specification.
 Some known server implementations include:
 
+- [Django](https://github.com/marcgibbons/django-rest-swagger)
+
 - [node.js](https://github.com/wordnik/swagger-node-express) with express framework
 
 - [Java/Scala JAX-RS](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-jaxrs)
@@ -47,8 +49,6 @@ Some known server implementations include:
 - [Scala Play 2](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2)
 
 - [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger), see [Swagger Guide](http://www.scalatra.org/2.2/guides/swagger.html)
-
-- [Django](https://github.com/marcgibbons/django-rest-swagger)
 
 - [Spring MVC](https://github.com/martypitt/swagger-springmvc)
 
