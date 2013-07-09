@@ -83,7 +83,7 @@ a `List` of values or a numeric `Range`.  For example:
       "properties":{
       ...
         "status":{
-          "type":"String",
+          "type":"string",
           "description":"pet status in the store",
           "allowableValues":{
             "valueType":"LIST",
