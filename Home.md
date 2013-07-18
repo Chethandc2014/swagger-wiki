@@ -56,6 +56,8 @@ Some known server implementations include:
 
 - [fubumvc-swagger](https://github.com/KevM/fubumvc-swagger) .net Fubumvc
 
+- [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle) .net framework
+
 - [Swagger.net](https://github.com/miketrionfo/Swagger.Net) .net integration from Mike Trionfo
 
 - [Swagger-PHP](http://packagist.org/packages/zircote/swagger-php) PHP Composer
