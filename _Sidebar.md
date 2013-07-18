@@ -11,8 +11,9 @@ Tutorials
 * [Scala JAX-RS](https://github.com/wordnik/swagger-core/wiki/scala-jax-rs)
 * [Overriding Models](https://github.com/wordnik/swagger-core/wiki/overriding-models)
 
-Roadmap
-* [Swagger Specification Roadmap](https://github.com/wordnik/swagger-core/wiki/Specification-Roadmap)
+Transition Guides
+* [Swagger Specification 1.2 Transition](https://github.com/wordnik/swagger-core/wiki/1.2-transition)
+* [Authorizations](https://github.com/wordnik/swagger-core/wiki/authorizations)
 
 History
 * [Change Log](https://github.com/wordnik/swagger-core/wiki/Changelog)
