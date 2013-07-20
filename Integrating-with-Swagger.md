@@ -1,4 +1,3 @@
-Integrating with Swagger
 ==========
 
 Before starting to integrate with Swagger there are some decisions to make.  There are many different ways to integrate, so let's look through some options.
