@@ -14,20 +14,19 @@ You can hand-craft Swagger JSON and serve them up on any server.  The JSON needs
 
 Server integration means dynamically providing JSON at runtime.  Within a server integration with Swagger, there are still various levels, depending on the language, framework, and implementation.
 
-Let's choose from our known options.
+Let's choose from the known options.
 
-[Java](Java-Integrations)
+- [Java](Java-Integrations)
 
-[Scala](Scala-Integrations)
+- [Scala](Scala-Integrations)
 
-[Javascript](Javascript-Integrations)
+- [Javascript](Javascript-Integrations)
 
-[Python](Python-Integrations)
+- [Python](Python-Integrations)
 
-[.net](Dot-Net-Integrations)
+- [.net](Dot-Net-Integrations)
 
-[PHP](PHP-Integrations)
+- [PHP](PHP-Integrations)
 
-[Ruby](Ruby-Integrations)
-
-[Clojure](Clojure-Integrations)
+- [Ruby](Ruby-Integrations)
+- [Clojure](Clojure-Integrations)
