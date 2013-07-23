@@ -16,29 +16,29 @@ In both cases, each authorization scheme is named for reference elsewhere in the
       "scopes": [
         "PUBLIC"
       ],
-      "grantTypes": {
-        "implicit": {
-          "loginEndpoint": {
-            "url": "http://sample.com/oauth/dialog"
+      "grantTypes" : {
+        "implicit" : {
+          "loginEndpoint" : {
+            "url" : "http://sample.com/oauth/dialog"
           },
-          "tokenName": "access_code"
+          "tokenName" : "access_code"
         },
-        "authorization_code": {
-          "tokenRequestEndpoint": {
-            "url": "http://sample.com/oauth/requestToken",
-            "clientIdName": "client_id",
-            "clientSecretName": "client_secret"
+        "authorization_code" : {
+          "tokenRequestEndpoint" : {
+            "url" : "http://sample.com/oauth/requestToken",
+            "clientIdName" : "client_id",
+            "clientSecretName" : "client_secret"
           },
-          "tokenEndpoint": {
-            "url": "http://sample.com/oauth/token",
-            "tokenName": "access_code"
+          "tokenEndpoint" : {
+            "url" : "http://sample.com/oauth/token",
+            "tokenName" : "access_code"
           }
         }
       }
     },
-    "apiKey": {
-      "type": "apiKey",
-      "passAs": "header"
+    "apiKey" : {
+      "type" : "apiKey",
+      "passAs" : "header"
     }
   }
 ```
