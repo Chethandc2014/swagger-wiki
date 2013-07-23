@@ -10,7 +10,7 @@ The purpose of the authorizations section is to prescribe how clients should con
 In both cases, each authorization scheme is named for reference elsewhere in the spec.  For example, it is allowed to define both an api key and multiple oauth schemes for a single API--different operations may require different authorization schemes to be satisfied before allowing access.  So, for example:
 
 ```json
-  "authorizations": {
+  "authorizations" : {
     "local-oauth": {
       "type": "oauth2",
       "scopes": [
