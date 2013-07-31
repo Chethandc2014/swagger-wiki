@@ -4,10 +4,10 @@ For swagger implementations with no server integration, you just need to produce
 
 | Path | Description | 
 |:---- |:-----------|
-|`/{path}/api-docs`               | this is the Resource Listing    |
-|`/{path}/api-docs/{api-name}`    | this is one Api Declaration     |
-|`/{path}/api-docs/{api-name-2}`  |                                 |
-|`/{path}/api-docs/{api-name-n}`  | this is the nth Api Declaration |
+|/{path}/api-docs               | Resource Listing     |
+|/{path}/api-docs/{api-name}    | 1st Api Declaration  |
+|/{path}/api-docs/{api-name-2}  | 2nd Api Declaration  |
+|/{path}/api-docs/{api-name-n}  | nth Api Declaration  |
 
 In the above structure, the resource listing contains pointers to Api Declarations on the same server.  The Api Declaration can live on other servers as well, since the `path` to them can be absolute.  For example:
 
