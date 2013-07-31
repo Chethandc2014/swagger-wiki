@@ -47,13 +47,14 @@ An example api is below, with some sections omitted:
           "httpMethod":"GET",
           "nickname":"getPetById",
           "responseClass":"Pet",
-          "parameters":[ ... ]
-          "summary":"Find pet by its unique ID"
+          "parameters":[ ... ],
+          "summary":"Find pet by its unique ID",
           "notes": "Only Pets which you have permission to see will be returned",
           "errorResponses":[ ... ]
         }
       ]
     }
+  ]
 ```
 
 In this `api`, there is one `operation`.  If there are no operations in the `api`, an empty array should be
