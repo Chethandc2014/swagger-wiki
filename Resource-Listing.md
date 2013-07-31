@@ -5,17 +5,17 @@ The Resource Listing creates an inventory of all APIs and is provided by default
 
 ```js
 {
-  apiVersion: "0.2",
-  swaggerVersion: "1.1",
-  basePath: "http://petstore.swagger.wordnik.com/api",
-  apis: [
+  "apiVersion": "0.2",
+  "swaggerVersion": "1.1",
+  "basePath": "http://petstore.swagger.wordnik.com/api",
+  "apis": [
     {
-      path: "/pet.{format}",
-      description: "Operations about pets"
+      "path": "/pet.{format}",
+      "description": "Operations about pets"
     },
     {
-      path: "/user.{format}",
-      description: "Operations about user"
+      "path": "/user.{format}",
+      "description": "Operations about user"
     }
   ]
 }
