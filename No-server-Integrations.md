@@ -2,11 +2,11 @@
 
 For swagger implementations with no server integration, you just need to produce and serve Resource Listings and Api Declarations from any HTTP server.  The depoyment structure typically looks like this:
 
-HTTP Server
- + /{path}/api-docs               <= this is the Resource Listing
- + /{path}/api-docs/{api-name}    <= this is one Api Declaration
- + /{path}/api-docs/{api-name-2}  
- + /{path}/api-docs/{api-name-n}  <= this is the nth Api Declaration
+##### HTTP Server
+` + /{path}/api-docs`               <= this is the Resource Listing
+` + /{path}/api-docs/{api-name}`    <= this is one Api Declaration
+` + /{path}/api-docs/{api-name-2}`  
+` + /{path}/api-docs/{api-name-n}`  <= this is the nth Api Declaration
 
 In the above structure, the resource listing contains pointers to Api Declarations on the same server.  The Api Declaration can live on other servers as well, since the `path` to them can be absolute.  For example:
 
@@ -33,6 +33,7 @@ Assuming this JSON is available under `http://{host}/{path}/api-docs`:
 Swagger will expect the Api Declarations are provided under the following paths:
 
 `http://{host}/{path}/api-docs/pet`
+
 `http://{host}/{path}/api-docs/user`
 
 #### Resource Listing on multiple servers
@@ -58,6 +59,7 @@ Assuming this JSON is available under `http://{host}/{path}/api-docs`:
 Swagger will expect the Api Declarations are provided under the following paths:
 
 `http://api.myhost.com/api-docs/pet`
+
 `http://api.myhost.com/api-docs/user`
 
 #### Api Declaration, and calling a Real Server
