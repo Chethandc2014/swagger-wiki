@@ -3,7 +3,7 @@
 For swagger implementations with no server integration, you just need to produce and serve Resource Listings and Api Declarations from any HTTP server.  The depoyment structure typically looks like this:
 
 | Path | Description | 
-|:---- | -----------:|
+|:---- |:-----------|
 |`/{path}/api-docs`               | this is the Resource Listing    |
 |`/{path}/api-docs/{api-name}`    | this is one Api Declaration     |
 |`/{path}/api-docs/{api-name-2}`  |                                 |
