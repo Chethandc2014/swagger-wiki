@@ -83,3 +83,27 @@ Now all documentation lives on `http://api.myhost.com` but the calls are made to
 ### Producing Swagger JSON
 
 There are a lot of ways to do this.
+
+* Do it by hand.  Grab your favorite JSON editor and write some JSON manually.  It can be tedious but it's not XML...
+
+* Use a 3rd party tool.  Here are some tools that can help create swagger JSON easily (not all are completely swagger-spec compliant):
+
+[Source 2 Swagger](https://github.com/solso/source2swagger).  This is a tool which reads comments in source code and generate the Swagger JSON.
+
+[Raw 2 Swagger](https://github.com/solso/raw2swagger).  This tool will look at HTTP logs and heuristically create Swagger JSON.  This can be great for documenting traffic to existing servers where you have no control over the source code.
+
+[Soap UI](http://olensmar.blogspot.se/2013/05/soapui-swagger-true.html).  This is a plug-in for the very popular SOAP-UI tool which allows you to build APIs graphically and export their definitions in Swagger spec.
+
+### I'm impatient, give me a sample
+
+Clone swagger-core:
+
+```
+git clone https://github.com/wordnik/swagger-core.git
+
+cd samples/no-server
+
+mvn jetty:run
+```
+
+While you can literally use *any* web server, this is using the maven plug-in to launch jetty on port 8000, since it's so simple to use.  The files under `src/main/webapp` are available at the root of the web server, and pointing swagger-ui to `http://localhost:8000/api-docs`.  Or you can go directly to `http://localhost:8000` to view the embedded swagger-ui.
