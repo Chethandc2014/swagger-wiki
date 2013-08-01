@@ -7,7 +7,7 @@
 * [Bench Accounting](https://bench.co/)
 * [US Government](http://www.usa.gov/About/developer-resources/federal-agency-directory/interactivedoc.shtml)
 * [DreamFactory](http://www.dreamfactory.com/)
-* [NPR](http://composer.nprstations.org/api/)
+* [NPR](http://composer.nprstations.org/)
 * [Sensr.net](https://sensr.net/)
 * [SubtleData](http://developers.subtledata.com/api/)
 * [API2Cart](https://api2cart.3scale.net/)
