@@ -131,4 +131,4 @@ This gives the `Pet` model a description, describes `status` and tells us that i
 
 #### Wrap up
 
-This is a very short getting started guide for Java + JAXRS.  There are many options and configurations to swagger which can be explored in the more detailed guides.
+This is a very short getting started guide for Java + CXF + JAXRS.  There are many options and configurations to swagger which can be explored in the more detailed guides.
