@@ -20,16 +20,21 @@ This adds a jersey-dependent swagger module for JAX-RS, along with all the requi
 
 First, we'll tell jersey how to find the swagger resource listing--this is done by configuring the package that jersey scans on startup.
 
-Your web.xml should contain something like the following, when using Jersey as either a filter or a servlet:
+Your web.xml should contain something like the following, when using Jersey as either a servlet:
 
 ```xml
-<init-param>
-  <param-name>com.sun.jersey.config.property.packages</param-name>
-  <param-value>{your-packages};com.wordnik.swagger.jaxrs.listing</param-value>
-</init-param>
+<servlet>
+  <servlet-name>jersey</servlet-name>
+  <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  <init-param>
+    <param-name>com.sun.jersey.config.property.packages</param-name>
+    <param-value>{your-packages};com.wordnik.swagger.jaxrs.listing</param-value>
+  </init-param>
+  ...
+</servlet>
 ```
 
-Of course, replace {your-packages} with the packages to your actual resources.  This does two things:
+Of course, replace {your-packages} with the packages to your actual resources.  Now swagger will be loaded by jersey and can respond to requests for the Resource Listing and Api Declaration.
 
 #### Specify a Swagger Configuration Class
 
@@ -55,7 +60,7 @@ The `swagger.api.basepath` should be configured to the _external, public address
 
 #### Annotate your resources
 
-Swagger only scans resources which have an `@Api` annotation on them.  Each `@Api` resource will appear as an `Api Declaration` in swagger.  The annotation is done as follows:
+Swagger only scans resources which have an `@Api` annotation on them.  Each `@Api` resource will appear as an Api Declaration in swagger.  The annotation is done as follows:
 
 ```java
 import com.wordnik.swagger.annotations.*;
