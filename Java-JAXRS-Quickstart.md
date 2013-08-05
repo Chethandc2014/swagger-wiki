@@ -1,9 +1,5 @@
 ==========
 
-Java integration has many flavors depending on the java framework you're using.
-
-### Java + Jersey + JAX-RS Quickstart
-
 Swagger is supported in Jersey 1.x.  This is probably the most popular Java integration--the swagger code is written in `scala` but it is fully compatible with Java.  There is a Swagger-Jersey-JAXRS module which can be added to your project with this dependency:
 
 ```xml
@@ -20,7 +16,7 @@ This adds a jersey-dependent swagger module for JAX-RS, along with all the requi
 
 First, we'll tell jersey how to find the swagger resource listing--this is done by configuring the package that jersey scans on startup.
 
-Your web.xml should contain something like the following, when using Jersey as either a servlet:
+Your web.xml should contain something like the following, when using Jersey as a servlet:
 
 ```xml
 <servlet>
@@ -28,11 +24,12 @@ Your web.xml should contain something like the following, when using Jersey as e
   <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
   <init-param>
     <param-name>com.sun.jersey.config.property.packages</param-name>
-    <param-value>{your-packages};com.wordnik.swagger.jaxrs.listing</param-value>
+    <param-value>{your-packages};com.wordnik.swagger.jersey.listing</param-value>
   </init-param>
   ...
 </servlet>
 ```
+Note! The package above is slightly different than the swagger-jaxrs module which is not bound to Jersey!
 
 Of course, replace {your-packages} with the packages to your actual resources.  Now swagger will be loaded by jersey and can respond to requests for the Resource Listing and Api Declaration.
 
