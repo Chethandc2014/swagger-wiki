@@ -62,7 +62,7 @@ returned.  The fields in the operation are:
 
 `httpMethod`.  This is the HTTP method required to invoke this operation--the allowable values are `GET`, `POST`, `PUT`, `DELETE`.
 
-`nickname`.  This is an required field provided by the server for the convenience of the UI and client
+`nickname`.  This is a required field provided by the server for the convenience of the UI and client
 code generator, and is used to provide a shebang in the swagger-ui.
 
 `responseClass`.  This is what is returned from the method--in short, it's either `void`, a `primitive`, a `complex` or a `container`
