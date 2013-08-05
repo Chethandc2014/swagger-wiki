@@ -7,8 +7,7 @@ Swagger Structure
 * [Error Description](https://github.com/wordnik/swagger-core/wiki/Errors)
 
 Tutorials
-* [Java JAX-RS](https://github.com/wordnik/swagger-core/wiki/java-jax-rs)
-* [Scala JAX-RS](https://github.com/wordnik/swagger-core/wiki/scala-jax-rs)
+* [Adding Swagger to your API](https://github.com/wordnik/swagger-core/wiki/Adding-Swagger-to-your-API)
 * [Overriding Models](https://github.com/wordnik/swagger-core/wiki/overriding-models)
 
 Transition Guides
