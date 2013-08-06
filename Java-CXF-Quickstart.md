@@ -128,6 +128,11 @@ public class Pet {
 
 This gives the `Pet` model a description, describes `status` and tells us that it is `required` and should be either `placed`, `approved` or `delivered`.
 
+#### Example app
+
+You can see a working sample here, which uses Java + CXF with Tomcat:
+
+[scala-servlet](https://github.com/wordnik/swagger-core/tree/1.3-RC3/samples/java-jaxrs-cxf)
 
 #### Wrap up
 
