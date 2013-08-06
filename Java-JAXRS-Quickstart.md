@@ -28,6 +28,10 @@ Your web.xml should contain something like the following, when using Jersey as a
   </init-param>
   ...
 </servlet>
+<servlet-mapping>
+  <servlet-name>jersey</servlet-name>
+  <url-pattern>/*</url-pattern>
+</servlet-mapping>
 ```
 Note! The package above is slightly different than the swagger-jaxrs module which is not bound to Jersey!
 
@@ -109,6 +113,16 @@ public class Pet {
 ```
 
 This gives the `Pet` model a description, describes `status` and tells us that it is `required` and should be either `placed`, `approved` or `delivered`.
+
+#### Test your configuration
+
+Assuming you're running on the default port of `8080` and your servlet mapping is as shown in the above web.xml snippet, you should be able to view your resource listing here:
+
+[http://localhost:8080/api-docs](http://localhost:8080/api-docs)
+
+and any subsequent api declarations as follows:
+
+[http://localhost:8080/api-docs/{path}](http://localhost:8080/api-docs/{path})
 
 #### Example app
 

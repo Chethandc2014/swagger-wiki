@@ -128,6 +128,16 @@ public class Pet {
 
 This gives the `Pet` model a description, describes `status` and tells us that it is `required` and should be either `placed`, `approved` or `delivered`.
 
+#### Test your configuration
+
+Assuming you're running on the default port of `8080` and CXF is mounted on `/*`, you should be able to view your resource listing here:
+
+[http://localhost:8080/api-docs](http://localhost:8080/api-docs)
+
+and any subsequent api declarations as follows:
+
+[http://localhost:8080/api-docs/{path}](http://localhost:8080/api-docs/{path})
+
 #### Example app
 
 You can see a working sample here, which uses Java + CXF with Tomcat:
