@@ -8,7 +8,10 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + Servlets](https://github.com/wordnik/swagger-core/wiki/Servlet-Quickstart)
 
-Guidelines for Swagger version 1.2.x (NOTE!  Swagger 1.2.x is in maintenance mode and won't be further developed!)
+
+Guidelines for Swagger version 1.2.x
+
+(NOTE!  Swagger 1.2.x is in maintenance mode and won't be further developed!)
 
 #### [Java + JAX-RS Integration](java-jax-rs)
 
