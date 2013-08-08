@@ -19,10 +19,10 @@ Server integration means dynamically providing JSON at runtime.  Within a server
 Let's choose from the known options.
 
 - [Java](Java-Integrations)
-- [Scala](Scala-Integrations)
-- [Javascript](Javascript-Integrations)
-- [Python](Python-Integrations)
-- [.net](Dot-Net-Integrations)
-- [PHP](PHP-Integrations)
-- [Ruby](Ruby-Integrations)
-- [Clojure](Clojure-Integrations)
+- [Scala](Scala-Integrations) <= quickstart coming soon
+- [Javascript](Javascript-Integrations) <= quickstart coming soon
+- [Python](Python-Integrations) <= quickstart coming soon
+- [.net](Dot-Net-Integrations) <= quickstart coming soon
+- [PHP](PHP-Integrations) <= quickstart coming soon
+- [Ruby](Ruby-Integrations) <= quickstart coming soon
+- [Clojure](Clojure-Integrations) <= quickstart coming soon
