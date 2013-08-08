@@ -117,9 +117,9 @@ and any subsequent api declarations as follows:
 
 #### Example app
 
-You can see a working sample here, which uses Java + Jersey + JAXRS:
+You can see a working sample here, which uses Java + Dropwizard:
 
-[java-jaxrs](https://github.com/wordnik/swagger-core/tree/1.3-RC3/samples/java-dropwizard)
+[java-dropwizard](https://github.com/wordnik/swagger-core/tree/1.3-RC3/samples/java-dropwizard)
 
 #### Wrap up
 
