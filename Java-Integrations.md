@@ -8,6 +8,8 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + Servlets](https://github.com/wordnik/swagger-core/wiki/Servlet-Quickstart)
 
+#### [Java + Dropwizard](https://github.com/wordnik/swagger-core/wiki/JavaDropwizard-Quickstart)
+
 
 Guidelines for Swagger version 1.2.x
 
