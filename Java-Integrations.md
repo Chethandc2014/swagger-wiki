@@ -10,6 +10,7 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + Dropwizard](https://github.com/wordnik/swagger-core/wiki/JavaDropwizard-Quickstart)
 
+#### [Java + doclet](https://github.com/ryankennedy/swagger-jaxrs-doclet)
 
 Guidelines for Swagger version 1.2.x
 
