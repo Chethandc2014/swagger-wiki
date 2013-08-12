@@ -24,7 +24,7 @@ Your web.xml should contain something like the following, when using Jersey as a
   <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
   <init-param>
     <param-name>com.sun.jersey.config.property.packages</param-name>
-    <param-value>{your-packages};com.wordnik.swagger.jaxrs.listing</param-value>
+    <param-value>{your-packages};com.wordnik.swagger.jersey.listing</param-value>
   </init-param>
   ...
 </servlet>
