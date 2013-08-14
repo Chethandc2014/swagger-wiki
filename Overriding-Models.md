@@ -57,7 +57,7 @@ Now you probably don't want the client to build it's own `Date` object from this
 
 This can be done by telling the model introspector to avoid reflecting over `java.util.Date` and instead to use a prescribed model representation:
 
-### With swagger-core version 1.3.0-SNAPSHOT:
+### With swagger-core version 1.3.0:
 
 ```scala
 import com.wordnik.swagger.converter.{ ModelConverters, OverrideConverter }
@@ -80,45 +80,6 @@ converter.add("java.util.Date", jsonString)
 
 ModelConverters.addConverter(converter, true)
 
-```
-
-### With swagger-core version 1.2.4
-```java
-import com.wordnik.swagger.core.util.JsonUtil;
-import com.wordnik.swagger.core.*;
-
-import com.fasterxml.jackson.databind.*;
-
-import java.io.IOException;
-
-public class DateSerializer {
-  public DateSerializer() {
-    try{
-      String jsonString = "\n" +
-        "{\n" +
-        "  \\"name\\": \\"Date\\",\n" +
-        "  \\"fields\\": [\n" +
-        "    {\n" +
-        "      \\"name\\": \\"value\\",\n" +
-        "      \\"description\\": \\"Date in milliseconds since epoch\\",\n" +
-        "      \\"notes\\": \\"Add any notes you like here\\",\n" +
-        "      \\"paramType\\": \\"long\\",\n" +
-        "      \\"required\\": true,\n" +
-        "      \\"allowMultiple\\": false\n" +
-        "    }\n" +
-        "  ]\n" +
-        "}\n";
-
-      DocumentationObject m = JsonUtil.getJsonMapper().readValue(jsonString, DocumentationObject.class);
-      String className = java.util.Date.class.getName();
-      ApiPropertiesReader.add(className, "Date", m);
-    }
-    catch (IOException e){
-      // handle this, of course!
-      e.printStackTrace();
-    }
-  }
-}
 ```
 
 This needs to be fired on startup of the app, typically in a bootstrap servlet.  Now whenever a `java.util.Date` is encountered by Swagger, it will use this definition.
