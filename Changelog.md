@@ -1,4 +1,3 @@
-Change Log
 ==========
 
 1.2.  This version is in release-candidate status and contains high-level changes.  See the [1.2 transition guide](1.2-transition) for information on transitioning both your spec and server integration.

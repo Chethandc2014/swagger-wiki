@@ -1,4 +1,3 @@
-Authorizations
 ==========
 
 The purpose of the authorizations section is to prescribe how clients should connect to the API.  There are two supported mechanisms:

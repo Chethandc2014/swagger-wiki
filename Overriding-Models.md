@@ -1,3 +1,5 @@
+==========
+
 Swagger uses reflection to understand the models that are required as either input parameters or model attributes.  For instance, a `User` object might have an `Address` attribute.  Swagger will attempt to introspect the entire object hierarchy so that all aspects of the model can be provided to the consumer.
 
 You can control what the Swagger introspection code sees with Swagger's own `ApiProperty`, using JAXB, or even @JsonIgnore annotations.  When you use 3rd party or even generic Java objects, this can get tricky as you may not want all aspects of the model being represented in the Swagger JSON.  For example, take `java.util.Date`.
@@ -70,7 +72,8 @@ val jsonString = """
       "required": true,
       "description": "Date in ISO-8601 format",
       "notes": "Add any notes you like here",
-      "type": "string"
+      "type": "string",
+      "format": "date-time"
     }
   }
 }

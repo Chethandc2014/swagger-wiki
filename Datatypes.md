@@ -1,4 +1,3 @@
-Datatypes
 ==========
 
 Swagger Spec supports `primitive`, `complex` and `container` values for both input and output.  Any datatype

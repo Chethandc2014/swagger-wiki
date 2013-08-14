@@ -1,4 +1,3 @@
-Integration guidelines
 ==========
 
 There are many ways to write REST APIs, and even more ways to integrate Swagger into them.  Here 

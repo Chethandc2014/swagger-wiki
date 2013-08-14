@@ -1,4 +1,3 @@
-Scala + JAX-RS
 ==========
 
 Swagger supports the Jersey framework for integration with JAX-RS.
