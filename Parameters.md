@@ -1,32 +1,28 @@
-Parameters
 ==========
 
 Parameters describe the inputs into an API operation.  They live in the `operation` object:
 
 ```json
 
-  "apis":[
-    {
-      "path": "/pet.{format}/{petId}",
-      "description": "Operations about pets",
-      "operations": [
-        {
-          "parameters":[
-            {
-              "paramType": "path",
-              "name": "petId",
-              "description": "ID of pet that needs to be fetched",
-              "dataType": "string",
-              "required": true,
-              "allowableValues": {
-                "max": 10,
-                "min": 0,
-                "valueType": "RANGE"
-              },
-              "allowMultiple": false
-            }
-          ],
-          ...
+"apis":[
+  {
+    "path": "/pet.{format}/{petId}",
+    "description": "Operations about pets",
+    "operations": [
+      {
+        "parameters":[
+          {
+            "paramType": "path",
+            "name": "petId",
+            "description": "ID of pet that needs to be fetched",
+            "type": "string",
+            "required": true,
+            "minimum": 0,
+            "maximum": 10,
+            "allowMultiple": false
+          }
+        ],
+        ...
 
 ```
 
@@ -49,15 +45,13 @@ field in the `api` object
 
 `description`.  This is the human-readable description for the parameter.
 
-`dataType`.  For `path`, `query`, and `header` `paramType`s, this field must be a `primitive`.
+`type`.  For `path`, `query`, and `header` `paramType`s, this field must be a `primitive`.
 For `body`, this can be a `complex` or `container` datatype.
 
 `required`.  For `path`, this is always true.  Otherwise, this field tells the client
 whether or not the field must be supplied.
 
-`allowableValues`.  This is an optional field which restricts the input to either a `List` or
-`Range` of allowable input values.  See the [datatypes](datatypes) section for more details
-on the `allowableValues` field.
+`enum`.  This is an optional field which restricts the input to a list of allowable input values.  See the [datatypes](datatypes) section for more details.
 
 `allowMultiple`.  For `query` params, this specifies that a comma-separated list of values can
 be passed to the API.  For `path` and `body` types, this field cannot be true.
