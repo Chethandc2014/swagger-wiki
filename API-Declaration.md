@@ -1,4 +1,3 @@
-API Declaration
 ==========
 
 The API Declaration provides all information about the API itself.  It contains base server
