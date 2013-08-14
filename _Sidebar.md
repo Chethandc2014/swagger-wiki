@@ -4,7 +4,7 @@ Swagger Structure
 * [API Declaration](https://github.com/wordnik/swagger-core/wiki/API-Declaration)
 * [Parameters](https://github.com/wordnik/swagger-core/wiki/Parameters)
 * [Data Types](https://github.com/wordnik/swagger-core/wiki/Datatypes)
-* [Error Description](https://github.com/wordnik/swagger-core/wiki/Errors)
+* [Response Messages](https://github.com/wordnik/swagger-core/wiki/Response-Messages)
 
 Tutorials
 * [Adding Swagger to your API](https://github.com/wordnik/swagger-core/wiki/Adding-Swagger-to-your-API)
