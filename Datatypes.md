@@ -8,7 +8,6 @@ which is not a `primitive` must be defined in the `models` section of the API De
 
 Since different programming languages represent primitive values differently, the Swagger spec supports only the following simple types, per JSON-schema draft 4:
 
-```
 | Common name | Swagger spec 1.2  |
 |:----------- |:----------------- |
 | integer     | integer, int32    |
@@ -21,7 +20,6 @@ Since different programming languages represent primitive values differently, th
 | date        | string, date      |
 | dateTime    | string, date-time |
 
-```
 
 Note that `simple` and `complex` names are case-sensitive.
 
