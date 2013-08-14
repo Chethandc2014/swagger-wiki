@@ -6,12 +6,12 @@ information as well as two sections: `apis` and `models`.
 
 While it might seem repetitive, it's important to include the following base server fields:
 
-```
+```json
 {
   "apiVersion": "0.2",
-  "swaggerVersion": "1.1",
+  "swaggerVersion": "1.2",
   "basePath": "http://petstore.swagger.wordnik.com/api",
-  "resourcePath": "/pet.{format}"
+  "resourcePath": "/pet"
   
   ...
 
@@ -38,35 +38,34 @@ operations.
 An example api is below, with some sections omitted:
 
 ```
-  "apis":[
-    {
-      "path":"/pet.{format}/{petId}",
-      "description":"Operations about pets",
-      "operations":[
-        {
-          "httpMethod":"GET",
-          "nickname":"getPetById",
-          "responseClass":"Pet",
-          "parameters":[ ... ],
-          "summary":"Find pet by its unique ID",
-          "notes": "Only Pets which you have permission to see will be returned",
-          "errorResponses":[ ... ]
-        }
-      ]
-    }
-  ]
+"apis":[
+  {
+    "path":"/pet/{petId}",
+    "description":"Operations about pets",
+    "operations":[
+      {
+        "method":"GET",
+        "nickname":"getPetById",
+        "type":"Pet",
+        "parameters":[ ... ],
+        "summary":"Find pet by its unique ID",
+        "notes": "Only Pets which you have permission to see will be returned",
+        "responseMessages":[ ... ]
+      }
+    ]
+  }
+]
 ```
 
 In this `api`, there is one `operation`.  If there are no operations in the `api`, an empty array should be
 returned.  The fields in the operation are:
 
-`httpMethod`.  This is the HTTP method required to invoke this operation--the allowable values are `GET`, `POST`, `PUT`, `DELETE`.
+`method`.  This is the HTTP method required to invoke this operation--the allowable values are `GET`, `POST`, `PUT`, `DELETE`.
 
 `nickname`.  This is a required field provided by the server for the convenience of the UI and client
 code generator, and is used to provide a shebang in the swagger-ui.
 
-`responseClass`.  This is what is returned from the method--in short, it's either `void`, a `primitive`, a `complex` or a `container`
-return value.  See the [datatypes](datatypes) section for more detail on supported datatypes.
+`type`.  This is what is returned from the method--in short, it's either `void`, a `simple-type`, a `complex` or a `container` return value.  See the [datatypes](datatypes) section for more detail on supported datatypes.
 
 `parameters`.  These are the inputs to the operation--see the [parameters](parameters) section for details.  If
 there are no required or optional `parameters` for an operation, an empty array should be returned.
@@ -76,12 +75,10 @@ there are no required or optional `parameters` for an operation, an empty array 
 
 `notes`.  A longer text field to explain the behavior of the operation.
 
-`errorResponses`.  An array describing the `error` cases returned by the operation.  See the [errors](errors) section for more detail
+`responseMessages`.  An array describing the `responseMessage` cases returned by the operation.  See the [ResponseMessages](ResponseMessages) section for more detail
 on this object.
 
-Alongside the `apis` is a `models` hash.  This contains a listing of all `non-primitive` datatypes required by ALL
-apis described in this particular API Declaration.  Note!  Models declarations may repeat across different API Declarations.
-Each declaration should function in a stand-alone fashion and provide all information necessary.
+Alongside the `apis` is a `models` hash.  This contains a listing of all `non-primitive` datatypes required by ALL apis described in this particular API Declaration.  Note!  Models declarations may repeat across different API Declarations.  Each declaration should function in a stand-alone fashion and provide all information necessary.
 
 All HTTP operations for a particular `path` should be grouped in a single `api` object.  There should be no
 duplicate HTTP methods for a single path.
