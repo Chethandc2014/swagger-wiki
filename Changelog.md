@@ -1,37 +1,95 @@
 ==========
 
-1.2.  This version is in release-candidate status and contains high-level changes.  See the [1.2 transition guide](1.2-transition) for information on transitioning both your spec and server integration.
+### v1.3.0 Aug-12 2013
 
-* Support for authorization description
+<li>- Added JSON-schema draft-4 support for models
 
-* Additional metadata about the API, including developer, contact, TOS, license
+<li>- Support for polymorphic models with discriminiators, subtypes
 
-* Added the following api-level descriptions, which can be overridden at the operation level:
+<li>- Added apiInfo so top-level API information can be annotated in both swagger-ui and elsewhere
 
-  - consumes.  Describes the input formats supported when receiving content
+<li>- Released swagger-spec 1.2
 
-  - produces.  The output formats that the resource can produce
+<li>- Pluggable readers for scanning classes, model introspection, config reading
 
-  - protocols.  The protocols supported by the resource (i.e. `http`, `https`, `ws`, `wss`)
+<li>- Simplified overriding of model introspection
 
-  - authorizations.  The required authorizations for a resource
+<li>- Support for consumes, produces, protocols, authentications
 
-* The `.{format}` in the path is now optional and off by default
+<li>- oAuth support in spec
 
-* Support for JAX-RS sub resources
+<li>- Support for raw servlet integration
 
-* Model inheritence, base-classes, and descriminators
+<li>- Resource, operation, model property ordering
 
-1.1.  This version contains mostly clarifications to ambiguous portions of the spec, including:
+<li>- Polymorphic model support
 
-* Clarify supported primitives, case normalization of models.
+### v1.2.5 Jun-19 2013
+<li>- Fixes for generic objects
 
-* Case normalization of container types
+### v1.2.4 Jun-5 2013
+<li>- Fixed `@Api` paths with slashes
 
-* No longer assume `resources.json` as resource declaration.  Codegen and UI must point directly to the resource listing document
+<li>- Added support for model detection with deep recursion (#176)
 
-* Return type of "ok" renamed to "void"
+<li>- i18n support (#190)
 
-* Addition of `.{format}` to API Listing document's `path`
+<li>- Master is now `stable`
 
-1.0. Initial release
+### v1.2.3 Apr-24 2013
+
+<li>- Updated to Jackson 2.1.4
+
+<li>- Fix for generics as input/output values
+
+<li>- Add manual model definitions
+
+### v1.2.2 Apr-8 2013
+
+### v1.2.0 Nov-27 2012
+
+<li>- Updated listing path to /api-docs.json
+
+<li>- Moved swagger-play2 and swagger-play2-utils to maven central
+
+### v1.1.0 Aug-22 2012
+
+<li>- Spec [clarifications](https://github.com/wordnik/swagger-core/wiki/Changelog)
+
+<li>- Updated to Jackson 2.0.x, added sample with [scala case classes](https://github.com/wordnik/swagger-core/tree/master/samples/scala-jaxrs-jackson2)
+
+<li>- Play 2.0.2 supported
+
+<li>- Pluggable model processor, added configurable package introspection
+
+<li>- Feature parity between JAX-RS & Play 2, java, scala
+
+<li>- Made .{format} [configurable](https://github.com/wordnik/swagger-core/tree/master/samples/scala-jaxrs-no-format), see [here](https://github.com/wordnik/swagger-core/blob/master/samples/scala-jaxrs-no-format/src/main/scala/com/wordnik/swagger/sample/Bootstrap.scala#L24)
+
+<li>- Added support for alternate resource listing, examples in [scala](https://github.com/wordnik/swagger-core/tree/master/samples/scala-alt-resource-listing) and [java](https://github.com/wordnik/swagger-core/tree/master/samples/java-alt-resource-listing)
+
+<li>- Moved swagger spec to github [wiki](https://github.com/wordnik/swagger-core/wiki)
+
+
+### v1.01 Jan-31 2012
+
+<li>- Transitioned build to Maven</li>
+
+<li>- Removed jaxrs dependencies from swagger-core</li>
+
+<li>- Moved sample server implementations into /samples directory</li>
+
+<li>- Added support for alternate API listing paths</li>
+
+<li>- Made .{format} optional</li>
+
+<li>- Added crazy scala versioning into artifact names (Scala 2.8.1 => ${artifact}_2.8.1)
+
+<li>- Added test and integration test through default maven integration-test lifecycle</li>
+
+### v1.0 Aug-10 2011
+
+<li>- Initial release of swagger</li>
+
+Pre-release versions will be suffixed with SNAPSHOT and RC appropriately.  If you want the
+release version, please grab it by tag (i.e. v1.0 for the release)
