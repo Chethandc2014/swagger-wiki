@@ -77,7 +77,7 @@ they should be declared in the `models` array.  For example:
 Here the `Pet` model has a `tag` property which is the complex type `Tag` from above.  
 
 Some model properties may be restricted to a fixed set of values.  To support this use
-case, the property field can have an optional `enum` property, which supports a list of alloable values, or a mimimum/maximum numeric `Range`.  For example:
+case, the property field can have an optional `enum` property, which supports a list of allowable values, or a minimum/maximum numeric `Range`.  For example:
 
 ```json
 "Pet": {
