@@ -1,6 +1,6 @@
 ==========
 
-For swagger implementations with no server integration, you just need to produce and serve Resource Listings and Api Declarations from any HTTP server.  The depoyment structure typically looks like this:
+For swagger implementations with no server integration, you just need to produce and serve Resource Listings and Api Declarations from any HTTP server.  The deployment structure typically looks like this:
 
 | Path | Description | 
 |:---- |:-----------|
@@ -31,7 +31,7 @@ Assuming this JSON is available under `http://{host}/{path}/api-docs`:
 }
 ```
 
-Swagger will expect the Api Declarations are provided under the following paths:
+Swagger will expect the Api Declarations to be provided under the following paths:
 
 `http://{host}/{path}/api-docs/pet`
 
@@ -57,7 +57,7 @@ Assuming this JSON is available under `http://{host}/{path}/api-docs`:
 }
 ```
 
-Swagger will expect the Api Declarations are provided under the following paths:
+Swagger will expect the Api Declarations to be provided under the following paths:
 
 `http://api.myhost.com/api-docs/pet`
 
