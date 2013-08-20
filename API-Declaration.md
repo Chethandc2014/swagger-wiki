@@ -74,7 +74,7 @@ there are no required or optional `parameters` for an operation, an empty array 
 
 `notes`.  A longer text field to explain the behavior of the operation.
 
-`responseMessages`.  An array describing the `responseMessage` cases returned by the operation.  See the [ResponseMessages](ResponseMessages) section for more detail
+`responseMessages`.  An array describing the `responseMessage` cases returned by the operation.  See the [Response Messages](Response-Messages) section for more detail
 on this object.
 
 Alongside the `apis` is a `models` hash.  This contains a listing of all `non-primitive` datatypes required by ALL apis described in this particular API Declaration.  Note!  Models declarations may repeat across different API Declarations.  Each declaration should function in a stand-alone fashion and provide all information necessary.
