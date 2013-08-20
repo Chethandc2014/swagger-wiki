@@ -119,7 +119,7 @@ and any subsequent api declarations as follows:
 
 You can see a working sample here, which uses Java + Dropwizard:
 
-[java-dropwizard](https://github.com/wordnik/swagger-core/tree/1.3-RC3/samples/java-dropwizard)
+[java-dropwizard](https://github.com/wordnik/swagger-core/blob/master/samples/java-dropwizard)
 
 #### Wrap up
 

@@ -6,6 +6,8 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + Apache CXF](https://github.com/wordnik/swagger-core/wiki/Java-CXF-Quickstart)
 
+#### [Java + Grails2](https://github.com/wordnik/swagger-core/wiki/Java-grails2-Quickstart)
+
 #### [Java + Servlets](https://github.com/wordnik/swagger-core/wiki/Servlet-Quickstart)
 
 #### [Java + Dropwizard](https://github.com/wordnik/swagger-core/wiki/JavaDropwizard-Quickstart)

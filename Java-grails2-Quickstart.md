@@ -1,12 +1,12 @@
 ==========
 
-Swagger is supported in Jersey 1.x.  This is probably the most popular Java integration--the swagger code is written in `scala` but it is fully compatible with Java.  There is a Swagger-Jersey-JAXRS module which can be added to your project with this dependency:
+Swagger is supported in Grails + Jersey 1.x.
 
 ```xml
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jaxrs_2.9.1</artifactId>
-  <version>1.3.0-RC3</version>
+  <version>1.3.0</version>
 </dependency>
 ```
 
@@ -14,52 +14,37 @@ This adds a swagger module for JAX-RS, along with all the required dependencies.
 
 #### Specify the swagger package
 
-First, we'll tell jersey how to find the swagger resource listing--this is done by configuring the `applicationContext.xml` file which configures the server.  While you _can_ use a web.xml with CXF but in this example, we'll use the applicationContext instead
+You need to tell grails about the new swagger packages to scan.  This is typically done in the `config.groovy` file:
 
-```xml
-<!-- Swagger API listing resource -->
-<bean id="swaggerResourceJSON" class="com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON" />
+```groovy
+// set the url mappings.  These paths are passed to JAXRS, and need to include the swagger resource listing and the apis themselves.
 
-<!-- Swagger writers -->
-<bean id="resourceWriter" class="com.wordnik.swagger.jaxrs.listing.ResourceListingProvider" />
-<bean id="apiWriter" class="com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider" />
+org.grails.jaxrs.url.mappings = ['/api','/api-docs']
 
-<bean class="org.apache.cxf.jaxrs.JAXRSServerFactoryBean" init-method="create">
-  <property name="address" value="/" />
-  <property name="serviceBeans">
-    <list>
-      <!-- your resources go here -->
-      <!-- ... -->
-      <!-- ... -->
-      <!-- Swagger API Listing resource -->
-      <ref bean="swaggerResourceJSON" />
-    </list>
-  </property>
-  <property name="providers">
-    <list>
-      <!-- any other providers you need go here -->
-      <!-- ... -->
-      <!-- ... -->
-      <!-- required for writing swagger classes -->
-      <ref bean="resourceWriter" />
-      <ref bean="apiWriter" />
-    </list>
-  </property>
-</bean>
+// give the scanning package for the swagger resource listings, along with your apis
+org.grails.jaxrs.provider.init.parameters = [
+  'com.sun.jersey.config.property.packages': 
+    'com.wordnik.swagger.sample.resource;com.wordnik.swagger.jaxrs.listing']
 ```
 
-In the above, we've created the `swaggerResourceJSON` bean as the actual resource that writes the swagger JSON.  We also created two JAXRS `@Provider` resources called `resourceWriter` and `apiWriter` which do the actual marshalling of swagger objects into JSON.  Finally, we've added all these into the `create` method for the server to make them all live.
+This tells grails to map requests to `/api` and `/api-docs` to JAXRS.  In addition the scanning packages will include YOUR apis, in package `com.wordnik.swagger.sample.resource` (of course, replace with your implementation) and the swagger listings under `com.wordnik.swagger.jaxrs.listing`.  In addition, it will find the JSON writers for the Resource Listing and Api Declaration, which will properly marshal the swagger objects into JSON without monkeying with your default JSON processors.
 
-#### Specify a Swagger Configuration Class
+Now when grails starts up, it'll find the JAXRS packages.
 
-To configure swagger, there's one more bean to add to the `applicationContext`:
+Next, we need to configure grails with a swagger configurator.  This can be done in one of three ways:
+
+1) In your BootStrap.groovy.  This is how you'd do so programmatically
+
+2) In a `web.xml`.  If you use the web.xml plugin, you can configure a servlet to start-up and configure swagger.
+
+3) In an `applicationContext.xml`.  If you use spring, which you probably do if you're using grails, you can configure swagger in a bean.  Let's follow that technique:
 
 ```xml
 <!-- this scans the classes for resources -->
 <bean id="swaggerConfig" class="com.wordnik.swagger.jaxrs.config.BeanConfig">
   <property name="resourcePackage" value="com.wordnik.swagger.sample.resource"/>
   <property name="version" value="1.0.0"/>
-  <property name="basePath" value="http://localhost:8002/api"/>
+  <property name="basePath" value="http://localhost:8080/java-grails2/api"/>
   <property name="title" value="Petstore sample app"/>
   <property name="description" value="This is a app."/>
   <property name="contact" value="apiteam@wordnik.com"/>
@@ -130,20 +115,22 @@ This gives the `Pet` model a description, describes `status` and tells us that i
 
 #### Test your configuration
 
-Assuming you're running on the default port of `8080` and CXF is mounted on `/*`, you should be able to view your resource listing here:
+Assuming you're running on the default port of `8080` and grails is mounted on `/java-grails2`, you should be able to view your resource listing here:
 
-[http://localhost:8080/api-docs](http://localhost:8080/api-docs)
+[http://localhost:8080/java-grails2/api-docs](http://localhost:8080/java-grails2/api-docs)
 
 and any subsequent api declarations as follows:
 
-[http://localhost:8080/api-docs/{path}](http://localhost:8080/api-docs/{path})
+[http://localhost:8080/java-grails2/api-docs/{path}](http://localhost:8080/java-grails2/api-docs/{path})
 
-#### Example app
+Finally, view the UI here:
 
-You can see a working sample here, which uses Java + CXF with Tomcat:
+[http://localhost:8080/java-grails2](http://localhost:8080/java-grails2)
 
-[scala-servlet](https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs-cxf)
+You can see a working sample here, which uses Java + grails with Tomcat:
+
+[scala-servlet](https://github.com/wordnik/swagger-core/blob/master/samples/java-grails2)
 
 #### Wrap up
 
-This is a very short getting started guide for Java + CXF + JAXRS.  There are many options and configurations to swagger which can be explored in the more detailed guides.
+This is a very short getting started guide for Java + grails + JAXRS.  There are many options and configurations to swagger which can be explored in the more detailed guides.
