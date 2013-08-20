@@ -5,7 +5,7 @@ Swagger is supported in Grails + Jersey 1.x.
 ```xml
 <dependency>
   <groupId>com.wordnik</groupId>
-  <artifactId>swagger-jaxrs_2.9.1</artifactId>
+  <artifactId>swagger-jaxrs_2.10</artifactId>
   <version>1.3.0</version>
 </dependency>
 ```
