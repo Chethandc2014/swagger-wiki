@@ -87,22 +87,23 @@ case, the property field can have an optional `enum` property, which supports a 
     "name",
     "id"
   ],
-  "status": {
-    "type": "string",
-    "description": "pet status in the store",
-    "enum": [
-      "available",
-      "pending",
-      "sold"
-    ]
-  },
-  "happiness": {
-    "type": "integer",
-    "format": "int32",
-    "description": "how happy the Pet appears to be, where 10 is 'extremely happy'",
-    "minimum": 1,
-    "maximum": 10
-  }
+  "properties": {
+    "status": {
+      "type": "string",
+      "description": "pet status in the store",
+      "enum": [
+        "available",
+        "pending",
+        "sold"
+      ]
+    },
+    "happiness": {
+      "type": "integer",
+      "format": "int32",
+      "description": "how happy the Pet appears to be, where 10 is 'extremely happy'",
+      "minimum": 1,
+      "maximum": 10
+    },
   ...
 
 ```
