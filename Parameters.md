@@ -16,7 +16,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
             "name": "petId",
             "description": "ID of pet that needs to be fetched",
             "type": "integer",
-            "format" "int64",
+            "format": "int64",
             "required": true,
             "minimum": 0,
             "maximum": 10,
