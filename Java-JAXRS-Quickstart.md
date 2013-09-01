@@ -39,12 +39,12 @@ Of course, replace {your-packages} with the packages to your actual resources.  
 
 #### Specify a Swagger Configuration Class
 
-The default configuration class is `DefaultJaxrsConfig`, which reads configuration values from your `web.xml`:
+The default configuration class is `JerseyJaxrsConfig`, which reads configuration values from your `web.xml`:
 
 ```xml
 <servlet>
-  <servlet-name>DefaultJaxrsConfig</servlet-name>
-  <servlet-class>com.wordnik.swagger.jaxrs.config.DefaultJaxrsConfig</servlet-class>
+  <servlet-name>JerseyJaxrsConfig</servlet-name>
+  <servlet-class>com.wordnik.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
   <init-param>
     <param-name>api.version</param-name>
     <param-value>1.0.0</param-value>
