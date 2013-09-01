@@ -19,8 +19,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
             "format": "int64",
             "required": true,
             "minimum": 0,
-            "maximum": 10,
-            "allowMultiple": false
+            "maximum": 10
           }
         ],
         ...
@@ -54,5 +53,5 @@ whether or not the field must be supplied.
 
 `enum`.  This is an optional field which restricts the input to a list of allowable input values.  See the [datatypes](datatypes) section for more details.
 
-`allowMultiple`.  For `query` params, this specifies that a comma-separated list of values can
-be passed to the API.  For `path` and `body` types, this field cannot be true.
+
+When sending multiple values, the `array` type should be used
