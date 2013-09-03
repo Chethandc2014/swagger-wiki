@@ -30,7 +30,7 @@ public class SwaggerSampleService extends Service<SwaggerSampleConfiguration> {
     // Swagger Resource
     environment.addResource(new ApiListingResourceJSON());
 
-    // Swager providers
+    // Swagger providers
     environment.addProvider(new ApiDeclarationProvider());
     environment.addProvider(new ResourceListingProvider());
 
@@ -46,6 +46,23 @@ public class SwaggerSampleService extends Service<SwaggerSampleConfiguration> {
     config.setBasePath("http://localhost:8000");
   }
 }
+```
+
+If you are running swagger-ui on a different host than the actual API, you'll probably want to add CORS support, via jetty servlet, in your pom.xml:
+
+```xml
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-servlets</artifactId>
+  <version>8.1.10.v20130312</version>
+</dependency>
+
+```
+... and in your run routine:
+
+```java
+// optional CORS support
+environment.addFilter(CrossOriginFilter.class, "/*");
 ```
 
 In the above, we did everything we need to configure Dropwizard to use Swagger.  Now all that's left is to annotate our resources.
