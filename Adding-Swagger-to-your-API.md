@@ -8,7 +8,7 @@ This is probably the most important question to answer first.  You can serve swa
 
 #### Answer: No!  You don't want any server integration
 
-You can create Swagger JSON and serve them up on any server.  The JSON needs to confirm to the [Swagger Spec](Resource-Listing) with the [Api Declaration](API-Declaration) having the `basePath` pointing directly to the target server.
+You can create Swagger JSON and serve them up on any server.  The JSON needs to conform to the [Swagger Spec](Resource-Listing) with the [Api Declaration](API-Declaration) having the `basePath` pointing directly to the target server.
 
 [See here](No-server-Integrations) for more your options.
 
