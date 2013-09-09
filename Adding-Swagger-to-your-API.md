@@ -26,3 +26,4 @@ Let's choose from the known options.
 - [PHP](PHP-Integrations) <= quickstart coming soon
 - [Ruby](Ruby-Integrations) <= quickstart coming soon
 - [Clojure](Clojure-Integrations) <= quickstart coming soon
+- [Go](Go-Integrations)
