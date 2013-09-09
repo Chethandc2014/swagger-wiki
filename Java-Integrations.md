@@ -14,3 +14,12 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + doclet](https://github.com/wordnik/swagger-core/wiki/JavaDoclet-Quickstart)
 
+Other integrations:
+
+*Enunciate* will generate swagger documentation based on source-code comments, and does not require a run-time integration with swagger:
+
+#### [Enunciate](http://enunciate.codehaus.org/index.html)
+
+*Swagger Doclet* Also generates static JSON from source code comment:
+
+#### [Swagger-JAXRS-Doclet](https://github.com/ryankennedy/swagger-jaxrs-doclet)
