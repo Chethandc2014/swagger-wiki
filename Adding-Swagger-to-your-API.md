@@ -20,10 +20,10 @@ Let's choose from the known options.
 
 - [Java](Java-Integrations)
 - [Scala](Scala-Integrations) <= quickstart coming soon
-- [Javascript](Javascript-Integrations) <= quickstart coming soon
+- [Javascript](Javascript-Integrations)
 - [Python](Python-Integrations) <= quickstart coming soon
 - [.net](Dot-Net-Integrations) <= quickstart coming soon
-- [PHP](PHP-Integrations) <= quickstart coming soon
-- [Ruby](Ruby-Integrations) <= quickstart coming soon
+- [PHP](PHP-Integrations)
+- [Ruby](Ruby-Integrations)
 - [Clojure](Clojure-Integrations) <= quickstart coming soon
 - [Go](Go-Integrations)
