@@ -9,7 +9,7 @@ Swagger Structure
 Tutorials
 * [Adding Swagger to your API](https://github.com/wordnik/swagger-core/wiki/Adding-Swagger-to-your-API)
 * [Overriding Models](https://github.com/wordnik/swagger-core/wiki/overriding-models)
-* [Supporting CORS]((https://github.com/wordnik/swagger-core/wiki/CORS))
+* [Supporting CORS](https://github.com/wordnik/swagger-core/wiki/CORS)
 
 Transition Guides
 * [Swagger Specification 1.2 Transition](https://github.com/wordnik/swagger-core/wiki/1.2-transition)
