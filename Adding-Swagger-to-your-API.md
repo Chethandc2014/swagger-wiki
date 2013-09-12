@@ -22,7 +22,7 @@ Let's choose from the known options.
 - [Scala](Scala-Integrations) <= quickstart coming soon
 - [Javascript](Javascript-Integrations)
 - [Python](Python-Integrations) <= quickstart coming soon
-- [.net](Dot-Net-Integrations) <= quickstart coming soon
+- [.net](Dot-Net-Integrations)
 - [PHP](PHP-Integrations)
 - [Ruby](Ruby-Integrations)
 - [Clojure](Clojure-Integrations) <= quickstart coming soon
