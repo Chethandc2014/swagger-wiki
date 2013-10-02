@@ -72,7 +72,7 @@ Some known server implementations include:
 
 - [Octohipster](https://github.com/myfreeweb/octohipster) for Clojure
 
-- [go-resetful](https://github.com/emicklei/go-restful) for Golang
+- [go-restful](https://github.com/emicklei/go-restful) for Golang
 
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
