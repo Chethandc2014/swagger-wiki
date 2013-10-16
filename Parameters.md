@@ -15,7 +15,7 @@ Parameters describe the inputs into an API operation.  They live in the `operati
             "paramType": "path",
             "name": "petId",
             "description": "ID of pet that needs to be fetched",
-            "type": "integer",
+            "dataType": "integer",
             "format": "int64",
             "required": true,
             "minimum": 0,
@@ -45,7 +45,7 @@ field in the `api` object
 
 `description`.  This is the human-readable description for the parameter.
 
-`type`.  For `path`, `query`, and `header` `paramType`s, this field must be a `primitive`.
+`dataType`.  For `path`, `query`, and `header` `paramType`s, this field must be a `primitive`.
 For `body`, this can be a `complex` or `container` datatype.
 
 `required`.  For `path`, this is always true.  Otherwise, this field tells the client
