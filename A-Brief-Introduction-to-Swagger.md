@@ -31,7 +31,7 @@ The actual api-docs URL is a Resource Listing JSON that describes the Swagger re
 
 There are three ways to create a Swagger Specification, depending on which server you are using:
 - **Codegen:** This is the traditional way of creating a Swagger Specification. The [swagger codegen](https://github.com/wordnik/swagger-codegen) converts annotations in your code into the Swagger Specification. For an example of the annotations see [this code](https://github.com/wordnik/swagger-codegen/blob/master/samples/server-generator/java-jaxrs/output/src/main/java/com/wordnik/api/PetApi.java).
-- **Automatically:** Some servers, such as [swagger-node-express](https://npmjs.org/package/swagger-node-express) and [swagger-play](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2), will create both your REST APIs and your Swagger Specification for you at the same time. <!-- link to swagger-node-express and other similar packages -->
+- **Automatically:** Some servers, such as [swagger-node-express](https://npmjs.org/package/swagger-node-express) and [swagger-play](https://github.com/wordnik/swagger-core/tree/master/modules/swagger-play2), will create both your REST APIs and your Swagger Specification for you at the same time.
 - **By Hand:** And finally, you can always create your Swagger specification by writing the JSON hand. After you write your Swagger specification (or if you get a Swagger specification from a different server) you can use one of the Server generators to create your code, such as the [node.js server generator](https://github.com/wordnik/swagger-codegen/tree/master/samples/server-generator/node)
 
 
