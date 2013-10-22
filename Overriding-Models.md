@@ -59,7 +59,7 @@ Now you probably don't want the client to build it's own `Date` object from this
 
 This can be done by telling the model introspector to avoid reflecting over `java.util.Date` and instead to use a prescribed model representation:
 
-### With swagger-core version 1.3.0:
+### In scala, with swagger-core version 1.3.x:
 
 ```scala
 import com.wordnik.swagger.converter.{ ModelConverters, OverrideConverter }
@@ -86,3 +86,27 @@ ModelConverters.addConverter(converter, true)
 ```
 
 This needs to be fired on startup of the app, typically in a bootstrap servlet.  Now whenever a `java.util.Date` is encountered by Swagger, it will use this definition.
+
+### In java, with swagger-core version 1.3.x:
+
+```java
+import com.wordnik.swagger.converter.*;
+
+String jsonString = "{" +
+"  \"id\": \"Date\"," +
+"  \"properties\": {" +
+"    \"value\": {" +
+"      \"required\": true," +
+"      \"description\": \"Date in ISO-8601 format\"," +
+"      \"notes\": \"Add any notes you like here\"," +
+"      \"type\": \"string\"," +
+"      \"format\": \"date-time\"" +
+"    }" +
+"  }" +
+"}";
+
+ModelConverter converter = new OverrideConverter();
+converter.add("java.util.Date", jsonString);
+
+ModelConverters.addConverter(converter, true);
+```
