@@ -74,6 +74,8 @@ Some known server implementations include:
 
 - [go-restful](https://github.com/emicklei/go-restful) for Golang
 
+- [swagger-docs](https://github.com/richhollis/swagger-docs) for Rails
+
 You can generate or manually write simple, static JSON documents which describe your existing 
 API.  That means you can benefit from the [swagger-ui](http://github.com/wordnik/swagger-ui) and [swagger-codegen](http://github.com/wordnik/swagger-codegen) without
 doing anything to your server other than creating some files.  They don't even need to exist on the same
