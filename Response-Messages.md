@@ -9,7 +9,7 @@ ambiguous and can benefit from some documentation.
 The `responseMessage` object contains just two fields, as shown below:
 
 ```json
-"responseMessage":[
+"responseMessages":[
   {
     "code": 400,
     "message": "Raised if a user supplies an invalid username format",
