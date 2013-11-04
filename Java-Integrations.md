@@ -16,6 +16,10 @@ Java integration has many flavors depending on the java framework you're using. 
 
 Other integrations:
 
+*Swagger4jaxrs* is a grails plugin to easily add Swagger to your grails project
+
+#### [swagger4jaxrs](https://github.com/nerdErg/swagger4jaxrs)
+
 *Enunciate* will generate swagger documentation based on source-code comments, and does not require a run-time integration with swagger:
 
 #### [Enunciate](http://enunciate.codehaus.org/index.html)
