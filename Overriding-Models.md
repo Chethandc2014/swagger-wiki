@@ -110,7 +110,7 @@ converter.add("java.util.Date", jsonString);
 ModelConverters.addConverter(converter, true);
 ```
 
-### Excluding fields with a Custom Model Converter
+### Excluding fields with a Custom Model Converter (1.3.1 and greater)
 If you want to exclude certain field types from your models, you can do so with a custom model converter.  For example, perhaps you have a model with a property type `EntityBeanIntercept` from your model but you don't want to override the entire model--you can do so as follows:
 
 ```scala
