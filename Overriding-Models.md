@@ -7,35 +7,35 @@ You can control what the Swagger introspection code sees with Swagger's own `Api
 By default, the `Date` object will be introspected from public methods, and look something like this:
 
 ```json
-"Date": {
-  "id": "Date",
-  "properties": {
-    "time": {
-      "type": "long"
+"Date" : {
+  "id" : "Date",
+  "properties" : {
+    "time" : {
+      "type" : "long"
     },
-    "minutes": {
-      "type": "int"
+    "minutes" : {
+      "type" : "int"
     },
-    "seconds": {
-      "type": "int"
+    "seconds" : {
+      "type" : "int"
     },
-    "hours": {
-      "type": "int"
+    "hours" : {
+      "type" : "int"
     },
-    "month": {
-      "type": "int"
+    "month" : {
+      "type" : "int"
     },
     "year": {
-      "type": "int"
+      "type" : "int"
     },
-    "timezoneOffset": {
-      "type": "int"
+    "timezoneOffset" : {
+      "type" : "int"
     },
-    "day": {
-      "type": "int"
+    "day" : {
+      "type" : "int"
     },
-    "date": {
-      "type": "int"
+    "date" : {
+      "type" : "int"
     }
   }
 }
@@ -108,4 +108,39 @@ ModelConverter converter = new OverrideConverter();
 converter.add("java.util.Date", jsonString);
 
 ModelConverters.addConverter(converter, true);
+```
+
+### Excluding fields with a Custom Model Converter
+If you want to exclude certain field types from your models, you can do so with a custom model converter.  For example, perhaps you have a model with a property type `EntityBeanIntercept` from your model but you don't want to override the entire model--you can do so as follows:
+
+```scala
+class CustomConverter extends SwaggerSchemaConverter {
+  override def skippedClasses: Set[String] = Set("com.avaje.ebean.bean.EntityBeanIntercept")
+}
+```
+
+The fully-qualified types listed in the `skippedClasses` will neither be shown for the model, nor expanded into the model schema.  See the unit test below, which excludes the property `bar` of type `Bar` from the model `Foo`:
+
+```scala
+class CustomConverterTest extends FlatSpec with ShouldMatchers {
+  it should "ignore properties with type Bar" in {
+    // add the custom converter
+    ModelConverters.addConverter(new CustomConverter, true)
+
+    // make sure the field bar: converter.Bar is not present
+    ModelConverters.read(classOf[Foo]) match {
+      case Some(model) => model.properties.get("bar") should be (None)
+      case _ => fail("didn't read anything")
+    }
+  }
+}
+
+class Foo {
+  @BeanProperty var bar:Bar = null
+  @BeanProperty var title:String = null
+}
+
+class Bar {
+  @BeanProperty var foo:String = null
+}
 ```
