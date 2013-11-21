@@ -1,3 +1,4 @@
+```
 package ro.jtonic.handsonrest.api;
 
 import com.wordnik.swagger.annotations.Api;
@@ -32,3 +33,4 @@ public interface ICarResource {
                     required = true) @PathParam("carId") String carId);
 
 }
+```
