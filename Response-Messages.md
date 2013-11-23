@@ -1,6 +1,6 @@
 ==========
 
-The API Declaration should describe how the different `errorResponses` map to the
+The API Declaration should describe how the different `responseMessages` map to the
 business logic of the API.  For instance, if a 404 is returned, it may be due to a variety
 of reasons--invalid resource, object cannot be found, invalid parameter, etc.  While
 the HTTP response codes can be interpreted by the consumer correctly, often they are
@@ -11,13 +11,13 @@ The `responseMessage` object contains just two fields, as shown below:
 ```json
 "responseMessages":[
   {
-    "code": 400,
-    "message": "Raised if a user supplies an invalid username format",
+    "code": 200,
+    "message": "Ok",
     "responseModel": "Pet"
   },
   {
     "code": 404,
-    "message": "The user cannot be found"
+    "message": "The pet cannot be found"
   }
 ],
 
