@@ -19,7 +19,7 @@ The `responseMessage` object contains just two fields, as shown below:
     "code": 404,
     "message": "The pet cannot be found"
   }
-],
+]
 
 ```
 
