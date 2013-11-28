@@ -90,6 +90,8 @@ There are a lot of ways to do this.
 
 [Source 2 Swagger](https://github.com/solso/source2swagger).  This is a tool which reads comments in source code and generate the Swagger JSON.
 
+[Swdogen](https://github.com/dotcy/swdogen). This is an another tool which reads comments and generate JSON but use javadoc-like notations for documenting. 
+
 [Raw 2 Swagger](https://github.com/solso/raw2swagger).  This tool will look at HTTP logs and heuristically create Swagger JSON.  This can be great for documenting traffic to existing servers where you have no control over the source code.
 
 [Soap UI](http://olensmar.blogspot.se/2013/05/soapui-swagger-true.html).  This is a plug-in for the very popular SOAP-UI tool which allows you to build APIs graphically and export their definitions in Swagger spec.
