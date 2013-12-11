@@ -41,7 +41,7 @@ By default, the `Date` object will be introspected from public methods, and look
 }
 ```
 
-Now you probably don't want the client to build it's own `Date` object from this description.  If you, for instance, have configured your API to send the date in `ISO-8601` format, the consumer probably wants to know that the date is coming as a `string` format.  Thus, you really want your `Date` to serialize like such:
+Now you probably don't want the client to build its own `Date` object from this description.  If you, for instance, have configured your API to send the date in `ISO-8601` format, the consumer probably wants to know that the date is coming as a `string` format.  Thus, you really want your `Date` to serialize like such:
 
 ```json
 "Date": {
