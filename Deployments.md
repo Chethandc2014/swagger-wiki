@@ -4,6 +4,7 @@
 * [APIHub](http://www.apihub.com/)
 
 ## Sites and Applications ##
+* [Kixeye](https://api.kixeye.com/api/v2/docs/)
 * [Callfire](https://www.callfire.com/api-documentation/rest/version/1.1)
 * [Banckle](http://banckle.com/)
 * [Catch Software](http://catchsoftware.com/)
