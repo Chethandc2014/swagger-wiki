@@ -100,7 +100,7 @@ There are a lot of ways to do this.
 
 Clone swagger-core:
 
-```
+```text
 git clone https://github.com/wordnik/swagger-core.git
 
 cd samples/no-server
