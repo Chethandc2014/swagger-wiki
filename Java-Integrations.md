@@ -14,7 +14,8 @@ Java integration has many flavors depending on the java framework you're using. 
 
 #### [Java + doclet](https://github.com/wordnik/swagger-core/wiki/JavaDoclet-Quickstart)
 
-Other integrations:
+Article about adding swagger w/o `web.xml`:  [Integrating Swagger Into JAX-RS With Java EE 6 Specification](http://jmchung.github.io/blog/2013/12/14/integrating-swagger-into-jax-rs-with-java-ee-6-specification/)
+##Other integrations:
 
 *Swagger4jaxrs* is a grails plugin to easily add Swagger to your grails project
 
