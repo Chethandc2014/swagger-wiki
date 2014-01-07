@@ -21,7 +21,7 @@ Let's choose from the known options.
 - [Java](Java-Integrations)
 - [Scala](Scala-Integrations) <= quickstart coming soon
 - [Javascript](Javascript-Integrations)
-- [Python](Python-Integrations) <= quickstart coming soon
+- [Python](Python-Integrations)
 - [.net](Dot-Net-Integrations)
 - [PHP](PHP-Integrations)
 - [Ruby](Ruby-Integrations)
