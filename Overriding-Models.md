@@ -93,14 +93,14 @@ This needs to be fired on startup of the app, typically in a bootstrap servlet. 
 import com.wordnik.swagger.converter.*;
 
 String jsonString = "{" +
-"  \\"id\\": \\"Date\\"," +
-"  \\"properties\\": {" +
-"    \\"value\\": {" +
-"      \\"required\\": true," +
-"      \\"description\\": \\"Date in ISO-8601 format\\"," +
-"      \\"notes\\": \\"Add any notes you like here\\"," +
-"      \\"type\\": \\"string\\"," +
-"      \\"format\\": \\"date-time\\"" +
+"  \"id\": \"Date\"," +
+"  \"properties\": {" +
+"    \"value\": {" +
+"      \"required\": true," +
+"      \"description\": \"Date in ISO-8601 format\"," +
+"      \"notes\": \"Add any notes you like here\"," +
+"      \"type\": \"string\"," +
+"      \"format\": \"date-time\"" +
 "    }" +
 "  }" +
 "}";
