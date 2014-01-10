@@ -104,7 +104,7 @@ String jsonString = "{" +
 "    }" +
 "  }" +
 "}";
-ModelConverter converter = new OverrideConverter();
+OverrideConverter converter = new OverrideConverter();
 converter.add("java.util.Date", jsonString);
 
 ModelConverters.addConverter(converter, true);
