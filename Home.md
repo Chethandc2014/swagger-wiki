@@ -50,7 +50,9 @@ Some known server implementations include:
 
 - [Scalatra](http://www.scalatra.org/) via [swagger-support](https://github.com/scalatra/scalatra/tree/master/swagger/src/main/scala/org/scalatra/swagger), see [Swagger Guide](http://www.scalatra.org/2.2/guides/swagger.html)
 
-- [Spring MVC](https://github.com/martypitt/swagger-springmvc)
+- [Spring MVC](https://github.com/martypitt/swagger-springmvc) via [swagger-springmvc]
+
+- [Spring MVC] (https://github.com/wkennedy/swagger4spring-web) via [swagger4spring-web]
 
 - [ServiceStack](https://github.com/ServiceStack/ServiceStack) .net/MONO
 
