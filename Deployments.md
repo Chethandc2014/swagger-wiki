@@ -4,6 +4,7 @@
 * [APIHub](http://www.apihub.com/)
 
 ## Sites and Applications ##
+* [Bitdango](https://bitdango.com/api)
 * [Kixeye](https://api.kixeye.com/api/v2/docs/)
 * [Callfire](https://www.callfire.com/api-documentation/rest/version/1.1)
 * [Banckle](http://banckle.com/)
@@ -23,7 +24,7 @@
 * [Facebook Graph API](http://www.apihub.com/api/facebook-graph-api) (via APIHub)
 * [the Rubicon Project](http://therubiconproject.com)
 * [Subledger](https://api.subledger.com)
-* [Bitdango](https://bitdango.com/api)
+
 
 ## Products ##
 * [SoapUI](http://smartbear.com/) (by SmartBear Software)
