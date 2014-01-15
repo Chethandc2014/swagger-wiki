@@ -14,7 +14,7 @@ and the underlying [http://api.wordnik.com/v4](http://api.wordnik.com/v4/resourc
 framework being released is currently used by Wordnik’s APIs, which power both internal and external API clients.
 
 #### How to contribute
-Community contributions have made Swagger.  If you are interested in contributing, please follow these simple guidelines.
+Community contributions have made Swagger a better specification and framework.  If you are interested in contributing, please follow these simple guidelines.
 
 1.  Use the [Google Group](https://groups.google.com/forum/#!forum/swagger-swaggersocket) for questions.  Issues should be opened if you find a problem in the product or have an enhancement request.
 
