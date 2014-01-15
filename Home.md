@@ -16,7 +16,7 @@ framework being released is currently used by Wordnik’s APIs, which power both
 #### How to contribute
 Community contributions have made Swagger.  If you are interested in contributing, please follow these simple guidelines.
 
-1.  Use the [Google Group]() for questions.  Issues should be opened if you find a problem in the product or have an enhancement request.
+1.  Use the [Google Group](https://groups.google.com/forum/#!forum/swagger-swaggersocket) for questions.  Issues should be opened if you find a problem in the product or have an enhancement request.
 
 2.  Send pull requests against the DEVELOP branch!  The master is `stable` so sending a pull request against it should really be used when there's a terrible bug that needs to be patched.  Typically, they should go against develop.
 
