@@ -13,6 +13,15 @@ was developed for Wordnik's own use during the development of [http://developer.
 and the underlying [http://api.wordnik.com/v4](http://api.wordnik.com/v4/resources.json).  Swagger development began in early 2010—the 
 framework being released is currently used by Wordnik’s APIs, which power both internal and external API clients.
 
+#### How to contribute
+Community contributions have made Swagger.  If you are interested in contributing, please follow these simple guidelines.
+
+1.  Use the [Google Group]() for questions.  Issues should be opened if you find a problem in the product or have an enhancement request.
+
+2.  Send pull requests against the DEVELOP branch!  The master is `stable` so sending a pull request against it should really be used when there's a terrible bug that needs to be patched.  Typically, they should go against develop.
+
+3.  Supply test cases.  If you don't we can't see if your code is working or not, or is broken in the future.
+
 #### Why is Swagger useful?
 The Swagger framework simultaneously addresses server, client, and documentation/sandbox 
 needs for REST APIs.  As a specification, it is language-agnostic.  It also provides a 
