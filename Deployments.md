@@ -23,6 +23,7 @@
 * [Facebook Graph API](http://www.apihub.com/api/facebook-graph-api) (via APIHub)
 * [the Rubicon Project](http://therubiconproject.com)
 * [Subledger](https://api.subledger.com)
+* [Bitdango](https://bitdango.com/api)
 
 ## Products ##
 * [SoapUI](http://smartbear.com/) (by SmartBear Software)
