@@ -1,5 +1,23 @@
 ==========
 
+### v1.3.2 Jan-16 2014
+
+<li>- Added support for Jersey2
+
+<li>- Simplified configuration for non web.xml
+
+<li>- Fixes for Servlet integration 
+
+<li>- Added ApiInfo support for Play2
+
+<li>- Model annotation fixes
+
+<li>- Updates to OAuth2 support annotations to include scopes
+
+<li>- OAuth2 server support
+
+<li>- Fixes for custom model processor support
+
 ### v1.3.0 Aug-12 2013
 
 <li>- Added JSON-schema draft-4 support for models
@@ -64,9 +82,9 @@
 
 <li>- Feature parity between JAX-RS & Play 2, java, scala
 
-<li>- Made .{format} [configurable](https://github.com/wordnik/swagger-core/tree/master/samples/scala-jaxrs-no-format), see [here](https://github.com/wordnik/swagger-core/blob/master/samples/scala-jaxrs-no-format/src/main/scala/com/wordnik/swagger/sample/Bootstrap.scala#L24)
+<li>- Made .{format} configurable
 
-<li>- Added support for alternate resource listing, examples in [scala](https://github.com/wordnik/swagger-core/tree/master/samples/scala-alt-resource-listing) and [java](https://github.com/wordnik/swagger-core/tree/master/samples/java-alt-resource-listing)
+<li>- Added support for alternate resource listing, examples in scala
 
 <li>- Moved swagger spec to github [wiki](https://github.com/wordnik/swagger-core/wiki)
 
