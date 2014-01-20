@@ -90,6 +90,8 @@ There are a lot of ways to do this.
 
 [Source 2 Swagger](https://github.com/solso/source2swagger).  This is a tool which reads comments in source code and generate the Swagger JSON.
 
+[Swagger Maven Plugin](https://github.com/kongchen/swagger-maven-plugin/). This is a maven plugin which can generate the Swagger JSON after you simply running `mvn compile`.
+
 [Swdogen](https://github.com/dotcy/swdogen). This is an another tool which reads comments and generate JSON but use javadoc-like notations for documenting. 
 
 [Raw 2 Swagger](https://github.com/solso/raw2swagger).  This tool will look at HTTP logs and heuristically create Swagger JSON.  This can be great for documenting traffic to existing servers where you have no control over the source code.
