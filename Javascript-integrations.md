@@ -7,3 +7,7 @@ Officially supported library for node.js:
 Community-contributed support for node.js:
 
 [Swagger-Jack](https://github.com/worldline/swagger-jack)
+
+Support for the [HAPI](https://github.com/spumko/hapi) server framework in node.js:
+
+[hapi-swagger](https://github.com/glennjones/hapi-swagger)
