@@ -4,6 +4,7 @@
 * [APIHub](http://www.apihub.com/)
 
 ## Sites and Applications ##
+* [Marvel Comics Developer Portal](http://developer.marvel.com/docs#!/public/)
 * [Bitdango](https://bitdango.com/api)
 * [Kixeye](https://api.kixeye.com/api/v2/docs/)
 * [Callfire](https://www.callfire.com/api-documentation/rest/version/1.1)
