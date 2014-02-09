@@ -131,7 +131,7 @@ A unique `set` of values:
 ```json
 {
   "type": "array",
-  "uniqueItems" true,
+  "uniqueItems": true,
   "items": {
     ...
   }
