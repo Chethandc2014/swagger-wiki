@@ -49,7 +49,7 @@ An example api is below, with some sections omitted:
         "parameters":[ ... ],
         "summary":"Find pet by its unique ID",
         "notes": "Only Pets which you have permission to see will be returned",
-        "errorResponses":[ ... ]
+        "responseMessages":[ ... ]
       }
     ]
   }
