@@ -3,7 +3,7 @@ Swagger Structure
 * [Resource Listing](https://github.com/wordnik/swagger-core/wiki/Resource-Listing)
 * [API Declaration](https://github.com/wordnik/swagger-core/wiki/API-Declaration)
 * [Parameters](https://github.com/wordnik/swagger-core/wiki/Parameters)
-* [Data Types](https://github.com/wordnik/swagger-core/wiki/Datatypes)
+* [Data Types](https://github.com/wordnik/swagger-core/wiki/Datatypes-&-Models-Definition)
 * [Response Messages](https://github.com/wordnik/swagger-core/wiki/Response-Messages)
 
 Tutorials
