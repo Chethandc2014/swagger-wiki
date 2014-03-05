@@ -1,5 +1,5 @@
 ==========
-Library Changelog
+## Swagger-Core version changelog
 
 ### v1.3.2 Jan-16 2014
 
