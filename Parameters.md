@@ -51,7 +51,7 @@ For `body`, this can be a `complex` or `container` datatype.
 `required`.  For `path`, this is always true.  Otherwise, this field tells the client
 whether or not the field must be supplied.
 
-`enum`.  This is an optional field which restricts the input to a list of allowable input values.  See the [datatypes](datatypes) section for more details.
+`enum`.  This is an optional field which restricts the input to a list of allowable input values.  See the [datatypes](Datatypes-&-Models-Definition) section for more details.
 
 
 When sending multiple values, the `array` type should be used
