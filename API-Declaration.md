@@ -64,7 +64,7 @@ returned.  The fields in the operation are:
 `nickname`.  This is a required field provided by the server for the convenience of the UI and client
 code generator, and is used to provide a shebang in the swagger-ui.
 
-`type`.  This is what is returned from the method--in short, it's either `void`, a `simple-type`, a `complex` or a `container` return value.  See the [datatypes](datatypes) section for more detail on supported datatypes.
+`type`.  This is what is returned from the method--in short, it's either `void`, a `simple-type`, a `complex` or a `container` return value.  See the [datatypes](Datatypes-&-Models-Definition) section for more detail on supported datatypes.
 
 `parameters`.  These are the inputs to the operation--see the [parameters](parameters) section for details.  If
 there are no required or optional `parameters` for an operation, an empty array should be returned.
