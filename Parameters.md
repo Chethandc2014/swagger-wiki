@@ -1,68 +1,57 @@
-The product info data 
+==========
+
+Parameters describe the inputs into an API operation.  They live in the `operation` object:
 
 ```json
 
-"pinfo:<product_id>":{
-    "Service":"AddProduct",
-    "Name":"ProductName",
-    "Title":"ProductTitle",
-    "Price":"3200",
-    "Images": {
-		"default":"image_url",
-		"portrait":["image_url1","image_url2","image_url3",…],
-		"landscape":["image_url1","image_url2","image_url3",…]
-	},
-	"Metadata":{
-		"SomeKey":"SomeValue",
-		"AnotherKey":"AnotherValue",
-		……
-	},
-	"Status":"Ready/OutOfStock/Waiting",
-	"Properties":{
-		"ma":[
-			{
-				"PropertyId":4,
-				"PropertyValue":"NYCQ"
-			}
-		],
-		"mb":[
-			{
-				"PropertyId":5,
-				"PropertyValue":"Slow"
-			},
-			{
-				"PropertyId":6,
-				"PropertyValue":"Rock"
-			}
-		]
-	}
-}
+"apis":[
+  {
+    "path": "/pet.{format}/{petId}",
+    "description": "Operations about pets",
+    "operations": [
+      {
+        "parameters":[
+          {
+            "paramType": "path",
+            "name": "petId",
+            "description": "ID of pet that needs to be fetched",
+            "dataType": "integer",
+            "format": "int64",
+            "required": true,
+            "minimum": 0,
+            "maximum": 10
+          }
+        ],
+        ...
 
 ```
 
---------
+The `parameters` array may be empty if the `operation` requires no parameters.  The fields are:
 
-# Message of the Day API
-A simple [MOTD](http://en.wikipedia.org/wiki/Motd_(Unix)) API.
+`paramType`.  This is the type of the parameter.  It can be only one of the following: 
+`path`, `query`, `body`, `header` or `form`.
 
-# Message [/messages/{id}]
-This resource represents one particular message identified by its *id*.
+A description of the fields is:
 
-## Retrieve Message [GET]
-Retrieve a message by its *id*.
+`name`.  This is the unique name for the parameter.  Each `name` must be unique, even if
+they are associated with different `paramType` values.  Other notes on the `name` field:
 
-+ Response 200 (text/plain)
+* If `paramType` is `body`, the `name` is used only for UI and codegeneration.
 
-        Hello World!
+* If `paramType` is `path`, the `name` field must correspond to the associated path segment from the `path`
+field in the `api` object
 
-## Delete Message [DELETE]
-Delete a message. **Warning:** This action **permanently** removes the message from the database.
+* If `paramType` is `query`, the `name` field corresponds to the query param name.
 
-+ Response 204
+`description`.  This is the human-readable description for the parameter.
+
+`dataType`.  For `path`, `query`, and `header` `paramType`s, this field must be a `primitive`.
+For `body`, this can be a `complex` or `container` datatype.
+
+`required`.  For `path`, this is always true.  Otherwise, this field tells the client
+whether or not the field must be supplied.
+
+`enum`.  This is an optional field which restricts the input to a list of allowable input values.  See the [datatypes](Datatypes-&-Models-Definition) section for more details.
 
 
-
-
-
-
-
+When sending multiple values, the `array` type should be used
