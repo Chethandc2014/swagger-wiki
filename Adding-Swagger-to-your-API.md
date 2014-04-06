@@ -8,7 +8,7 @@ This is probably the most important question to answer first.  You can serve swa
 
 #### Answer: No!  You don't want any server integration
 
-You can create Swagger JSON and serve them up on any server.  The JSON needs to conform to the [Swagger Spec](Resource-Listing) with the [Api Declaration](API-Declaration) having the `basePath` pointing directly to the target server.
+You can create Swagger JSON and serve them up on any server.  The JSON needs to conform to the [Swagger Spec](https://github.com/wordnik/swagger-spec) with the Api Declaration having the `basePath` pointing directly to the target server.
 
 [See here](No-server-Integrations) for more your options.
 
@@ -16,14 +16,4 @@ You can create Swagger JSON and serve them up on any server.  The JSON needs to 
 
 Server integration means dynamically providing JSON at runtime.  Within a server integration with Swagger, there are still various levels, depending on the language, framework, and implementation.
 
-Let's choose from the known options.
-
-- [Java](Java-Integrations)
-- [Scala](Scala-Integrations) <= quickstart coming soon
-- [Javascript](Javascript-Integrations)
-- [Python](Python-Integrations)
-- [.net](Dot-Net-Integrations)
-- [PHP](PHP-Integrations)
-- [Ruby](Ruby-Integrations)
-- [Clojure](Clojure-Integrations) <= quickstart coming soon
-- [Go](Go-Integrations)
+Check out the [Java integrations] (Java-Integrations). 
