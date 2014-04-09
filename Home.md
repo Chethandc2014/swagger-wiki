@@ -1,4 +1,4 @@
-For complete information about Swagger, make sure you check the [Swagger Specification](https://github.com/wordnik/swagger-spec) project. It contains general information and the actual Swagger specification.
+For complete information about Swagger™, make sure you check the [Swagger Specification](https://github.com/wordnik/swagger-spec) project. It contains general information and the actual Swagger specification.
 
 ### How to contribute
 Community contributions have made Swagger a better specification and framework.  If you are interested in contributing, please follow these simple guidelines.
