@@ -1,5 +1,10 @@
 ## Swagger-Core version changelog
 
+### v1.3.5 - Apr-28 2014
+- Added @BeanParam support for Jersey 2.x.  This community contribution allows better modularization of your app by using a @BeanParam annotation.  Swagger will now scan annotated properties in your POJO.  #446, #537, #532
+- Better Date support for XMLGregorianCalendar,  LocalDateTime #524, #525, #509
+- Updated Jersey2 sample.  There are subtle but important differences in how jersey2 and Swagger interact, you can see a fully functional integration here: https://github.com/wordnik/swagger-core/tree/master/samples/java-jersey2
+
 ### v1.3.4 - Apr-2 2014
 
 - You can now integrate a JAX-RS project without any custom annotations ([#489](https://github.com/wordnik/swagger-core/issues/489)).  While not all swagger niceties are supported, you can see an example here: https://github.com/wordnik/swagger-core/tree/master/samples/java-jaxrs-no-annotations
