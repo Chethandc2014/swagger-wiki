@@ -1,7 +1,5 @@
-Tutorials
-* [Adding Swagger to your API](https://github.com/wordnik/swagger-core/wiki/Adding-Swagger-to-your-API)
-* [Overriding Models](https://github.com/wordnik/swagger-core/wiki/overriding-models)
-* [Supporting CORS](https://github.com/wordnik/swagger-core/wiki/CORS)
+Getting Started
 
-History
-* [Change Log](https://github.com/wordnik/swagger-core/wiki/Changelog)
+* [Project Setup](https://github.com/biztera/web/wiki/Project-Setup): guide for installing the project and running the app
+* [Developer Tool Setup](https://github.com/biztera/web/wiki/Developer-Tool-Setup): guide for installing developer tools for the project
+* [Running the App and the Tests](https://github.com/biztera/web/wiki/Running-the-App-and-the-Tests): guide for running the app and the tests
