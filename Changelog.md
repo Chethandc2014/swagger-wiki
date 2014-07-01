@@ -1,13 +1,13 @@
 ## Swagger-Core version changelog
 
 ### v1.3.6 - Jun-25 2014
-- Simplified mechanism to override datatypes in the model introspection process (#588, #481)
-- Extracting models from multiple classes in the same documentation path is now supported (#560)
-- Overriding model as a primitive (#573)
+- Simplified mechanism to override datatypes in the model introspection process ([#588](https://github.com/wordnik/swagger-core/issues/588), [#481](https://github.com/wordnik/swagger-core/issues/481))
+- Extracting models from multiple classes in the same documentation path is now supported ([#560](https://github.com/wordnik/swagger-core/issues/560))
+- Overriding model as a primitive ([#573](https://github.com/wordnik/swagger-core/issues/573))
 
 ### v1.3.5 - Apr-28 2014
-- Added @BeanParam support for Jersey 2.x.  This community contribution allows better modularization of your app by using a @BeanParam annotation.  Swagger will now scan annotated properties in your POJO.  #446, #537, #532
-- Better Date support for XMLGregorianCalendar,  LocalDateTime #524, #525, #509
+- Added @BeanParam support for Jersey 2.x.  This community contribution allows better modularization of your app by using a @BeanParam annotation.  Swagger will now scan annotated properties in your POJO.  [#446](https://github.com/wordnik/swagger-core/issues/446), [#537](https://github.com/wordnik/swagger-core/issues/537), [#532](https://github.com/wordnik/swagger-core/issues/532)
+- Better Date support for XMLGregorianCalendar,  LocalDateTime [#524](https://github.com/wordnik/swagger-core/issues/524), [#525](https://github.com/wordnik/swagger-core/issues/525), [#509](https://github.com/wordnik/swagger-core/issues/509)
 - Updated Jersey2 sample.  There are subtle but important differences in how jersey2 and Swagger interact, you can see a fully functional integration here: https://github.com/wordnik/swagger-core/tree/master/samples/java-jersey2
 
 ### v1.3.4 - Apr-2 2014
