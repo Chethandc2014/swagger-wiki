@@ -1,5 +1,11 @@
 ## Swagger-Core version changelog
 
+### v1.3.7 - Jul-14 2014
+- Removed hashes for authorization fields which are not oAuth (no ticket)
+- Added parameter descriptions in swagger-servlet module ([#604](https://github.com/wordnik/swagger-core/issues/604))
+- Models not merged when a resource with same path is in multiple files: ([#610](https://github.com/wordnik/swagger-core/issues/610))
+- Updated swagger-ui in samples to 2.0.18
+
 ### v1.3.6 - Jun-25 2014
 - Simplified mechanism to override datatypes in the model introspection process ([#588](https://github.com/wordnik/swagger-core/issues/588), [#481](https://github.com/wordnik/swagger-core/issues/481))
 - Extracting models from multiple classes in the same documentation path is now supported ([#560](https://github.com/wordnik/swagger-core/issues/560))
