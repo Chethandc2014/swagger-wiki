@@ -1,5 +1,15 @@
 ## Swagger-Core version changelog
 
+### v1.3.9 - Sep-18 2014
+- Updated to swagger-ui 2.0.24 (in the samples)
+- [#667](https://github.com/wordnik/swagger-core/issues/667) fixed authorizations in 1.3.8
+- [#633](https://github.com/wordnik/swagger-core/issues/633) added hidden=true support for @Api operations
+- [#663](https://github.com/wordnik/swagger-core/issues/663) added scanning of interfaces with @Inherited annotation
+- Support for scala 2.9.x has been dropped, and the Play module support is 2.3.x and greater.
+
+### v1.3.8
+This release had a major bug in it, please refrain from using it.
+
 ### v1.3.7 - Jul-14 2014
 - Removed hashes for authorization fields which are not oAuth (no ticket)
 - Added parameter descriptions in swagger-servlet module ([#604](https://github.com/wordnik/swagger-core/issues/604))
