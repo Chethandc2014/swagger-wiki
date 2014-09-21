@@ -1,5 +1,8 @@
 ## Swagger-Core version changelog
 
+### v1.3.10 - Sep-21 2014
+- Fixed broken artifact for swagger-play2 for scala 2.10 and 2.11
+
 ### v1.3.9 - Sep-18 2014
 - Updated to swagger-ui 2.0.24 (in the samples)
 - [#667](https://github.com/wordnik/swagger-core/issues/667) fixed authorizations in 1.3.8
