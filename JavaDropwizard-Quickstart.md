@@ -6,7 +6,7 @@ Dropwizard uses Jersey + JAXRS, both which are supported with Swagger.  The swag
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jaxrs_2.10</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.10</version>
 </dependency>
 ```
 
