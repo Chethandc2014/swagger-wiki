@@ -7,8 +7,8 @@ To support servlets, add this dependency:
 ```xml
 <dependency>
   <groupId>com.wordnik</groupId>
-  <artifactId>swagger-servlet_2.9.1</artifactId>
-  <version>1.3.0-RC3</version>
+  <artifactId>swagger-servlet_2.10</artifactId>
+  <version>1.3.10</version>
 </dependency>
 ```
 
@@ -86,7 +86,7 @@ We need to first tell Swagger about the operation itself, so we add an `@ApiOper
   @ApiImplicitParam(name = "email", value = "User's email", required = true, dataType = "string", paramType = "query"),
 })
 @Override
-protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
 ```
 
