@@ -10,7 +10,7 @@ This is probably the most important question to answer first.  You can serve swa
 
 You can create Swagger JSON and serve them up on any server.  The JSON needs to conform to the [Swagger Spec](https://github.com/wordnik/swagger-spec) with the Api Declaration having the `basePath` pointing directly to the target server.
 
-[See here](No-server-Integrations) for more your options.
+[See here](No-server-Integrations) for your options.
 
 #### Answer: Yes! You want server integration
 
