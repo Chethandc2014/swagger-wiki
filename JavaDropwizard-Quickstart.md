@@ -28,11 +28,11 @@ public class SwaggerSampleService extends Service<SwaggerSampleConfiguration> {
   @Override
   public void run(SwaggerSampleConfiguration configuration, Environment environment) {
     // Swagger Resource
-    environment.jersey().register(new ApiListingResourceJSON());
+    environment.addResource(new ApiListingResourceJSON());
 
     // Swagger providers
-    environment.jersey().register(new ApiDeclarationProvider());
-    environment.jersey().register(new ResourceListingProvider());
+    environment.addResource(new ApiDeclarationProvider());
+    environment.addResource(new ResourceListingProvider());
 
     // Swagger Scanner, which finds all the resources for @Api Annotations
     ScannerFactory.setScanner(new DefaultJaxrsScanner());
