@@ -56,11 +56,10 @@ Swagger-UI cannot easily show this error state.
 
 There are many ways to support CORS which depend completely on how you have integrated Swagger.  Here are some examples:
 
-* Using java/scala + servlets, you can add filter:
+* Using java/scala + servlets, you can add filter such as
+[com.wordnik.swagger.sample.util.ApiOriginFilter](https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs/src/main/java/com/wordnik/swagger/sample/util/ApiOriginFilter.java)
 
-https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs/src/main/java/com/wordnik/swagger/sample/util/ApiOriginFilter.java
-
-This requires the filter being initialized in the `web.xml`.  Please see the samples for this.
+This requires the filter being initialized in the `WEB-INF/web.xml`.  Please see the sample [web.xml](https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs/src/main/webapp/WEB-INF/web.xml) for this. Specifically, you need the bits that define the servlet filter using `ApiOriginFilter` and the `<filter-mapping>` for that filter.
 
 * Using node.js + [swagger-node-express](https://github.com/wordnik/swagger-node-express):
 
