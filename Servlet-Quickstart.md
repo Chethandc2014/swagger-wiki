@@ -126,7 +126,7 @@ and any subsequent api declarations as follows:
 
 You can see a working sample here, which uses scala + servlets:
 
-[scala-servlet](https://github.com/wordnik/swagger-core/blob/master/samples/scala-servlet)
+[scala-servlet](https://github.com/swagger-api/swagger-core/blob/master/samples/scala-servlet)
 
 #### Wrap up
 

@@ -129,7 +129,7 @@ Finally, view the UI here:
 
 You can see a working sample here, which uses Java + grails with Tomcat:
 
-[scala-servlet](https://github.com/wordnik/swagger-core/blob/master/samples/java-grails2)
+[scala-servlet](https://github.com/swagger-api/swagger-core/blob/master/samples/java-grails2)
 
 #### Wrap up
 

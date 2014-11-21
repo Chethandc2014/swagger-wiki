@@ -128,7 +128,7 @@ and any subsequent api declarations as follows:
 
 You can see a working sample here, which uses Java + Jersey + JAXRS:
 
-[java-jaxrs](https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs)
+[java-jaxrs](https://github.com/swagger-api/swagger-core/blob/master/samples/java-jaxrs)
 
 #### Wrap up
 

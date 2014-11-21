@@ -142,7 +142,7 @@ and any subsequent api declarations as follows:
 
 You can see a working sample here, which uses Java + CXF with Tomcat:
 
-[scala-servlet](https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs-cxf)
+[scala-servlet](https://github.com/swagger-api/swagger-core/blob/master/samples/java-jaxrs-cxf)
 
 #### Wrap up
 

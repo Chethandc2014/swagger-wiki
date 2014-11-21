@@ -1,6 +1,6 @@
 # Swagger-Core Annotations
 
-In order to generate the Swagger documentation, swagger-core offers a set of annotations to declare and manipulate the output. The swagger-core output is compliant with [Swagger Specification](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md). A user is not required to be familiar with the full aspects of the Swagger Specification in order to use it, but as a reference it may answer a few questions regarding the generated output.  
+In order to generate the Swagger documentation, swagger-core offers a set of annotations to declare and manipulate the output. The swagger-core output is compliant with [Swagger Specification](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md). A user is not required to be familiar with the full aspects of the Swagger Specification in order to use it, but as a reference it may answer a few questions regarding the generated output.  
 
 This page introduces the annotations provided by swagger-core. They are grouped into three - the annotation to declare the resource, the set of annotations to declare an operation, and the set of annotations that declare API models. 
 
@@ -41,9 +41,9 @@ Name | Description
 
 The `@Api` is used to declare a Swagger resource API. It serves a double purpose - it affects the Resource Listing *and* the API Declaration. Only classes that are annotated with `@Api` will be scanned by Swagger.
 
-In the Resource Listing, the annotation will translate to the [Resource Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#512-resource-object).
+In the Resource Listing, the annotation will translate to the [Resource Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#512-resource-object).
 
-In the API Declaration, it will basically serve as the basis for the [API Declaration](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#52-api-declaration) itself.
+In the API Declaration, it will basically serve as the basis for the [API Declaration](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#52-api-declaration) itself.
 
 A JAX-RS usage would be:
 ```java
@@ -93,7 +93,7 @@ New in **1.3.8**: The boolean `hidden` property was added to the annotation. Thi
 
 The `@ApiOperation` is used to declare a single operation within an API resource. An operation is considered a unique combination of a path and a HTTP method. Only methods that are annotated with `@ApiOperation` will be scanned and added the API Declaration.
 
-The annotation will affect two parts of the Swagger output, the [API Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#522-api-object), which would be created one per path, and the [Operation Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#523-operation-object), which would be created one per @ApiOperation.
+The annotation will affect two parts of the Swagger output, the [API Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#522-api-object), which would be created one per path, and the [Operation Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#523-operation-object), which would be created one per @ApiOperation.
 Remember that when using Servlets, the `@Api` would affect the API Object instead as it sets the path.
 
 A JAX-RS usage would be:
@@ -173,7 +173,7 @@ There's no difference in usage between usages (JAX-RS, Servlets or otherwise):
 
 These annotations are used as input to [@Api](#api) and [@ApiOperation](#apioperation) only, and not directly on the resources and operations. Once you've declared and configured which authorization schemes you support in your API, you can use these annotation to note which authorization scheme is required on a resource or a specific operation. The `@AuthorizationScope` is specific to the case of an OAuth2 authorization scheme where you may want to specify specific supported scopes.
 
-The @Authorization and @AuthorizationScope translate to the [Authorization Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#5210-authorizations-object) and the [Scope Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#5211-scope-object) respectively.
+The @Authorization and @AuthorizationScope translate to the [Authorization Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#5210-authorizations-object) and the [Scope Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#5211-scope-object) respectively.
 
 The behavior between the implementations (JAX-RS, Servlets or otherwise) is the same:
 ```java
@@ -212,7 +212,7 @@ The output would be:
 
 The `@ApiParam` is used solely with the JAX-RS parameter annotations (`@PathParam`, `@QueryParam`, `@HeaderParam`, `@FormParam` and in JAX-RS 2, `@BeanParam`). While swagger-core scans these annotations by default, the `@ApiParam` can be used to add more details on the parameters or change the values as they are read from the code.
 
-In the Swagger Specification, this translates to the [Parameter Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
+In the Swagger Specification, this translates to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
 
 Swagger will pick up the `value()` of these annotations and use them as the parameter name, and based on the the annotation it will also set the parameter type. For the body parameter (the single input parameter of a JAX-RS method), the name will automatically be set as `body` (as required by the Swagger Specification).
 
@@ -262,7 +262,7 @@ You may wish you describe operation parameters manually. This can be for various
 
 Since there can be several parameters to be included, the `@ApiImplicitParams` allows for multiple `@ApiImplicitParam` definitions.
 
-In the Swagger Specification, these translate to the [Parameter Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
+In the Swagger Specification, these translate to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
 
 When defining parameters implicitly, it's important to set `name`, `dataType` and `paramType` for Swagger's definitions to be proper. 
 
@@ -315,7 +315,7 @@ In the above sample we can see a Servlet definition with several parameters. The
 
 Swagger-core builds the model definitions based on the references to them throughout the API introspection. The `@ApiModel` allows you to manipulate the meta data of a model from a simple description or name change to a definition of polymorphism.
 
-This translates to the [Model Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#527-model-object) in the Swagger Specification.
+This translates to the [Model Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#527-model-object) in the Swagger Specification.
 
 At its basic functionality, you an use `@ApiModel` to change the name of the model and add a description to it:
 ```java
@@ -380,7 +380,7 @@ The output for this would be:
 
 While swagger-core will introspect fields and setters/getters, it will also read and process JAXB annotations. The `@ApiModelProperty` allows controlling Swagger-specific definitions such as allowed values, and additional notes. It also offers additional filtering properties in case you want to hide the property in certain scenarios.
 
-For information about this in the Swagger Spec, check out the [Property Object](https://github.com/wordnik/swagger-spec/blob/master/versions/1.2.md#529-property-object).
+For information about this in the Swagger Spec, check out the [Property Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#529-property-object).
 
 ```java
   @ApiModelProperty(value = "pet status in the store", allowableValues = "available,pending,sold")

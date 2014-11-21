@@ -275,7 +275,7 @@ Note the `Access-Control-Allow-Origin: *` line from the server.  You can add a f
 
 Creating a filter:
 
-https://github.com/wordnik/swagger-core/blob/master/samples/java-jaxrs/src/main/java/com/wordnik/swagger/sample/util/ApiOriginFilter.java
+https://github.com/swagger-api/swagger-core/blob/master/samples/java-jaxrs/src/main/java/com/wordnik/swagger/sample/util/ApiOriginFilter.java
 
 Adding the filter to the web service:
 

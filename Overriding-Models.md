@@ -110,7 +110,7 @@ converter.add("java.util.Date", jsonString);
 ModelConverters.addConverter(converter, true);
 ```
 You may also find this discussion and example helpful when implementing this in Java:
-https://github.com/wordnik/swagger-core/issues/359
+https://github.com/swagger-api/swagger-core/issues/359
 
 
 ### Excluding fields with a Custom Model Converter (1.3.1 and greater)
