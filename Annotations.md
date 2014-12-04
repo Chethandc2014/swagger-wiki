@@ -85,19 +85,12 @@ Note how the path is `"/sample"` and not `"/sample/users"`. The "/users" part wi
 ```java
   @Api(value = "/sample", 
   	authorizations = {
-		  @Authorization(
-				  value="petoauth", 
-				  scopes = {
-						  @AuthorizationScope(
-								  scope = "add:pet", 
-								  description = "allows adding of pets")
-						  }
-				  )
+		  @Authorization(value="sampleoauth", scopes = {})
   	}
   )
 ```
 
-In this example we're adding an OAuth2 authorization scheme with one scope. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
+In this example we're adding a previously-declared OAuth2 authorization scheme without any scopes. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
 
 New in **1.3.7**: You can now define a specific `basePath` for a given API.
 
