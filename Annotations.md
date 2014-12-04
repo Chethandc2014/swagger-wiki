@@ -81,6 +81,24 @@ The output of the Resource Listing would be (as a value in the `apis` array):
 ```
 Note how the path is `"/sample"` and not `"/sample/users"`. The "/users" part will be used as the operation path.
 
+`@Api` can also be used to declare authorization at the resource-level. These definitions apply to all operations under this resource, but can be overridden at the operation level if needed. This applies to both JAX-RS and Servlets. As a simplified example:
+```java
+  @Api(value = "/sample", 
+  	authorizations = {
+		  @Authorization(
+				  value="petoauth", 
+				  scopes = {
+						  @AuthorizationScope(
+								  scope = "add:pet", 
+								  description = "allows adding of pets")
+						  }
+				  )
+  	}
+  )
+```
+
+In this example we're adding an OAuth2 authorization scheme with one scope. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
+
 New in **1.3.7**: You can now define a specific `basePath` for a given API.
 
 New in **1.3.8**: The boolean `hidden` property was added to the annotation. This can be used to entirely hide an @Api even if it declared. This is especially useful when using sub-resources to remove unwanted artifacts.
