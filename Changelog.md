@@ -1,5 +1,34 @@
 ## Swagger-Core version changelog
 
+### v1.3.12 - Dec-23 2014
+
+#### Bug Fixes
+- [#729](https://github.com/swagger-api/swagger-core/issues/729) jaxrs class and method-level parameters may duplicate.
+- [#721](https://github.com/swagger-api/swagger-core/issues/721) missing / when concatenating sub-resources creates invalid swagger api-docs.
+- [#576](https://github.com/swagger-api/swagger-core/issues/576) @Path on resource method different from Jersey.
+- [#502](https://github.com/swagger-api/swagger-core/issues/502) @XmlElement not working correctly on Fields.
+- [#334](https://github.com/swagger-api/swagger-core/issues/334) @ApiModelProperty(dataType='xx') not handled within ModelPropertyParser.
+- [#93](https://github.com/swagger-api/swagger-core/issues/93) Swagger-play2-util IllegalAccessError on health status.
+
+#### Features
+- [#693](https://github.com/swagger-api/swagger-core/issues/693) Cannot make converter from byte[] to String.
+- [#643](https://github.com/swagger-api/swagger-core/issues/643) play2 should infer httpMethod=XX in @ApiOperation from routes.
+- [#615](https://github.com/swagger-api/swagger-core/issues/615) Operation response type not picked up from method signature.
+- [#312](https://github.com/swagger-api/swagger-core/issues/312) Implicit params should throw error if not properly constructed.
+
+#### Samples
+- New Apache Wink sample
+- New Jersey 1.X + Spring sample
+- Modified RESTEasy sample to the pet store
+- New RESTEasy + Spring sample
+- New Mule sample
+
+#### Known issues
+- The CXF sample produces proper documentation but they API itself doesn't work.
+
+### v1.3.11 - Nov-27 2014
+- New Module - swagger-mule for easier integration with Mule projects. This is the first official release, even though it's also available as a 1.3.10 dependency.
+
 ### v1.3.10 - Sep-21 2014
 - Fixed broken artifact for swagger-play2 for scala 2.10 and 2.11
 
