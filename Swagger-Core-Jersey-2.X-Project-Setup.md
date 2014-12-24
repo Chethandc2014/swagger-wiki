@@ -8,7 +8,7 @@ You need to complete the three steps in order to set up your application with Sw
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
-You can check out the [sample application](https://github.com/webron/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
+You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
 
 ## Adding the dependencies to your application
 
@@ -19,7 +19,7 @@ Use the following maven dependency:
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jersey2-jaxrs_2.10</artifactId>
-  <version>1.3.10</version>
+  <version>1.3.12</version>
 </dependency>
 ```
 
