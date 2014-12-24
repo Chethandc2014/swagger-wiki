@@ -6,7 +6,7 @@ Swagger is supported in Jersey 1.x.  This is probably the most popular Java inte
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jaxrs_2.10</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.12</version>
 </dependency>
 ```
 
