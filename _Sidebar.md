@@ -8,7 +8,7 @@
 
 ###### Tutorials
 * [Overriding Models](https://github.com/swagger-api/swagger-core/wiki/overriding-models)
-* [Supporting CORS](https://github.com/swagger-api/swagger-core/wiki/CORS)
+* [[CORS Support|CORS-Support]]
 
 ###### History
 * [Change Log](https://github.com/swagger-api/swagger-core/wiki/Changelog)
