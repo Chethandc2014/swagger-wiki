@@ -10,8 +10,8 @@ You need to complete the three steps in order to set up your application with Sw
 
 For your convenience there are two Jersey 1.X sample projects:
 
-1. [java-jaxrs](https://github.com/webron/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
-2. [java-jersey-spring](https://github.com/webron/swagger-core/tree/master/samples/java-jersey-spring) which shows a project using Spring IoC.
+1. [java-jaxrs](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
+2. [java-jersey-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jersey-spring) which shows a project using Spring IoC.
 
 ## Adding the dependencies to your application
 
@@ -22,7 +22,7 @@ Use the following maven dependency:
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jersey-jaxrs_2.10</artifactId>
-  <version>1.3.10</version>
+  <version>1.3.12</version>
 </dependency>
 ```
 
