@@ -14,4 +14,4 @@
 * [Change Log](https://github.com/swagger-api/swagger-core/wiki/Changelog)
 
 ###### Legacy Docs
-* [Adding Swagger to your API](https://github.com/swagger-api/swagger-core/wiki/Adding-Swagger-to-your-API)
+* [[Java Integrations|Java-Integrations]]
