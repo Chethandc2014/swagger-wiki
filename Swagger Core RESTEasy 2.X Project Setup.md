@@ -1,4 +1,4 @@
-This page contains the required information to add Swagger to your RestEasy 2.X application.
+This page contains the required information to add Swagger to your RESTEasy 2.X application.
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup]].
 
@@ -10,8 +10,8 @@ You need to complete the three steps in order to set up your application with Sw
 
 For your convenience there are two RESTEasy sample projects:
 
-1. [java-resteasy](https://github.com/webron/swagger-core/tree/master/samples/java-resteasy) - includes a configuration based on the usage of the Application class.
-2. [java-resteasy-spring](https://github.com/webron/swagger-core/tree/master/samples/java-resteasy-spring) - uses RESTEasy's own method of integrating with Spring.
+1. [java-resteasy](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy) - includes a configuration based on the usage of the Application class.
+2. [java-resteasy-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy-spring) - uses RESTEasy's own method of integrating with Spring.
 
 ## Adding the dependencies to your application
 
@@ -22,7 +22,7 @@ Use the following maven dependency:
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-jaxrs_2.10</artifactId>
-  <version>1.3.10</version>
+  <version>1.3.12</version>
 </dependency>
 ```
 
