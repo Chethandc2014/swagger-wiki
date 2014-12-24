@@ -11,7 +11,7 @@ Each implementation has its own wiki page summarizing the steps:
 1. [[Jersey 1.X|Swagger-Core-Jersey-1.X-Project-Setup]]
 1. [[Jersey 2.X|Swagger-Core-Jersey-2.X-Project-Setup]]
 1. [[RESTEasy 2.X|Swagger-Core-RestEasy-2.X-Project-Setup]]
-1. [[Mule|https://github.com/webron/swagger-core/wiki/Swagger-Core-Mule-Project-Setup]]
+1. [[Mule|Swagger-Core-Mule-Project-Setup]]
 
 
 Once you finish the set up process, you can continue on to adding the [[annotations|Annotations]] to your code.
