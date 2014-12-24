@@ -41,7 +41,7 @@ Scala developers who use version 2.11, can replace `_2.10` with `_2.11`. For Jav
 
 ### Adding the dependencies to your application
 
-At the time of writing this document, Swagger 1.3.10 is the latest release, which will be used in the examples in this document. It can be assumed that future versions will be attached in a similar manner. Should the behavior change, the document will be updated accordingly. The latest Swagger-Core version can be found here - https://github.com/wordnik/swagger-core#compatability.
+At the time of writing this document, Swagger 1.3.12 is the latest release, which will be used in the examples in this document. It can be assumed that future versions will be attached in a similar manner. Should the behavior change, the document will be updated accordingly. The latest Swagger-Core version can be found here - https://github.com/swagger-api/swagger-core#compatability.
 
 Projects that cannot utilize maven's dependencies would need to add the dependencies manually. Since those may change from version to version, the list of dependencies will not be documented here. Instead, it is advised that you clone the swagger-core repository, go to the directory of the relevant module (artifact) and run `mvn dependency:list`. That would give you a list of dependencies required by swagger-core which you would have to include manually in your application. Keep in mind this requires you to have maven installed but it does not require you to use maven for your project.
 
