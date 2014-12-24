@@ -8,7 +8,7 @@ To support servlets, add this dependency:
 <dependency>
   <groupId>com.wordnik</groupId>
   <artifactId>swagger-servlet_2.10</artifactId>
-  <version>1.3.10</version>
+  <version>1.3.12</version>
 </dependency>
 ```
 
