@@ -136,7 +136,7 @@ public class SampleApplication extends Application {
 
         resources.add(com.wordnik.swagger.jersey.listing.ApiListingResourceJSON.class);
         resources.add(com.wordnik.swagger.jersey.listing.JerseyApiDeclarationProvider.class);
-        com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider.class);
+        resources.add(com.wordnik.swagger.jersey.listing.JerseyResourceListingProvider.class);
 
         return resources;
     }
