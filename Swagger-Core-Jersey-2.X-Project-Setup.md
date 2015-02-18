@@ -8,7 +8,7 @@ You need to complete the three steps in order to set up your application with Sw
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
-You can check out the [sample application](https://github.com/swagger-api/swagger-core/v1.3.12/master/samples/java-jaxrs) which is based on the package scanning configuration.
+You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-jersey2) which is based on the package scanning configuration.
 
 ## Adding the dependencies to your application
 
