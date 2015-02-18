@@ -10,8 +10,8 @@ You need to complete the three steps in order to set up your application with Sw
 
 For your convenience there are two RESTEasy sample projects:
 
-1. [java-resteasy](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy) - includes a configuration based on the usage of the Application class.
-2. [java-resteasy-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy-spring) - uses RESTEasy's own method of integrating with Spring.
+1. [java-resteasy](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-resteasy) - includes a configuration based on the usage of the Application class.
+2. [java-resteasy-spring](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-resteasy-spring) - uses RESTEasy's own method of integrating with Spring.
 
 ## Adding the dependencies to your application
 
