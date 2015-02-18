@@ -10,8 +10,8 @@ You need to complete the three steps in order to set up your application with Sw
 
 For your convenience there are two Jersey 1.X sample projects:
 
-1. [java-jaxrs](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
-2. [java-jersey-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jersey-spring) which shows a project using Spring IoC.
+1. [java-jaxrs](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-jaxrs) which is based on the package scanning configuration.
+2. [java-jersey-spring](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-jersey-spring) which shows a project using Spring IoC.
 
 ## Adding the dependencies to your application
 
