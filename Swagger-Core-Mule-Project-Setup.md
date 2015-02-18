@@ -6,7 +6,7 @@ You can find additional information at our main [[set up page|Swagger-Core-JAX-R
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
-You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/master/samples/java-mule).
+You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/v1.3.12/samples/java-mule).
 
 ## Adding the dependencies to your application
 
