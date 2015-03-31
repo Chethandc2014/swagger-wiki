@@ -1,4 +1,7 @@
-###### Integration
+###### Integration 1.5.X
+* [[Annotations|Annotations 1.5.X]]
+
+###### Integration 1.3.X
 * [[JAX-RS Setup|Swagger-Core-JAX-RS-Project-Setup]]
   * [[Jersey 1.X|Swagger-Core-Jersey-1.X-Project-Setup]]
   * [[Jersey 2.X|Swagger-Core-Jersey-2.X-Project-Setup]]
