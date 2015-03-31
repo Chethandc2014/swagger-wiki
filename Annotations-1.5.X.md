@@ -35,6 +35,8 @@ Name | Description
 [@ApiResponses](#apiresponses-apiresponse) | A wrapper to allow a list of multiple ApiResponse objects.
 [@Authorization](#authorization-authorizationscope) | Declares an authorization scheme to be used on a resource or an operation.
 [@AuthorizationScope](#authorization-authorizationscope) | Describes an OAuth2 authorization scope.
+[ExternalDocs](#externalDocs) | Represents an external documentation description.
+[ResponseHeader](#responseHeader) | Represents a header that can be provided as part of the response.
 
 ## Resource API Declaration
 
