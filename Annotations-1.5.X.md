@@ -10,7 +10,6 @@ The documentation for each annotation is meant as an overview of its usage. Each
 
 At the very least, `@Api` is required to declare an API resource and `@ApiOperation` is required to declare an API operation. Without having those two combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
 
-New in **1.3.9**: Annotations are now `@Inherited`. This means that defining them on interfaces or classes will affect the classes that implement/extend them.  
 
 Table of contents:
 * [Quick Annotation Overview](#quick-annotation-overview)
