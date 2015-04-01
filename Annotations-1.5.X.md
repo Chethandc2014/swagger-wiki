@@ -42,62 +42,35 @@ Name | Description
 
 ### [@Api](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Api.html)
 
-The `@Api` is used to declare a Swagger resource API. It serves a double purpose - it affects the Resource Listing *and* the API Declaration. Only classes that are annotated with `@Api` will be scanned by Swagger.
-
-In the Resource Listing, the annotation will translate to the [Resource Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#512-resource-object).
-
-In the API Declaration, it will basically serve as the basis for the [API Declaration](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#52-api-declaration) itself.
-
+In Swagger 2.0, resources were replaced by tags, and this impacts the `@Api` annotation. It is no longer used to declare a resource, and it is now used to apply definitions for all the operations defined under it.
+ 
 A JAX-RS usage would be:
 ```java
 @Path("/pet")
-@Api(value = "/pet", description = "Operations about pets")
+@Api(value = "pet", authorizations = {
+      @Authorization(value="sampleoauth", scopes = {})
+    })
 @Produces({"application/json", "application/xml"})
 public class PetResource {
  ...
 }
 ```
 
-Here we have a Pet resource that is exposed on `/pet`. The `@Api` here states that the *documentation* of this resource will be hosted under `/pet` as well (keep in mind it can be any URL) and there’s a description given to this resource. Swagger will pick up on the `@Produces` annotation but you can override this value if you wish. 
+In this example, we're saying that the tag for the opeartions under this class is `pet` (so they would all be grouped together). Swagger will pick up on the `@Produces` annotation but you can override this value if you wish. 
 
-The output of the Resource Listing would be (as a value in the `apis` array):
-```js
-    {
-      "path": "/pet",
-      "description": "Operations about pets"
-    }
-```
-A Servlet sample would be:
+`@Api` can also be used to declare authorization at the resource-level. These definitions apply to all operations under this resource, but can be overridden at the operation level if needed. In the example above, we're adding a previously-declared OAuth2 authorization scheme without any scopes. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
+
+Instead of using the `value()`, you can use the `tags()` property which allows you to set multiple tags for the operations. For example:
+
 ```java
-@Api(value = "/sample/users", description = "gets some data from a servlet", consumes="application/json, application/xml")
-public class SampleServlet extends HttpServlet {
+@Api(tags = {"external_info","user_info"})
 ```
 
-In this case too, the *documentation* will be hosted at `/sample/users`. Notice that unlike with JAX-RS, this *has* to be the URL mapping of the Servlet. We also added a `consumes` property to the `@Api` to declare which content types are accepted by the exposed API.
+Note that in this case, `value()` would be ignored even if it exists.
 
-The output of the Resource Listing would be (as a value in the `apis` array):
-```js
-    {
-      "path": "/sample",
-      "description": "Operations about pets"
-    }
-```
-Note how the path is `"/sample"` and not `"/sample/users"`. The "/users" part will be used as the operation path.
+The boolean `hidden` property can be used to entirely hide an @Api even if it declared. This is especially useful when using sub-resources to remove unwanted artifacts.
 
-`@Api` can also be used to declare authorization at the resource-level. These definitions apply to all operations under this resource, but can be overridden at the operation level if needed. This applies to both JAX-RS and Servlets. As a simplified example:
-```java
-  @Api(value = "/sample", 
-  	authorizations = {
-		  @Authorization(value="sampleoauth", scopes = {})
-  	}
-  )
-```
-
-In this example we're adding a previously-declared OAuth2 authorization scheme without any scopes. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
-
-New in **1.3.7**: You can now define a specific `basePath` for a given API.
-
-New in **1.3.8**: The boolean `hidden` property was added to the annotation. This can be used to entirely hide an @Api even if it declared. This is especially useful when using sub-resources to remove unwanted artifacts.
+In swagger-core 1.5.X, `description()`, `basePath()`, and `position()` are no longer used.
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Api.html).**
 
@@ -192,16 +165,16 @@ The @Authorization and @AuthorizationScope translate to the [Authorization Objec
 The behavior between the implementations (JAX-RS, Servlets or otherwise) is the same:
 ```java
   @ApiOperation(value = "Add a new pet to the store", 
-  	authorizations = {
-		  @Authorization(
-				  value="petoauth", 
-				  scopes = {
-						  @AuthorizationScope(
-								  scope = "add:pet", 
-								  description = "allows adding of pets")
-						  }
-				  )
-  	}
+    authorizations = {
+      @Authorization(
+          value="petoauth", 
+          scopes = {
+              @AuthorizationScope(
+                  scope = "add:pet", 
+                  description = "allows adding of pets")
+              }
+          )
+    }
   )
   public Response addPet(...) {...}
 ```
