@@ -126,14 +126,16 @@ It's a common practice to return errors (or other success messages) using HTTP s
 
 The `@ApiResponse` describes a concrete possible response. It cannot be used directly on the method and needs to be included in the array value of `@ApiResponses` (whether there's one response or more).
 
-If the response is accompanied with a body, the body model can be described as well (once model per response).
+If the response is accompanied with a body, the body model can be described as well (one model per response).
 
-There's no difference in usage between usages (JAX-RS, Servlets or otherwise):
 ```java
-  @ApiResponses(value = { @ApiResponse(code = 400, message = "Invalid ID supplied"),
+  @ApiResponses(value = { 
+      @ApiResponse(code = 400, message = "Invalid ID supplied", responseHeaders = @ResponseHeader(name = "X-Rack-Cache", description = "Explains whether or not a cache was used", response = Boolean.class)),
       @ApiResponse(code = 404, message = "Pet not found") })
   public Response getPetById(...) {...}
 ```
+
+In swagger-core 1.5.X, you can also add description of response headers as seen in the example above.
 
 **For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiResponses](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponses.html), [@ApiResponse](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponse.html))**.
 
