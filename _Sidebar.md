@@ -1,5 +1,5 @@
 ###### Integration 1.5.X
-* [[Annotations|Annotations 1.5.X]] (WIP)
+* [[Annotations|Annotations 1.5.X]]
 
 ###### Integration 1.3.X
 * [[JAX-RS Setup|Swagger-Core-JAX-RS-Project-Setup]]
