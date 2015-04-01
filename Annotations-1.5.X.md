@@ -130,7 +130,8 @@ If the response is accompanied with a body, the body model can be described as w
 
 ```java
   @ApiResponses(value = { 
-      @ApiResponse(code = 400, message = "Invalid ID supplied", responseHeaders = @ResponseHeader(name = "X-Rack-Cache", description = "Explains whether or not a cache was used", response = Boolean.class)),
+      @ApiResponse(code = 400, message = "Invalid ID supplied", 
+                   responseHeaders = @ResponseHeader(name = "X-Rack-Cache", description = "Explains whether or not a cache was used", response = Boolean.class)),
       @ApiResponse(code = 404, message = "Pet not found") })
   public Response getPetById(...) {...}
 ```
