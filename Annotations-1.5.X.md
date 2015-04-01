@@ -33,8 +33,7 @@ Name | Description
 [@ApiResponses](#apiresponses-apiresponse) | A wrapper to allow a list of multiple ApiResponse objects.
 [@Authorization](#authorization-authorizationscope) | Declares an authorization scheme to be used on a resource or an operation.
 [@AuthorizationScope](#authorization-authorizationscope) | Describes an OAuth2 authorization scope.
-[ExternalDocs](#externalDocs) | Represents an external documentation description.
-[ResponseHeader](#responseHeader) | Represents a header that can be provided as part of the response.
+[@ResponseHeader](#responseHeader) | Represents a header that can be provided as part of the response.
 
 ## Resource API Declaration
 
@@ -269,6 +268,23 @@ In the above sample we can see a Servlet definition with several parameters. The
 ```
 
 **For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParams.html))**.
+
+### [@ResponseHeader](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ResponseHeader.html)
+
+If you want to describe a response header, you can simply add it to your [@ApiOperation](#apioperation) or [@ApiResponse](#apiresponses-apiresponse), while supplying the name of the header, a description and a type.
+
+For example, in a given response, it would look as follows:
+
+```java
+  @ApiResponses(value = { 
+      @ApiResponse(code = 400, message = "Invalid ID supplied", 
+                   responseHeaders = @ResponseHeader(name = "X-Rack-Cache", description = "Explains whether or not a cache was used", response = Boolean.class)),
+      @ApiResponse(code = 404, message = "Pet not found") })
+  public Response getPetById(...) {...}
+```
+
+
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ResponseHeader.html).**
 
 ## Model Declaration
 
