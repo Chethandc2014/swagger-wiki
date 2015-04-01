@@ -228,7 +228,7 @@ You may wish you describe operation parameters manually. This can be for various
 
 Since there can be several parameters to be included, the `@ApiImplicitParams` allows for multiple `@ApiImplicitParam` definitions.
 
-In the Swagger Specification, these translate to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
+In the Swagger Specification, these translate to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parameterObject).
 
 When defining parameters implicitly, it's important to set `name`, `dataType` and `paramType` for Swagger's definitions to be proper. 
 
@@ -245,32 +245,29 @@ In the above sample we can see a Servlet definition with several parameters. The
 
 ```js
  "parameters": [
-            {
-              "name": "name",
-              "description": "User's name",
-              "required": true,
-              "type": "string",
-              "paramType": "query",
-              "allowMultiple": false
-            },
-            {
-              "name": "email",
-              "description": "User's email",
-              "required": false,
-              "type": "string",
-              "paramType": "query",
-              "allowMultiple": false
-            },
-            {
-              "name": "id",
-              "description": "User ID",
-              "required": true,
-              "type": "integer",
-              "format": "int64",
-              "paramType": "query",
-              "allowMultiple": false
-            }
-          ]
+  {
+    "name": "name",
+    "description": "User's name",
+    "required": true,
+    "type": "string",
+    "in": "query"
+  },
+  {
+    "name": "email",
+    "description": "User's email",
+    "required": false,
+    "type": "string",
+    "in": "query"
+  },
+  {
+    "name": "id",
+    "description": "User ID",
+    "required": true,
+    "type": "integer",
+    "format": "int64",
+    "in": "query"
+  }
+]
 ```
 
 **For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParams.html))**.
