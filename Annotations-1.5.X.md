@@ -78,10 +78,7 @@ In swagger-core 1.5.X, `description()`, `basePath()`, and `position()` are no lo
 
 ### [@ApiOperation](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiOperation.html)
 
-The `@ApiOperation` is used to declare a single operation within an API resource. An operation is considered a unique combination of a path and a HTTP method. Only methods that are annotated with `@ApiOperation` will be scanned and added the API Declaration.
-
-The annotation will affect two parts of the Swagger output, the [API Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#522-api-object), which would be created one per path, and the [Operation Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#523-operation-object), which would be created one per @ApiOperation.
-Remember that when using Servlets, the `@Api` would affect the API Object instead as it sets the path.
+The `@ApiOperation` is used to declare a single operation. An operation is considered a unique combination of a path and a HTTP method. Only methods that are annotated with `@ApiOperation` will be scanned and added the Swagger definition.
 
 A JAX-RS usage would be:
 ```java
@@ -94,48 +91,32 @@ A JAX-RS usage would be:
  public Response findPetsByStatus(...) { ... }
 ```
 
-The `value` of the annotation is a short description on the API. Since this is displayed in the list of operations in Swagger-UI and the location is limited in size, this should be kept short (preferably shorter than 120 characters). The `notes` allows you to give significantly more details about the operations (e.g. you can include request samples and responses here). `response` is the return type of the method. Notice that the actual method declaration returns a `Response` but that is a general-purpose JAX-RS class and not the actual response sent to the user. If the returned object is the actual result, it can be used directly instead of declaring it in the annotation. Since we want to return a list of pets, we declare that using the `responseContainer`. Keep in mind that Java has type erasure, so using generics in the return type may not be parsed properly, and the `response` should be used directly. The `@GET` JAX-RS annotation will be used as the (HTTP) `method` field of the operation, and the `@Path` would tell us the path of the operation (operations are grouped under the same path, one for each HTTP method used).
+The `value` of the annotation is a short description on the API. Since this is displayed in the list of operations in Swagger-UI and the location is limited in size, this should be kept short (preferably shorter than 120 characters). The `notes` allows you to give significantly more details about the operations. `response` is the return type of the method. Notice that the actual method declaration returns a `Response` but that is a general-purpose JAX-RS class and not the actual response sent to the user. If the returned object is the actual result, it can be used directly instead of declaring it in the annotation. Since we want to return a list of pets, we declare that using the `responseContainer`. Keep in mind that Java has type erasure, so using generics in the return type may not be parsed properly, and the `response` should be used directly. The `@GET` JAX-RS annotation will be used as the (HTTP) `method` field of the operation, and the `@Path` would tell us the path of the operation (operations are grouped under the same path, one for each HTTP method used).
 
 The output would be:
 ```js
-    {
-      "path": "/pet/findByStatus",
-      "operations": [
-        {
-          "method": "GET",
-          "summary": "Finds Pets by status",
-          "notes": "Multiple status values can be provided with comma seperated strings",
+    "/pet/findByStatus": {
+  "get": {
+    "tags": [
+      "pet"
+    ],
+    "summary": "Finds Pets by status",
+    "description": "Multiple status values can be provided with comma seperated strings",
+    "responses": {
+      "200": {
+        "description": "successful operation",
+        "schema": {
           "type": "array",
           "items": {
-            "$ref": "Pet"
-          },
-          "nickname": "findPetsByStatus",
-          .
-          .
-          .
+            "$ref": "#/definitions/Pet"
+          }
+        }
+      },
+      .
+      .
+      .
 ```
 
-A Servlet sample would be:
-```java
-@ApiOperation(httpMethod = "GET", 
-   value = "Resource to get a user", 
-   response = SampleData.class, 
-   nickname="getUser")
-public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {...}
-```
- 
-We already know what `value` and `response` here mean, based on the JAX-RS sample. Here, we have two additional properties. The `httpMethod` is used to explicitly declare which HTTP method is used in this operation, since we don't have that information like in JAX-RS. The `nickname` is also new and serves as unique name for the operation. In JAX-RS this would default to the method name and with Servlets it must be declared by the user for proper functionality. The `path` of the operation would be derived from the `@Api` annotation on the Servlet itself.
-
-The output would be:
-```js
-         {
-          "method": "GET",
-          "summary": "Resource to get a user",
-          "type": "SampleData",
-          .
-          .
-          .
-```
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiOperation.html).**
 
