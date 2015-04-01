@@ -276,7 +276,7 @@ In the above sample we can see a Servlet definition with several parameters. The
 
 Swagger-core builds the model definitions based on the references to them throughout the API introspection. The `@ApiModel` allows you to manipulate the meta data of a model from a simple description or name change to a definition of polymorphism.
 
-This translates to the [Model Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#527-model-object) in the Swagger Specification.
+This translates to the [Schema Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#schemaObject) in the Swagger Specification.
 
 At its basic functionality, you an use `@ApiModel` to change the name of the model and add a description to it:
 ```java
@@ -288,60 +288,18 @@ Here we change the name of the model from OriginalModel to DifferentModel.
 The output would be:
 ```js
  "DifferentModel": {
-      "id": "DifferentModel",
       "description": "Sample model for the documentation",
       .
       .
   }
 ```
-    
 
-To support polymorphism and inheritance, we use the `discriminator` and the `subTypes` fields. Both must be used for the Swagger output to be valid. 
-
-The `discriminator` field must be a field at the top model which will be used to determine which sub model is being used. For example, if you have an `Animal` class with `Cat`, `Dog` and `Chicken` as sub classes, the `animalType` field could be used as the discriminator to determine which animal is actually being used. 
-
-The `subTypes` must list the classes of the inheriting models. The classes themselves don't have to inherit from the super type. In fact, Swagger will not automatically read the extending classes and you have to manually describe these classes in the `subTypes` in order for them to be parsed.
-
-```java
-@ApiModel(value="SuperModel", discriminator = "foo", subTypes = {SubModel.class})
-public class SuperModel {...}
-
-@ApiModel(value="SubModel")
-public class SubModel {...}
-```
-
-The above snippet is a simple sample of how inheritance can be described. Notice SubModel does not extend SuperModel. In the same way, you can add multiple inheriting classes. There can be any number of inheritance levels.
-
-The output for this would be:
-```js
-"SuperModel": {
-  "id": "SuperModel",
-  "required": [
-    "foo"
-  ],
-  "properties": {
-    "foo": {
-      "type": "string"
-    }
-  },
-  "subTypes": ["SubModel"],
-  "discriminator": "foo"
-},
-"SubModel": {
-  "id": "SubModel",
-  "properties": {
-     ...
-  },
-}
-```
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModel.html).**
 
 ### [@ApiModelProperty](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html)
 
 While swagger-core will introspect fields and setters/getters, it will also read and process JAXB annotations. The `@ApiModelProperty` allows controlling Swagger-specific definitions such as allowed values, and additional notes. It also offers additional filtering properties in case you want to hide the property in certain scenarios.
-
-For information about this in the Swagger Spec, check out the [Property Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#529-property-object).
 
 ```java
   @ApiModelProperty(value = "pet status in the store", allowableValues = "available,pending,sold")
