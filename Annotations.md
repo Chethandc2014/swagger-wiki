@@ -169,7 +169,7 @@ It's a common practice to return errors (or other success messages) using HTTP s
 
 The `@ApiResponse` describes a concrete possible response. It cannot be used directly on the method and needs to be included in the array value of `@ApiResponses` (whether there's one response or more).
 
-If the response is accompanied with a body, the body model can be described as well (once model per response).
+If the response is accompanied with a body, the body model can be described as well (one model per response).
 
 There's no difference in usage between usages (JAX-RS, Servlets or otherwise):
 ```java
