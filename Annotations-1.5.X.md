@@ -144,7 +144,7 @@ In swagger-core 1.5.X, you can also add description of response headers as seen 
 
 These annotations are used as input to [@Api](#api) and [@ApiOperation](#apioperation) only, and not directly on the resources and operations. Once you've declared and configured which authorization schemes you support in your API, you can use these annotation to note which authorization scheme is required on a resource or a specific operation. The `@AuthorizationScope` is specific to the case of an OAuth2 authorization scheme where you may want to specify specific supported scopes.
 
-The @Authorization and @AuthorizationScope translate to the [Authorization Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#5210-authorizations-object) and the [Scope Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#5211-scope-object) respectively.
+The @Authorization and @AuthorizationScope translate to the [Security Requirement Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#securityRequirementObject).
 
 The behavior between the implementations (JAX-RS, Servlets or otherwise) is the same:
 ```java
@@ -152,11 +152,7 @@ The behavior between the implementations (JAX-RS, Servlets or otherwise) is the 
     authorizations = {
       @Authorization(
           value="petoauth", 
-          scopes = {
-              @AuthorizationScope(
-                  scope = "add:pet", 
-                  description = "allows adding of pets")
-              }
+          scopes = { @AuthorizationScope(scope = "add:pet") }
           )
     }
   )
@@ -167,14 +163,13 @@ In this case we declare that the `addPet` operation uses the `petoauth` authoriz
 
 The output would be:
 ```js
-  "authorizations": {
+"security": [
+  {
     "petoauth": [
-      {
-        "scope": "add:pet",
-        "description": "allows adding of pets"
-      }
+      "add:pet"
     ]
   }
+]
 ```
 
 **For further details about this annotation, usage and edge cases, check out the javadocs ([@Authorization](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Authorization.html), [@AuthorizationScope](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/AuthorizationScope.html))**.
