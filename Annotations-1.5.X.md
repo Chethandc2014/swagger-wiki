@@ -178,9 +178,9 @@ The output would be:
 
 The `@ApiParam` is used solely with the JAX-RS parameter annotations (`@PathParam`, `@QueryParam`, `@HeaderParam`, `@FormParam` and in JAX-RS 2, `@BeanParam`). While swagger-core scans these annotations by default, the `@ApiParam` can be used to add more details on the parameters or change the values as they are read from the code.
 
-In the Swagger Specification, this translates to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md#524-parameter-object).
+In the Swagger Specification, this translates to the [Parameter Object](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md#parameterObject).
 
-Swagger will pick up the `value()` of these annotations and use them as the parameter name, and based on the the annotation it will also set the parameter type. For the body parameter (the single input parameter of a JAX-RS method), the name will automatically be set as `body` (as required by the Swagger Specification).
+Swagger will pick up the `value()` of these annotations and use them as the parameter name, and based on the the annotation it will also set the parameter type.
 
 Swagger will also use the value of `@DefaultValue` as the default value property if one exists.
 
@@ -198,23 +198,23 @@ Here we have two parameters. The first, `username` which is a part of the path. 
 The output would be:
 ```js
  "parameters": [
-            {
-              "name": "username",
-              "description": "name that need to be updated",
-              "required": true,
-              "type": "string",
-              "paramType": "path",
-              "allowMultiple": false
-            },
-            {
-              "name": "body",
-              "description": "Updated user object",
-              "required": true,
-              "type": "User",
-              "paramType": "body",
-              "allowMultiple": false
-            }
-          ]
+  {
+    "name": "username",
+    "in": "path",
+    "description": "name that need to be deleted",
+    "required": true,
+    "type": "string"
+  },
+  {
+    "in": "body",
+    "name": "body",
+    "description": "Updated user object",
+    "required": false,
+    "schema": {
+      "$ref": "#/definitions/User"
+    }
+  }
+]
 ```
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiParam.html).**
