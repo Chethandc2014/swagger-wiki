@@ -1,6 +1,6 @@
 This page contains the required information to add Swagger to your Mule application.
 
-You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup]].
+You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
 1. [Adding the dependencies to your application](#adding-the-dependencies-to-your-application)
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)

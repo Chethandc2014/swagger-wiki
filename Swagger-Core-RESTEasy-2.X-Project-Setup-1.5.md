@@ -1,6 +1,6 @@
 This page contains the required information to add Swagger to your RESTEasy 2.X application.
 
-You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup]].
+You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
 You need to complete the three steps in order to set up your application with Swagger:
 
