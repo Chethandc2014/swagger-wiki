@@ -2,6 +2,8 @@ This page contains the required information to add Swagger to your RESTEasy 2.X 
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
+**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/wordnik/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
+
 You need to complete the three steps in order to set up your application with Swagger:
 
 1. [Adding the dependencies to your application](#adding-the-dependencies-to-your-application)
