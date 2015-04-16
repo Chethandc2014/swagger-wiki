@@ -1,5 +1,7 @@
 #Swagger-Core JAX-RS Project Setup
 
+**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/wordnik/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
+
 In order to integrate the Swagger documentation in your application, you'd need to follow these three set up steps:
 
 1. [Adding Swagger's dependencies to your project.](#adding-swaggers-dependencies-to-your-project)
