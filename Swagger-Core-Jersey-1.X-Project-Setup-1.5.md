@@ -10,10 +10,16 @@ You need to complete the three steps in order to set up your application with Sw
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
+<hr>
+Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
+<hr>
+
 For your convenience there are two Jersey 1.X sample projects:
 
 1. [java-jaxrs](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
 2. [java-jersey-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jersey-spring) which shows a project using Spring IoC.
+
+<hr><hr>
 
 ## Adding the dependencies to your application
 
@@ -30,16 +36,25 @@ Use the following maven dependency:
 
 The `swagger-jersey-jaxrs` artifact pulls in a specific version of Jersey. Maven's dependency management should resolve the version properly if you use an newer version, however in some cases you may be required to manually exclude it.
 
+<hr><hr>
 
 ## Hooking up Swagger-Core in your Application
+In order to integrate swagger-core with your application, follow the instructions provided based on the way you configured Jersey in your application. Only one of these methods should apply for your application. 
 
 1. [Using Jersey's container Servlet (with web.xml)](#using-jerseys-container-servlet-with-webxml)
     1. [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
     1. [Using a custom Application subclass](#using-a-custom-application-subclass)
 1. [Using Spring](#using-spring)
 
+<hr>
+
 ### Using Jersey's container Servlet (with web.xml)
-You can set Jersey's `ServletContainer` as a servlet.
+When you use Jersey's `ServletContainer` servlet, you can either configure it using the web.xml directly or use a custom Application subclass. Follow the instructions below based on the configuration you use in your application.
+
+1. [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
+1. [Using a custom Application subclass](#using-a-custom-application-subclass)
+
+<hr>
 
 #### Package scanning / Concrete class selection
 
@@ -74,6 +89,10 @@ A few things to note:
 1. `{your.application.packages}` should be replaced by the package(s) of your application.
 2. The mapping of the servlet depends on your own needs. The above is just an example.
 
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr>
+
 #### Using a custom `Application` subclass
 
 When using a custom `Application` subclass, you would need to add swagger-core's providers to the set up process. For example:
@@ -98,6 +117,10 @@ public class SampleApplication extends Application {
 
 The commented part is where you'd add your own application's resources and providers.
 
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr>
+
 ### Using Spring
 
 The following instruction are based on using Jersey's own servlet for Spring integration (the `com.sun.jersey.spi.spring.container.servlet.SpringServlet` servlet). 
@@ -113,13 +136,21 @@ As such, you need to add Swagger-Core's relevant classes manually to your applic
 
 When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declaration) to initialize Swagger.
 
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr><hr>
+
 ## Configure and Initialize Swagger
+
+There are two main ways to configure and initialize the Swagger definition within your application. The first, within the web.xml, offers a simplified method of configuration. If you're looking for more control, then the BeanConfig path is the one you should choose.
 
 1. [Using Swagger's Servlet in the web.xml](#using-swaggers-servlet-in-the-webxml)
 1. [Using Swagger's BeanConfig](#using-swaggers-beanconfig)
     1. [Using a Servlet](#using-a-servlet)
     1. [Using the Application class](#using-the-application-class)
     1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+
+<hr>
 
 ### Using Swagger's Servlet in the web.xml
 
@@ -148,9 +179,13 @@ A few things to note:
 2. `swagger.api.basepath` should point to the context root of your API. This defers from server to server and how you configured your JAX-RS application.
 3. There's no `<servlet-mapping>` for this servlet as it is only used for initialization and doesn't actually expose any interface.
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 ### Using Swagger's BeanConfig
 
-Swagger's `BeanConfig` class allows you to set various properties for Swagger's initialization.
+Swagger's `BeanConfig` class allows you to set various properties for Swagger's initialization. The following is a table with the `BeanConfig`s method and property names to be used for the configuration, either directly at the class or from Spring's configuration.
 
 Method | Property Name | Purpose
 --- | --- | --- 
@@ -173,11 +208,13 @@ In order for the Swagger to operate properly, you *must* set the base path of th
 
 In order for Swagger to actually produce the documentation, you *must* `setScan(true)`.
 
-The BeanConfig should be called when your application starts up. The two common use cases are either using a Servlet or the Application class if you're already using one. Otherwise, any other method you use at your application's initialization could work.
+The BeanConfig should be called when your application starts up. The two common use cases are either using a Servlet or the Application class if you're already using one. Otherwise, any other method you use at your application's initialization could work. Only *one* of the methods below is required to complete this guide.
 
 1. [Using a Servlet](#using-a-servlet)
 1. [Using the Application class](#using-the-application-class)
 1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+
+<hr>
 
 #### Using a Servlet
 
@@ -217,6 +254,10 @@ And adding the following snippet to the web.xml will ensure the initialization o
 
 There's no need for a URL mapping for this servlet as it is only used to initialize the application.
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 #### Using the Application class
 
 If you're already using an Application class to configure your JAX-RS application, you can use its constructor to set up Swagger:
@@ -241,6 +282,10 @@ public class SampleApplication extends Application {
 }
 ```
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 #### Using Spring's Bean Declaration
 
 When using Spring, you must include a BeanConfig bean declaration in your application context configuration file. When using Spring, Swagger-Core cannot pick up the resources automatically, so must set the value of the `resourcePackage` property to which packages need to be scanned by Swagger. You must also set the `scan` property to be `true` for the scanning to take place.
@@ -259,3 +304,5 @@ A sample declaration would be:
 ```
 
 You can use any of the properties available with to the [BeanConfig](#using-swaggers-beanconfig) to customize your Swagger configuration.
+
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
