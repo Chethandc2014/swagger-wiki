@@ -41,18 +41,18 @@ The `swagger-jersey-jaxrs` artifact pulls in a specific version of Jersey. Maven
 ## <a name="hooking-up-swagger-core-in-your-application"></a>2. Hooking up Swagger-Core in your Application
 In order to integrate swagger-core with your application, follow the instructions provided based on the way you configured Jersey in your application. Only one of these methods should apply for your application. 
 
-1. [Using Jersey's container Servlet (with web.xml)](#using-jerseys-container-servlet-with-webxml)
-    1. [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
-    1. [Using a custom Application subclass](#using-a-custom-application-subclass)
-1. [Using Spring](#using-spring)
+- [Using Jersey's container Servlet (with web.xml)](#using-jerseys-container-servlet-with-webxml)
+    - [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
+    - [Using a custom Application subclass](#using-a-custom-application-subclass)
+- [Using Spring](#using-spring)
 
 <hr>
 
 ### Using Jersey's container Servlet (with web.xml)
 When you use Jersey's `ServletContainer` servlet, you can either configure it using the web.xml directly or use a custom Application subclass. Follow the instructions below based on the configuration you use in your application.
 
-1. [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
-1. [Using a custom Application subclass](#using-a-custom-application-subclass)
+- [Package scanning / Concrete class selection](#package-scanning--concrete-class-selection)
+- [Using a custom Application subclass](#using-a-custom-application-subclass)
 
 <hr>
 
@@ -86,8 +86,8 @@ A sample servlet definition:
 
 A few things to note:
 
-1. `{your.application.packages}` should be replaced by the package(s) of your application.
-2. The mapping of the servlet depends on your own needs. The above is just an example.
+- `{your.application.packages}` should be replaced by the package(s) of your application.
+- The mapping of the servlet depends on your own needs. The above is just an example.
 
 **You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
 
@@ -144,11 +144,11 @@ When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declarat
 
 There are two main ways to configure and initialize the Swagger definition within your application. The first, within the web.xml, offers a simplified method of configuration. If you're looking for more control, then the BeanConfig path is the one you should choose.
 
-1. [Using Swagger's Servlet in the web.xml](#using-swaggers-servlet-in-the-webxml)
-1. [Using Swagger's BeanConfig](#using-swaggers-beanconfig)
-    1. [Using a Servlet](#using-a-servlet)
-    1. [Using the Application class](#using-the-application-class)
-    1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+- [Using Swagger's Servlet in the web.xml](#using-swaggers-servlet-in-the-webxml)
+- [Using Swagger's BeanConfig](#using-swaggers-beanconfig)
+    - [Using a Servlet](#using-a-servlet)
+    - [Using the Application class](#using-the-application-class)
+    - [Using Spring's Bean Declaration](#using-springs-bean-declaration)
 
 <hr>
 
@@ -210,9 +210,9 @@ In order for Swagger to actually produce the documentation, you *must* `setScan(
 
 The BeanConfig should be called when your application starts up. The two common use cases are either using a Servlet or the Application class if you're already using one. Otherwise, any other method you use at your application's initialization could work. Only *one* of the methods below is required to complete this guide.
 
-1. [Using a Servlet](#using-a-servlet)
-1. [Using the Application class](#using-the-application-class)
-1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+- [Using a Servlet](#using-a-servlet)
+- [Using the Application class](#using-the-application-class)
+- [Using Spring's Bean Declaration](#using-springs-bean-declaration)
 
 <hr>
 
