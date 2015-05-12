@@ -38,7 +38,7 @@ The `swagger-jersey-jaxrs` artifact pulls in a specific version of Jersey. Maven
 
 <hr><hr>
 
-## <a name="hooking-up-swagger-core-in-your-application"></>2. Hooking up Swagger-Core in your Application
+## <a name="hooking-up-swagger-core-in-your-application"></a>2. Hooking up Swagger-Core in your Application
 In order to integrate swagger-core with your application, follow the instructions provided based on the way you configured Jersey in your application. Only one of these methods should apply for your application. 
 
 1. [Using Jersey's container Servlet (with web.xml)](#using-jerseys-container-servlet-with-webxml)
