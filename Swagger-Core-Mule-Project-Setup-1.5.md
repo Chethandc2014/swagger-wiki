@@ -8,9 +8,15 @@ You can find additional information at our main [[set up page|Swagger-Core-JAX-R
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
+<hr>
+Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
+<hr>
+
 You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/master/samples/java-mule).
 
-## Adding the dependencies to your application
+<hr><hr>
+
+## <a name="adding-the-dependencies-to-your-application"></a>1. Adding the dependencies to your application
 
 Check the [[change log|Changelog]] to see information about the latest version and the changes from previous versions.
 
@@ -23,8 +29,9 @@ Use the following maven dependency:
 </dependency>
 ```
 
+<hr><hr>
 
-## Hooking up Swagger-Core in your Application
+## <a name="hooking-up-swagger-core-in-your-application"></a>2. Hooking up Swagger-Core in your Application
 
 The next step is to set up your mule configuration (`config.resources`).
 
@@ -52,7 +59,9 @@ Under the flow definition where you define your Jersey resources, add the bean y
 
 The above snippet assumes you have an additional REST resource you declared as `sampleResourceBean`.
 
-## Configure and Initialize Swagger
+<hr><hr>
+
+## <a name="configure-and-initialize-swagger"></a>3. Configure and Initialize Swagger
 
 The final step is to use swagger-core's `BeanConfig` to initialize Swagger.
 
@@ -94,3 +103,5 @@ prettyPrint | Sets whether the `swagger.json` will be pretty printed.
 In order for the Swagger to operate properly, you *must* set the base path of the application.
 
 In order for Swagger to actually produce the documentation, you *must* set `"scan"` to be `"true"`.
+
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**

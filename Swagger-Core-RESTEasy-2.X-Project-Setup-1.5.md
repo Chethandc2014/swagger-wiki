@@ -10,12 +10,18 @@ You need to complete the three steps in order to set up your application with Sw
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
 1. [Configure and Initialize Swagger](#configure-and-initialize-swagger)
 
+<hr>
+Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
+<hr>
+
 For your convenience there are two RESTEasy sample projects:
 
 1. [java-resteasy](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy) - includes a configuration based on the usage of the Application class.
 2. [java-resteasy-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-resteasy-spring) - uses RESTEasy's own method of integrating with Spring.
 
-## Adding the dependencies to your application
+<hr><hr>
+
+## <a name="adding-the-dependencies-to-your-application"></a>1. Adding the dependencies to your application
 
 Check the [[change log|Changelog]] to see information about the latest version and the changes from previous versions.
 
@@ -28,18 +34,22 @@ Use the following maven dependency:
 </dependency>
 ```
 
-## Hooking up Swagger-Core in your Application
+<hr><hr>
 
-RestEasy offers several mechanisms to register resources and providers:
+## <a name="hooking-up-swagger-core-in-your-application"></a>2. Hooking up Swagger-Core in your Application
 
-1. [Manual registration using configuration switches](#manual-registration-using-configuration-switches)
-1. [Automatic scanning and registration](#automatic-scanning-and-registration)
-1. [Using the Application class](#using-a-custom-application-subclass)
-1. [Using Spring](#using-spring)
+RestEasy offers several mechanisms to register resources and providers. Use *one* of the following to hook up swagger-core, based on the method you already use:
+
+- [Manual registration using configuration switches](#manual-registration-using-configuration-switches)
+- [Automatic scanning and registration](#automatic-scanning-and-registration)
+- [Using the Application class](#using-a-custom-application-subclass)
+- [Using Spring](#using-spring)
 
 You can use the options mentioned using any form of available web.xml RestEasy initialization (servlets, filter or listener).
 
 Regardless of the configuration method, the Swagger specification will be available at `/swagger.json` under the designated context root. If, for example, you mapped RestEasy to serve requests under `/myapi/*`, then Swagger will be available under `/myapi/swagger.json`.
+
+<hr>
 
 ### Manual registration using configuration switches
 
@@ -59,6 +69,10 @@ Using RestEasy's `<context-param>` switches, you can set your applications resou
 
 Note: `{your.application.providers}` is your application's list of comma separated providers acting as resources.
 
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr>
+
 ### Automatic scanning and registration
 
 If you've already configured the following `<context-param>`:
@@ -75,6 +89,10 @@ that will also pick Swagger's resources and providers automatically.
 Note that if you only set `resteasy.scan.providers` or `resteasy.scan.resources` to `true`, you will have to either enable the other as well or configure the relevant resource/providers as suggested in the previous configuration option.
 
 When using automatic scanning, swagger-core is unable to detect the resources automatically. To resolve that, you must tell swagger-core which packages to scan. The suggested solution is to use the [BeanConfig](#using-swaggers-beanconfig) method (most likely as a Servlet). Make sure to use the `setResourcePackage(String)` method in order to tell Swagger where it can find the resources.
+
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr>
 
 ### Using a custom `Application` subclass
 
@@ -100,6 +118,10 @@ public class SampleApplication extends Application {
 
 The commented part is where you'd add your own application's resources and providers.
 
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
+
+<hr>
+
 ### Using Spring
 
 The following instruction are based on using RESTEasy's own listener for Spring integration (the `org.jboss.resteasy.plugins.spring.SpringContextLoaderListener` listener). 
@@ -115,15 +137,21 @@ As such, you need to add Swagger-Core's relevant classes manually to your applic
 
 When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declaration) to initialize Swagger.
 
-## Configure and Initialize Swagger
+**You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
 
-The following ways are available to configure and initialize Swagger-Core:
+<hr><hr>
 
-1. [Using Swagger's Servlet in the web.xml](#using-swaggers-servlet-in-the-webxml)
-1. [Using Swagger's BeanConfig](#using-swaggers-beanconfig)
-    1. [Using a Servlet](#using-a-servlet)
-    1. [Using the Application class](#using-the-application-class)
-    1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+## <a name="configure-and-initialize-swagger"></a>3. Configure and Initialize Swagger
+
+There are two main ways to configure and initialize the Swagger definition within your application. The first, within the web.xml, offers a simplified method of configuration. If you're looking for more control, then the BeanConfig path is the one you should choose.
+
+- [Using Swagger's Servlet in the web.xml](#using-swaggers-servlet-in-the-webxml)
+- [Using Swagger's BeanConfig](#using-swaggers-beanconfig)
+    - [Using a Servlet](#using-a-servlet)
+    - [Using the Application class](#using-the-application-class)
+    - [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+
+<hr>
 
 ### Using Swagger's Servlet in the web.xml
 
@@ -152,6 +180,10 @@ A few things to note:
 2. `swagger.api.basepath` should point to the context root of your API. This defers from server to server and how you configured your JAX-RS application.
 3. There's no `<servlet-mapping>` for this servlet as it is only used for initialization and doesn't actually expose any interface.
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 ### Using Swagger's BeanConfig
 
 Swagger's `BeanConfig` class allows you to set various properties for Swagger's initialization.
@@ -179,9 +211,9 @@ In order for Swagger to actually produce the documentation, you *must* `setScan(
 
 The BeanConfig should be called when your application starts up. The two common use cases are either using a Servlet or the Application class if you're already using one. Otherwise, any other method you use at your application's initialization could work.
 
-1. [Using a Servlet](#using-a-servlet)
-1. [Using the Application class](#using-the-application-class)
-1. [Using Spring's Bean Declaration](#using-springs-bean-declaration)
+- [Using a Servlet](#using-a-servlet)
+- [Using the Application class](#using-the-application-class)
+- [Using Spring's Bean Declaration](#using-springs-bean-declaration)
 
 #### Using a Servlet
 
@@ -221,6 +253,10 @@ And adding the following snippet to the web.xml will ensure the initialization o
 
 There's no need for a URL mapping for this servlet as it is only used to initialize the application.
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 #### Using the Application class
 
 If you're already using an Application class to configure your JAX-RS application, you can use its constructor to set up Swagger:
@@ -245,6 +281,10 @@ public class SampleApplication extends Application {
 }
 ```
 
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+<hr>
+
 #### Using Spring's Bean Declaration
 
 When using Spring, you must include a BeanConfig bean declaration in your application context configuration file. When using Spring, Swagger-Core cannot pick up the resources automatically, so must set the value of the `resourcePackage` property to which packages need to be scanned by Swagger. You must also set the `scan` property to be `true` for the scanning to take place.
@@ -263,3 +303,5 @@ A sample declaration would be:
 ```
 
 You can use any of the properties available with to the [BeanConfig](#using-swaggers-beanconfig) to customize your Swagger configuration.
+
+**You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
