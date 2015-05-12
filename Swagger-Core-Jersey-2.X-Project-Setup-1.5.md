@@ -185,7 +185,7 @@ The commented part is where you'd add your own application's resources and provi
 
 **You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
 
-<hr><gr>
+<hr><hr>
 
 ## <a name="configure-and-initialize-swagger"></a>3. Configure and Initialize Swagger
 
