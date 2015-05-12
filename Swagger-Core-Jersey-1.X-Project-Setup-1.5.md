@@ -21,7 +21,7 @@ For your convenience there are two Jersey 1.X sample projects:
 
 <hr><hr>
 
-## Adding the dependencies to your application
+## <a name="adding-the-dependencies-to-your-application"></a>1. Adding the dependencies to your application
 
 Check the [[change log|Changelog]] to see information about the latest version and the changes from previous versions.
 
