@@ -86,8 +86,8 @@ A sample servlet definition:
 
 A few things to note:
 
-- `{your.application.packages}` should be replaced by the package(s) of your application.
-- The mapping of the servlet depends on your own needs. The above is just an example.
+1. `{your.application.packages}` should be replaced by the package(s) of your application.
+1. The mapping of the servlet depends on your own needs. The above is just an example.
 
 **You can now proceed to the next section - [Configure and Initialize Swagger](#configure-and-initialize-swagger).**
 
