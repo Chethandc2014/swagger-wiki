@@ -38,7 +38,7 @@ The `swagger-jersey-jaxrs` artifact pulls in a specific version of Jersey. Maven
 
 <hr><hr>
 
-## Hooking up Swagger-Core in your Application
+## <a name="hooking-up-swagger-core-in-your-application"></>2. Hooking up Swagger-Core in your Application
 In order to integrate swagger-core with your application, follow the instructions provided based on the way you configured Jersey in your application. Only one of these methods should apply for your application. 
 
 1. [Using Jersey's container Servlet (with web.xml)](#using-jerseys-container-servlet-with-webxml)
@@ -140,7 +140,7 @@ When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declarat
 
 <hr><hr>
 
-## Configure and Initialize Swagger
+## <a name="configure-and-initialize-swagger"></a>Configure and Initialize Swagger
 
 There are two main ways to configure and initialize the Swagger definition within your application. The first, within the web.xml, offers a simplified method of configuration. If you're looking for more control, then the BeanConfig path is the one you should choose.
 
