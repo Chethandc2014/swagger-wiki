@@ -140,7 +140,7 @@ When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declarat
 
 <hr><hr>
 
-## <a name="configure-and-initialize-swagger"></a>Configure and Initialize Swagger
+## <a name="configure-and-initialize-swagger"></a>3. Configure and Initialize Swagger
 
 There are two main ways to configure and initialize the Swagger definition within your application. The first, within the web.xml, offers a simplified method of configuration. If you're looking for more control, then the BeanConfig path is the one you should choose.
 
