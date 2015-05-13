@@ -1,5 +1,7 @@
+###### Migration Guides
+* [[swagger-core 1.3 to 1.5|1.3--1.5-Migration]]
+
 ###### Integration 1.5.X
-* [[Migration guide from swagger-core 1.3 to 1.5|1.3--1.5-Migration]]
 * [[JAX-RS Setup|Swagger-Core-JAX-RS-Project-Setup-1.5.X]]
   * [[Jersey 1.X|Swagger-Core-Jersey-1.X-Project-Setup-1.5]]
   * [[Jersey 2.X|Swagger-Core-Jersey-2.X-Project-Setup-1.5]]
