@@ -22,7 +22,7 @@ Not this
    }
 ```
 Reason: 
-It's more common-practice to have the curly-bracket that declares scope on the same line as the statement. LoadUI used new-line scope earlier and not single-line, but has since being integrated into ReadyAPI been conforming to the single-line standard. 
+It's more common-practice to have the curly-bracket that declares scope on the same line as the statement.
 
 ####Block-less loops and if-statements
 **Do this**
@@ -90,9 +90,7 @@ Don't do this
 ```
 
 Reason: 
-Generally, it's nice to see exactly what we're importing. Also we do a lot of development in Groovy, and it's particularly easy to get a conflict between java.awt.List and java.util.List. When this happens Groovy is unable to make sense of what List-class to use when implicitly declared and will throw Exceptions at Runtime. 
-
-
+Generally, it's nice to see exactly what we're importing. 
 
 ### Comments
 **Do this**
