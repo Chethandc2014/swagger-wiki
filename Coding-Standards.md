@@ -1,4 +1,4 @@
-This document outlines the coding standards / conventions all R!A developers _must_ adhere to when writing/committing code. In general - the standard [Google Java Code Conventions](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html) should be adhered to - with the below additions/exceptions:
+This document outlines the coding standards / conventions all swagger-api developers _must_ adhere to when writing/committing code. In general - the standard [Google Java Code Conventions](https://google-styleguide.googlecode.com/svn/trunk/javaguide.html) should be adhered to - with the below additions/exceptions:
 
 ### Code Formatting
 You are free to use any IDE or text editor you like, as long as you conform to the code-formatting standards. Java's syntax allows you to do many things as you want, many of which are controversial or up for discussion. But generally we have decided on a set of team-specific standards that the code-formatting settings will follow when auto-indenting. 
