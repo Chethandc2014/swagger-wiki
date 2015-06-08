@@ -17,7 +17,7 @@ Table of contents:
 * [Swagger Definition](#swagger-definition)
 * [Customising the Swagger Definition](#customising-the-swagger-definition) 
 
-**For your convenience, the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs) are available as well.**
+**For your convenience, the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs) are available as well.**
 
 ## Quick Annotation Overview
 
@@ -49,7 +49,7 @@ Name | Description
 
 ## Resource API Declaration
 
-### [@Api](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Api.html)
+### [@Api](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Api.html)
 
 In Swagger 2.0, resources were replaced by tags, and this impacts the `@Api` annotation. It is no longer used to declare a resource, and it is now used to apply definitions for all the operations defined under it.
  
@@ -81,11 +81,11 @@ The boolean `hidden` property can be used to entirely hide an @Api even if it de
 
 In swagger-core 1.5.X, `description()`, `basePath()`, and `position()` are no longer used.
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Api.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Api.html).**
 
 ## Operation Declaration
 
-### [@ApiOperation](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiOperation.html)
+### [@ApiOperation](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiOperation.html)
 
 The `@ApiOperation` is used to declare a single operation. An operation is considered a unique combination of a path and a HTTP method. Only methods that are annotated with `@ApiOperation` will be scanned and added the Swagger definition.
 
@@ -127,9 +127,9 @@ The output would be:
 ```
 
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiOperation.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiOperation.html).**
 
-### [@ApiResponses](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponses.html), [@ApiResponse](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponse.html)
+### [@ApiResponses](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiResponses.html), [@ApiResponse](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiResponse.html)
 
 It's a common practice to return errors (or other success messages) using HTTP status codes. While the general return type of an operation is defined in the [@ApiOperation](#apioperation), the rest of the return codes should be described using these annotations.
 
@@ -147,9 +147,9 @@ If the response is accompanied with a body, the body model can be described as w
 
 In swagger-core 1.5.X, you can also add description of response headers as seen in the example above.
 
-**For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiResponses](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponses.html), [@ApiResponse](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiResponse.html))**.
+**For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiResponses](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiResponses.html), [@ApiResponse](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiResponse.html))**.
 
-### [@Authorization](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Authorization.html), [@AuthorizationScope](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/AuthorizationScope.html)
+### [@Authorization](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Authorization.html), [@AuthorizationScope](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/AuthorizationScope.html)
 
 These annotations are used as input to [@Api](#api) and [@ApiOperation](#apioperation) only, and not directly on the resources and operations. Once you've declared and configured which authorization schemes you support in your API, you can use these annotation to note which authorization scheme is required on a resource or a specific operation. The `@AuthorizationScope` is specific to the case of an OAuth2 authorization scheme where you may want to specify specific supported scopes.
 
@@ -181,9 +181,9 @@ The output would be:
 ]
 ```
 
-**For further details about this annotation, usage and edge cases, check out the javadocs ([@Authorization](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Authorization.html), [@AuthorizationScope](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/AuthorizationScope.html))**.
+**For further details about this annotation, usage and edge cases, check out the javadocs ([@Authorization](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Authorization.html), [@AuthorizationScope](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/AuthorizationScope.html))**.
 
-### [@ApiParam](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiParam.html)
+### [@ApiParam](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiParam.html)
 
 The `@ApiParam` is used solely with the JAX-RS parameter annotations (`@PathParam`, `@QueryParam`, `@HeaderParam`, `@FormParam` and in JAX-RS 2, `@BeanParam`). While swagger-core scans these annotations by default, the `@ApiParam` can be used to add more details on the parameters or change the values as they are read from the code.
 
@@ -226,9 +226,9 @@ The output would be:
 ]
 ```
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiParam.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiParam.html).**
 
-### [@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParams.html)
+### [@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiImplicitParams.html)
 
 You may wish you describe operation parameters manually. This can be for various reasons, for example:
 * Using Servlets which don't use JAX-RS annotations.
@@ -279,9 +279,9 @@ In the above sample we can see a Servlet definition with several parameters. The
 ]
 ```
 
-**For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiImplicitParams.html))**.
+**For further details about this annotation, usage and edge cases, check out the javadocs ([@ApiImplicitParam](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiImplicitParam.html), [@ApiImplicitParams](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiImplicitParams.html))**.
 
-### [@ResponseHeader](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ResponseHeader.html)
+### [@ResponseHeader](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ResponseHeader.html)
 
 If you want to describe a response header, you can simply add it to your [@ApiOperation](#apioperation) or [@ApiResponse](#apiresponses-apiresponse), while supplying the name of the header, a description and a type.
 
@@ -296,11 +296,11 @@ For example, in a given response, it would look as follows:
 ```
 
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ResponseHeader.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ResponseHeader.html).**
 
 ## Model Declaration
 
-### [@ApiModel](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModel.html)
+### [@ApiModel](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiModel.html)
 
 Swagger-core builds the model definitions based on the references to them throughout the API introspection. The `@ApiModel` allows you to manipulate the meta data of a model from a simple description or name change to a definition of polymorphism.
 
@@ -323,9 +323,9 @@ The output would be:
 ```
 
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModel.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiModel.html).**
 
-### [@ApiModelProperty](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html)
+### [@ApiModelProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiModelProperty.html)
 
 While swagger-core will introspect fields and setters/getters, it will also read and process JAXB annotations. The `@ApiModelProperty` allows controlling Swagger-specific definitions such as allowed values, and additional notes. It also offers additional filtering properties in case you want to hide the property in certain scenarios.
 
@@ -354,7 +354,7 @@ The output of it would be:
       }
 ```
 
-**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html).**
+**For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ApiModelProperty.html).**
 
 ## Swagger Definition
 
