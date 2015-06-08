@@ -2,7 +2,7 @@ This page contains the required information to add Swagger to your Jersey 2.X ap
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
-**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/wordnik/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
+**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
 
 You need to complete the three steps in order to set up your application with Swagger:
 
@@ -14,7 +14,15 @@ You need to complete the three steps in order to set up your application with Sw
 Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
 <hr>
 
-You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jersey2) which is based on the package scanning configuration.
+---
+
+As part of the 1.5 release, we've repackaged the project under the **io.swagger** package. If you're migrating, you need to update your imports accordingly. This will mostly affect your annotation usage. A simple find/replace should cover this change easily.
+
+The groupId in maven has also changed to `io.swagger`.
+
+---
+
+You can check out the [sample application](https://github.com/swagger-api/swagger-samples/tree/master/java/java-jersey2) which is based on the package scanning configuration.
 
 <hr><hr>
 
@@ -25,9 +33,9 @@ Check the [[change log|Changelog]] to see information about the latest version a
 Use the following maven dependency:
 ```xml
 <dependency>
-  <groupId>com.wordnik</groupId>
+  <groupId>io.swagger</groupId>
   <artifactId>swagger-jersey2-jaxrs</artifactId>
-  <version>1.5.1-M1</version>
+  <version>1.5.0</version>
 </dependency>
 ```
 
@@ -67,7 +75,7 @@ If you're defining it as a servlet:
       <init-param>
         <param-name>jersey.config.server.provider.packages</param-name>
         <param-value>
-            com.wordnik.swagger.jaxrs.listing,
+            io.swagger.jaxrs.listing,
             {your.application.packages}
         </param-value>
       </init-param>
@@ -88,7 +96,7 @@ And if as a filter:
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>
-                com.wordnik.swagger.jaxrs.listing,
+                io.swagger.jaxrs.listing,
                 {your.application.packages}
             </param-value>
         </init-param>
@@ -114,8 +122,8 @@ If you're defining it as a servlet:
         <init-param>
             <param-name>jersey.config.server.provider.classnames</param-name>
             <param-value>
-                com.wordnik.swagger.jaxrs.listing.ApiListingResource,
-                com.wordnik.swagger.jaxrs.listing.SwaggerSerializers,
+                io.swagger.jaxrs.listing.ApiListingResource,
+                io.swagger.jaxrs.listing.SwaggerSerializers,
                 {your.application.classes}
             </param-value>
         </init-param>
@@ -136,8 +144,8 @@ And if as a filter:
         <init-param>
             <param-name>jersey.config.server.provider.classnames</param-name>
             <param-value>
-                com.wordnik.swagger.jaxrs.listing.ApiListingResource,
-                com.wordnik.swagger.jaxrs.listing.SwaggerSerializers,
+                io.swagger.jaxrs.listing.ApiListingResource,
+                io.swagger.jaxrs.listing.SwaggerSerializers,
                 {your.application.classes}
             </param-value>
         </init-param>
@@ -173,8 +181,8 @@ public class SampleApplication extends Application {
         //resources.add(SecondResource.class);
         //...
 
-        resources.add(com.wordnik.swagger.jaxrs.listing.ApiListingResource.class);
-        resources.add(com.wordnik.swagger.jaxrs.listing.SwaggerSerializers.class);
+        resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
+        resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
         
         return resources;
     }
@@ -206,7 +214,7 @@ Add the following snippet to your web.xml:
 ```xml
     <servlet>
         <servlet-name>Jersey2Config</servlet-name>
-        <servlet-class>com.wordnik.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
+        <servlet-class>io.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
         <init-param>
             <param-name>api.version</param-name>
             <param-value>1.0.0</param-value>
