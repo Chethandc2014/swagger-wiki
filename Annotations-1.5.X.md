@@ -463,6 +463,7 @@ The extension annotation allows for adding of [extension properties](http://swag
            @ExtensionProperty(name = "test2", value = "value2")
        })
     }
+...
 ```
 
 which will result in the following json: 
@@ -486,6 +487,7 @@ Alternatively you can name the extension:
            @ExtensionProperty(name = "test2", value = "value2")
        })
     }
+...
 ```
 
 which will result in the following json: 
