@@ -2,7 +2,7 @@ This page contains the required information to add Swagger to your Mule applicat
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
-**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/wordnik/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
+**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
 
 1. [Adding the dependencies to your application](#adding-the-dependencies-to-your-application)
 1. [Hooking up Swagger-Core in your Application](#hooking-up-swagger-core-in-your-application)
@@ -12,7 +12,15 @@ You can find additional information at our main [[set up page|Swagger-Core-JAX-R
 Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
 <hr>
 
-You can check out the [sample application](https://github.com/swagger-api/swagger-core/tree/master/samples/java-mule).
+---
+
+As part of the 1.5 release, we've repackaged the project under the **io.swagger** package. If you're migrating, you need to update your imports accordingly. This will mostly affect your annotation usage. A simple find/replace should cover this change easily.
+
+The groupId in maven has also changed to `io.swagger`.
+
+---
+
+You can check out the [sample application](https://github.com/swagger-api/swagger-samples/tree/master/java/java-mule).
 
 <hr><hr>
 
@@ -23,9 +31,9 @@ Check the [[change log|Changelog]] to see information about the latest version a
 Use the following maven dependency:
 ```xml
 <dependency>
-  <groupId>com.wordnik</groupId>
+  <groupId>io.swagger</groupId>
   <artifactId>swagger-mule</artifactId>
-  <version>1.5.1-M2</version>
+  <version>1.5.0</version>
 </dependency>
 ```
 
@@ -38,23 +46,23 @@ The next step is to set up your mule configuration (`config.resources`).
 In your mule integration xml, add the following snippet:
 
 ```xml
-	<spring:beans>
-		<spring:bean id="apiListingJSON"
-			class="com.wordnik.swagger.mule.ApiListingJSON" />
-	</spring:beans>
+    <spring:beans>
+        <spring:bean id="apiListingJSON"
+            class="io.swagger.mule.ApiListingJSON" />
+    </spring:beans>
 ```
 
 Under the flow definition where you define your Jersey resources, add the bean you defined above as an additional component:
 
 ```xml
-	<jersey:resources doc:name="REST">
-		<component>
-			<spring-object bean="sampleResourceBean" />
-		</component>
-		<component>
-			<spring-object bean="apiListingJSON" />
-		</component>
-	</jersey:resources>
+    <jersey:resources doc:name="REST">
+        <component>
+            <spring-object bean="sampleResourceBean" />
+        </component>
+        <component>
+            <spring-object bean="apiListingJSON" />
+        </component>
+    </jersey:resources>
 ```
 
 The above snippet assumes you have an additional REST resource you declared as `sampleResourceBean`.
@@ -67,18 +75,18 @@ The final step is to use swagger-core's `BeanConfig` to initialize Swagger.
 
 In your mule configuration file, add the BeanConfig bean. You can add it alongside with the previous ApiListingJSON declaration as such:
 ```xml
-	<spring:beans>
-		<spring:bean id="apiListingJSON"
-			class="com.wordnik.swagger.mule.ApiListingJSON" />
-		<spring:bean id="swaggerConfig"
-			class="com.wordnik.swagger.jaxrs.config.BeanConfig">
-			<spring:property name="resourcePackage" value="com.app.sample" />
-			<spring:property name="version" value="1.0.0" />
-			<spring:property name="host" value="localhost:7001" />
-			<spring:property name="basePath" value="/" />
-			<spring:property name="scan" value="true" />
-		</spring:bean>
-	</spring:beans>
+    <spring:beans>
+        <spring:bean id="apiListingJSON"
+            class="io.swagger.mule.ApiListingJSON" />
+        <spring:bean id="swaggerConfig"
+            class="io.swagger.jaxrs.config.BeanConfig">
+            <spring:property name="resourcePackage" value="com.app.sample" />
+            <spring:property name="version" value="1.0.0" />
+            <spring:property name="host" value="localhost:7001" />
+            <spring:property name="basePath" value="/" />
+            <spring:property name="scan" value="true" />
+        </spring:bean>
+    </spring:beans>
 ```
 
 The following properties are available for your BeanConfig:
