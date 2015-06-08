@@ -2,7 +2,7 @@ This page contains the required information to add Swagger to your Jersey 1.X ap
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup-1.5.X]].
 
-**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/wordnik/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
+**NOTE: swagger-core 1.5.X produces [Swagger 2.0](https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md) definition files. For more information, check out the [swagger-spec repository](https://github.com/swagger-api/swagger-spec).**
 
 You need to complete the three steps in order to set up your application with Swagger:
 
@@ -14,10 +14,18 @@ You need to complete the three steps in order to set up your application with Sw
 Once you complete these steps, your Swagger definition would be available at `/swagger.json` and `/swagger.yaml` at the context root of your application.
 <hr>
 
+---
+
+As part of the 1.5 release, we've repackaged the project under the **io.swagger** package. If you're migrating, you need to update your imports accordingly. This will mostly affect your annotation usage. A simple find/replace should cover this change easily.
+
+The groupId in maven has also changed to `io.swagger`.
+
+---
+
 For your convenience there are two Jersey 1.X sample projects:
 
-1. [java-jaxrs](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jaxrs) which is based on the package scanning configuration.
-2. [java-jersey-spring](https://github.com/swagger-api/swagger-core/tree/master/samples/java-jersey-spring) which shows a project using Spring IoC.
+1. [java-jersey-jaxrs](https://github.com/swagger-api/swagger-samples/tree/master/java/java-jersey-jaxrs) which is based on the package scanning configuration.
+2. [java-jersey-spring](https://github.com/swagger-api/swagger-samples/tree/master/java/java-jersey-spring) which shows a project using Spring IoC.
 
 <hr><hr>
 
@@ -28,9 +36,9 @@ Check the [[change log|Changelog]] to see information about the latest version a
 Use the following maven dependency:
 ```xml
 <dependency>
-  <groupId>com.wordnik</groupId>
+  <groupId>io.swagger</groupId>
   <artifactId>swagger-jersey-jaxrs</artifactId>
-  <version>1.5.1-M2</version>
+  <version>1.5.0</version>
 </dependency>
 ```
 
@@ -71,8 +79,8 @@ A sample servlet definition:
         <init-param>
             <param-name>com.sun.jersey.config.property.packages</param-name>
             <param-value>
-                com.wordnik.swagger.jaxrs.json,
-                com.wordnik.swagger.jaxrs.listing,
+                io.swagger.jaxrs.json,
+                io.swagger.jaxrs.listing,
                 {your.application.packages}
             </param-value>
         </init-param>
@@ -107,8 +115,8 @@ public class SampleApplication extends Application {
         //resources.add(SecondResource.class);
         //...
 
-        resources.add(com.wordnik.swagger.jaxrs.listing.ApiListingResource.class);
-        resources.add(com.wordnik.swagger.jaxrs.listing.SwaggerSerializers.class);
+        resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);
+        resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
 
         return resources;
     }
@@ -130,8 +138,8 @@ Swagger Core's classes are framework-agnostic and as such do contain Spring anno
 As such, you need to add Swagger-Core's relevant classes manually to your application context configuration file:
 
 ```xml
-    <bean id="apiListingResource" class="com.wordnik.swagger.jaxrs.listing.ApiListingResource"/>
-    <bean id="swaggerSerializers" class="com.wordnik.swagger.jaxrs.listing.SwaggerSerializers" scope="singleton"/>
+    <bean id="apiListingResource" class="io.swagger.jaxrs.listing.ApiListingResource"/>
+    <bean id="swaggerSerializers" class="io.swagger.jaxrs.listing.SwaggerSerializers" scope="singleton"/>
 ```
 
 When using Spring, you must add a [BeanConfig bean](#using-springs-bean-declaration) to initialize Swagger.
@@ -160,7 +168,7 @@ Add the following snippet to your web.xml:
 ```xml
     <servlet>
         <servlet-name>Jersey2Config</servlet-name>
-        <servlet-class>com.wordnik.swagger.jaxrs.config.DefaultJaxrsConfig</servlet-class>
+        <servlet-class>io.swagger.jaxrs.config.DefaultJaxrsConfig</servlet-class>
         <init-param>
             <param-name>api.version</param-name>
             <param-value>1.0.0</param-value>
@@ -292,7 +300,7 @@ When using Spring, you must include a BeanConfig bean declaration in your applic
 
 A sample declaration would be:
 ```xml
-    <bean id="beanConfig" class="com.wordnik.swagger.jaxrs.config.BeanConfig">
+    <bean id="beanConfig" class="io.swagger.jaxrs.config.BeanConfig">
         <property name="title" value="Swagger Sample App"/>
         <property name="version" value="1.0.0" />
         <property name="schemes" value="http" />
