@@ -501,3 +501,5 @@ which will result in the following json:
 which wraps the contained extension properties in a JSON object.
 
 ### [@ExtensionProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html)
+
+An individual property within an extension - see previous [@Extension](#extension) section for examples.
