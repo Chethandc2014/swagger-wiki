@@ -32,7 +32,7 @@ Swagger uses maven for build and deployment and its artifacts are available at M
 
 ### Understanding Swagger-Core's Naming Convention
 
-Swagger-Core uses the `groupId` name of `com.wordnik`. This is true to all dependencies.
+Swagger-Core uses the `groupId` name of `io.swagger`. This is true to all dependencies.
 
 There are three artifacts that can be applied to JAX-RS:
 
