@@ -18,6 +18,15 @@ Each implementation has its own wiki page summarizing the steps:
 
 Once you finish the set up process, you can continue on to adding the [[annotations|Annotations-1.5.X]] to your code.
 
+---
+
+As part of the 1.5 release, we've repackaged the project under the **io.swagger** package. If you're migrating, you need to update your imports accordingly. This will mostly affect your annotation usage. A simple find/replace should cover this change easily.
+
+The groupId in maven has also changed to `io.swagger`.
+
+---
+
+
 ## Adding Swagger's Dependencies to your Project
 Swagger uses maven for build and deployment and its artifacts are available at Maven Central. You can use the maven dependencies with any dependency management system that supports maven dependencies such as Maven, Ivy and Gradle.
 
