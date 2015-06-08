@@ -14,6 +14,8 @@ Table of contents:
 * [Resource API Declaration](#resource-api-declaration)
 * [Operation Declaration](#operation-declaration)
 * [Model Declaration](#model-declaration)
+* [Swagger Definition](#swagger-definition)
+* [Customising the Swagger object](#customising-the-swagger-object) 
 
 **For your convenience, the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs) are available as well.**
 
@@ -355,7 +357,7 @@ The output of it would be:
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html).**
 
-## Swagger Definition annotations
+## Swagger Definition
 
 ### [@SwaggerDefinition](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html)
 
@@ -503,3 +505,46 @@ which wraps the contained extension properties in a JSON object.
 ### [@ExtensionProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html)
 
 An individual property within an extension - see previous [@Extension](#extension) section for examples.
+
+## Customising the Swagger Definition
+
+If you for any reason want to customise the generated Swagger definition beyond what is possible with the annotations, you can provide the Swagger engine with a ReaderListener that provides the corresponding callbacks:
+
+```java
+public interface ReaderListener {
+
+    /**
+     * Called before the Swagger definition gets populated from scanned classes. Use this method to
+     * pre-process the Swagger definition before it gets populated.
+     *
+     * @param reader the reader used to read annotations and build the Swagger definition
+     * @param swagger the initial swagger definition
+     */
+
+    void beforeScan(Reader reader, Swagger swagger);
+
+    /**
+     * Called after a Swagger definition has been populated from scanned classes. Use this method to
+     * post-process Swagger definitions.
+     *
+     * @param reader the reader used to read annotations and build the Swagger definition
+     * @param swagger the configured Swagger definition
+     */
+
+    void afterScan(Reader reader, Swagger swagger);
+}
+```
+
+Any class found during resource scanning with this annotation will be instantiated and invoked correspondingly. For example the following class:
+
+```java
+public class BasePathModifier implements ReaderListener {
+    void beforeScan(Reader reader, Swagger swagger){}
+
+    void afterScan(Reader reader, Swagger swagger){
+        swagger.setBasePath( System.getProperty( "swagger.basepath", swagger.getBasePath() ));
+    }
+}
+```
+
+Would allow you to override the generated basePath from a system-property.
