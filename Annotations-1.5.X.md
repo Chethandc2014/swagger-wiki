@@ -355,9 +355,35 @@ The output of it would be:
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html).**
 
-## Swagger Definition level
+## Swagger Definition annotations
 
 ### [@SwaggerDefinition](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html)
+
+The SwaggerDefinition annotation provides properties corresponding to many (but not all) top-level properties of the Swagger object, allowing you to set these for your auto-generated definition. The annotation can be on any class scanned during the Swagger auto-configuration process, i.e. it does not have to be on a JAX-RS API class but could just be on a marker/config interface, for example:
+
+```java
+@SwaggerDefinition(
+        info = @Info(
+                description = "Gets the weather",
+                version = "V12.0.12",
+                title = "The Weather API",
+                termsOfService = "http://theweatherapi.io/terms.html",
+                contact = @Contact(name = "Rain Moore", email = "rain.moore@theweatherapi.io", url = "http://theweatherapi.io"),
+                license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0"),
+        ),
+        consumes = {"application/json", "application/xml"},
+        produces = {"application/json", "application/xml"},
+        schemes = {SwaggerDefinition.Scheme.HTTP, SwaggerDefinition.Scheme.HTTPS},
+        tags = {
+                @Tag(name = "Private", description = "Tag used to denote operations as private")
+        }, 
+        externalDocs = @ExternalDocs(value = "Meteorology", url = "http://theweatherapi.io/meteorology.html")
+)
+public interface TheWeatherApiConfig {
+}
+```
+
+The properties shown above will result in the corresponding 
 
 ### [@Info](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html)
 
@@ -368,4 +394,3 @@ The output of it would be:
 ### [@Extension](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html)
 
 ### [@ExtensionProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html)
-
