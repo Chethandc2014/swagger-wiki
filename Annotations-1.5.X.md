@@ -357,15 +357,15 @@ The output of it would be:
 
 ## Swagger Definition level
 
-### [@SwaggerDefinition][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html]
+### [@SwaggerDefinition](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html)
 
-### [@Info][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html]
+### [@Info](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html)
 
-### [@Contact][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html]
+### [@Contact](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html)
 
-### [@License][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html]
+### [@License](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html)
 
-### [@Extension][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html]
+### [@Extension](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html)
 
-### [@ExtensionProperty][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html]
+### [@ExtensionProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html)
 
