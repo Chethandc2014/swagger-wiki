@@ -35,6 +35,17 @@ Name | Description
 [@AuthorizationScope](#authorization-authorizationscope) | Describes an OAuth2 authorization scope.
 [@ResponseHeader](#responseHeader) | Represents a header that can be provided as part of the response.
 
+The latest release also adds a number of annotations for adding extensions and metadata at the Swagger Definition level: 
+
+Name | Description 
+--- | --- 
+[@SwaggerDefinition](#swaggerdefinition) | Definition-level properties to be added to the generated Swagger definition
+[@Info](#info) | General metadata for a Swagger definition
+[@Contact](#contact) | Properties to describe the contact person for a Swagger definition
+[@License](#license) | Properties to describe the license for a Swagger definition
+[@Extension](#extension) | Adds an extension with contained properties
+[@ExtensionProperty](#extensionproperty) | Adds custom properties to an extension
+
 ## Resource API Declaration
 
 ### [@Api](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/Api.html)
@@ -343,3 +354,18 @@ The output of it would be:
 ```
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs/index.html?com/wordnik/swagger/annotations/ApiModelProperty.html).**
+
+## Swagger Definition level
+
+### [@SwaggerDefinition][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html]
+
+### [@Info][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html]
+
+### [@Contact][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html]
+
+### [@License][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html]
+
+### [@Extension][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html]
+
+### [@ExtensionProperty][http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html]
+
