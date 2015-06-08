@@ -368,8 +368,15 @@ The SwaggerDefinition annotation provides properties corresponding to many (but 
                 version = "V12.0.12",
                 title = "The Weather API",
                 termsOfService = "http://theweatherapi.io/terms.html",
-                contact = @Contact(name = "Rain Moore", email = "rain.moore@theweatherapi.io", url = "http://theweatherapi.io"),
-                license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0")
+                contact = @Contact(
+                   name = "Rain Moore", 
+                   email = "rain.moore@theweatherapi.io", 
+                   url = "http://theweatherapi.io"
+                ),
+                license = @License(
+                   name = "Apache 2.0", 
+                   url = "http://www.apache.org/licenses/LICENSE-2.0"
+                )
         ),
         consumes = {"application/json", "application/xml"},
         produces = {"application/json", "application/xml"},
@@ -441,8 +448,56 @@ The @License annotation adds license properties to the @Info section of a Swagge
 ...
 ```
 
-See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html) for a list of supported properties.
+See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html) for a list of supported properties. 
 
 ### [@Extension](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html)
+
+The extension annotation allows for adding of [extension properties](http://swagger.io/specification#vendorExtensions) to a Swagger definition. It is currently supported within the  @ApiOperation, @Info and @Tag annotations. There are two ways to use it:
+
+```java
+...
+   extensions = {
+       @Extension(properties = {
+           @ExtensionProperty(name = "test1", value = "value1"),
+           @ExtensionProperty(name = "test2", value = "value2")
+       })
+    }
+```
+
+which will result in the following json: 
+
+```js
+...
+   "x-test1" : "value1",
+   "x-test2" : "value2"
+...
+```
+
+The property name will automatically be prefixed with "x-" if it isn't done so explicitly in the annotation.
+
+Alternatively you can name the extension:
+
+```java
+...
+   extensions = { 
+       @Extension( name = "my-extension", properties = {
+           @ExtensionProperty(name = "test1", value = "value1"),
+           @ExtensionProperty(name = "test2", value = "value2")
+       })
+    }
+```
+
+which will result in the following json: 
+
+```js
+...
+   "x-my-extension" : {
+      "test1" : "value1",
+      "test2" : "value2"
+   }
+...
+```
+
+which wraps the contained extension properties in a JSON object.
 
 ### [@ExtensionProperty](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/ExtensionProperty.html)
