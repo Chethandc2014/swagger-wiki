@@ -393,7 +393,7 @@ public interface TheWeatherApiConfig {
 
 The properties shown above will result in the corresponding metadata to be added to the generates swagger.json / swagger.yaml file
 
-If you have multiple SwaggerDefinitions they will be aggregated as they are found - any duplicate annotation properties will overwrite previous ones.
+If you have multiple @SwaggerDefinition annotations they will be aggregated in the order they are found - any duplicate annotation properties will overwrite previous ones.
 
 ### [@Info](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html)
 
