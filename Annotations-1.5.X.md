@@ -359,7 +359,7 @@ The output of it would be:
 
 ### [@SwaggerDefinition](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/SwaggerDefinition.html)
 
-The SwaggerDefinition annotation provides properties corresponding to many (but not all) top-level properties of the Swagger object, allowing you to set these for your auto-generated definition. The annotation can be on any class scanned during the Swagger auto-configuration process, i.e. it does not have to be on a JAX-RS API class but could just be on a marker/config interface, for example:
+The SwaggerDefinition annotation provides properties corresponding to many (but not all) top-level properties of the [Swagger](https://swagger.io/specification#swagger-object) object, allowing you to set these for your auto-generated definition. The annotation can be on any class scanned during the Swagger auto-configuration process, i.e. it does not have to be on a JAX-RS API class but could just be on a marker/config interface, for example:
 
 ```java
 @SwaggerDefinition(
@@ -383,9 +383,27 @@ public interface TheWeatherApiConfig {
 }
 ```
 
-The properties shown above will result in the corresponding 
+The properties shown above will result in the corresponding metadata to be added to the generates swagger.json / swagger.yaml file
+
+If you have multiple SwaggerDefinitions they will be aggregated as they are found - any duplicate annotation properties will overwrite previous ones.
 
 ### [@Info](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html)
+
+The @Info annotation adds general metadata properties for a Swagger definition - corresponding to the [Info](https://swagger.io/specification#infoObject) object in the specification. As in the example above:
+
+```java
+@SwaggerDefinition(
+        info = @Info(
+                description = "Gets the weather",
+                version = "V12.0.12",
+                title = "The Weather API",
+                termsOfService = "http://theweatherapi.io/terms.html",
+                ...
+        ),
+...
+```
+
+See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Info.html) for a complete list of supported properties.
 
 ### [@Contact](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html)
 
