@@ -15,10 +15,9 @@ Table of contents:
 * [Operation Declaration](#operation-declaration)
 * [Model Declaration](#model-declaration)
 * [Swagger Definition](#swagger-definition)
-* [Customising the Swagger object](#customising-the-swagger-object) 
+* [Customising the Swagger Definition](#customising-the-swagger-definition) 
 
 **For your convenience, the [javadocs](http://docs.swagger.io/swagger-core/v1.5.0-M2/apidocs) are available as well.**
-
 
 ## Quick Annotation Overview
 
