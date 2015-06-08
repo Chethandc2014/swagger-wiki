@@ -369,7 +369,7 @@ The SwaggerDefinition annotation provides properties corresponding to many (but 
                 title = "The Weather API",
                 termsOfService = "http://theweatherapi.io/terms.html",
                 contact = @Contact(name = "Rain Moore", email = "rain.moore@theweatherapi.io", url = "http://theweatherapi.io"),
-                license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0"),
+                license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0")
         ),
         consumes = {"application/json", "application/xml"},
         produces = {"application/json", "application/xml"},
@@ -407,7 +407,41 @@ See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?
 
 ### [@Contact](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html)
 
+The @Contact annotation adds contact properties to the @Info section of a Swagger definition - corresponding to the [Contact](http://swagger.io/specification#contactObject) object in the specification. As in the example above:
+
+```java
+@SwaggerDefinition(
+        info = @Info(
+                ...
+                contact = @Contact(
+                   name = "Rain Moore", 
+                   email = "rain.moore@theweatherapi.io", 
+                   url = "http://theweatherapi.io"
+                ),
+                ...
+        ),
+...
+```
+
+See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Contact.html) for a list of supported properties.
+
 ### [@License](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html)
+
+The @License annotation adds license properties to the @Info section of a Swagger definition - corresponding to the [License](http://swagger.io/specification#licenseObject) object in the specification. As in the example above:
+
+```java
+@SwaggerDefinition(
+        info = @Info(
+                ...
+                license = @License(
+                   name = "Apache 2.0", 
+                   url = "http://www.apache.org/licenses/LICENSE-2.0"
+                )
+        ),
+...
+```
+
+See the [javadoc](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/License.html) for a list of supported properties.
 
 ### [@Extension](http://docs.swagger.io/swagger-core/v1.5.0/apidocs/index.html?io/swagger/annotations/Extension.html)
 
