@@ -4,7 +4,7 @@ This document outlines the coding standards / conventions all swagger-api develo
 You are free to use any IDE or text editor you like, as long as you conform to the code-formatting standards. Java's syntax allows you to do many things as you want, many of which are controversial or up for discussion. But generally we have decided on a set of team-specific standards that the code-formatting settings will follow when auto-indenting. 
 
 * [Eclipse Formatting Rules](http://swagger.io/wp-content/uploads/2015/05/eclipse-formatting.zip)
-* [IntelliJ IDEA Formatting Rules](http://swagger.io/wp-content/uploads/2015/05/idea-settings.zip)
+* [IntelliJ IDEA Formatting Rules](http://swagger.io/wp-content/uploads/2015/06/swagger-idea-formatting.zip)
 
 ####New scope on same line or new line
 **Do this**
