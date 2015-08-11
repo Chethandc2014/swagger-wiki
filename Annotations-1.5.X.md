@@ -65,7 +65,7 @@ public class PetResource {
 }
 ```
 
-In this example, we're saying that the tag for the opeartions under this class is `pet` (so they would all be grouped together). Swagger will pick up on the `@Produces` annotation but you can override this value if you wish. 
+In this example, we're saying that the tag for the operations under this class is `pet` (so they would all be grouped together). Swagger will pick up on the `@Produces` annotation but you can override this value if you wish. 
 
 `@Api` can also be used to declare authorization at the resource-level. These definitions apply to all operations under this resource, but can be overridden at the operation level if needed. In the example above, we're adding a previously-declared OAuth2 authorization scheme without any scopes. For further details, check the [@Authorization](#authorization-authorizationscope) annotation.
 
