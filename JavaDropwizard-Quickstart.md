@@ -136,7 +136,7 @@ and any subsequent api declarations as follows:
 
 You can see a working sample here, which uses Java + Dropwizard:
 
-[java-dropwizard](https://github.com/swagger-api/swagger-core/blob/master/samples/java-dropwizard)
+[java-dropwizard](https://github.com/swagger-api/swagger-samples/tree/master/java/java-dropwizard)
 
 #### Wrap up
 
