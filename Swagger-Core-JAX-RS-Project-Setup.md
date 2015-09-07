@@ -1,5 +1,15 @@
 #Swagger-Core JAX-RS Project Setup
 
+---
+---
+---
+
+# **This document is here for legacy information and refers to an old version of swagger-core. To use the latest, please refer to the [new guide](https://github.com/swagger-api/swagger-core/wiki/Swagger-Core-JAX-RS-Project-Setup-1.5.X).**
+
+---
+---
+---
+
 In order to integrate the Swagger documentation in your application, you'd need to follow these three set up steps:
 
 1. [Adding Swagger's dependencies to your project.](#adding-swaggers-dependencies-to-your-project)
