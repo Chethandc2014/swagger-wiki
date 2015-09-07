@@ -1,3 +1,13 @@
+---
+---
+---
+
+# **This document is here for legacy information and refers to an old version of swagger-core. To use the latest, please refer to the [new guide](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X).**
+
+---
+---
+---
+
 # Swagger-Core Annotations
 
 In order to generate the Swagger documentation, swagger-core offers a set of annotations to declare and manipulate the output. The swagger-core output is compliant with [Swagger Specification](https://github.com/swagger-api/swagger-spec/blob/master/versions/1.2.md). A user is not required to be familiar with the full aspects of the Swagger Specification in order to use it, but as a reference it may answer a few questions regarding the generated output.  
