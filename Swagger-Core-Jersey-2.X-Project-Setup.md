@@ -1,3 +1,13 @@
+---
+---
+---
+
+# **This document is here for legacy information and refers to an old version of swagger-core. To use the latest, please refer to the [new guide](https://github.com/swagger-api/swagger-core/wiki/Swagger-Core-Jersey-2.X-Project-Setup-1.5).**
+
+---
+---
+---
+
 This page contains the required information to add Swagger to your Jersey 2.X application.
 
 You can find additional information at our main [[set up page|Swagger-Core-JAX-RS-Project-Setup]].
