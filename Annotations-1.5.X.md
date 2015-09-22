@@ -243,9 +243,9 @@ When defining parameters implicitly, it's important to set `name`, `dataType` an
 
 ```java
  @ApiImplicitParams({
-    new ApiImplicitParam(name = "name", value = "User's name", required = true, dataType = "string", paramType = "query"),
-    new ApiImplicitParam(name = "email", value = "User's email", required = false, dataType = "string", paramType = "query"),
-    new ApiImplicitParam(name = "id", value = "User ID", required = true, dataType = "long", paramType = "query")
+    ApiImplicitParam(name = "name", value = "User's name", required = true, dataType = "string", paramType = "query"),
+    ApiImplicitParam(name = "email", value = "User's email", required = false, dataType = "string", paramType = "query"),
+    ApiImplicitParam(name = "id", value = "User ID", required = true, dataType = "long", paramType = "query")
   })
  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {...}
 ```
