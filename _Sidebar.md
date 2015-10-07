@@ -25,5 +25,3 @@
     * [[RESTEasy|Swagger-Core-RESTEasy-2.X-Project-Setup]]
     * [[Mule|Swagger-Core-Mule-Project-Setup]]
   * [[Annotations|Annotations]]
-
-* [[Java Integrations|Java-Integrations]]
