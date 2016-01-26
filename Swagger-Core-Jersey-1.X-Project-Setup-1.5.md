@@ -207,7 +207,7 @@ setVersion(String) | version | Sets the version of the API.
 setSchemes(String[]) | schemes | Sets the schemes for the API URLs (http, https).
 setHost(String) | host | Sets the host (including a port) for the API URLs. Does not include the schemes nor context root.
 setBasePath(String) | basePath | Sets the context root for the API calls.
-setFilterClass(Sting) | filterClass | Sets a security filter for Swagger's documentation.
+setFilterClass(Sting) | filterClass | Sets a security filter for Swagger's documentation (`filterClass` should implement `io.swagger.core.filter.SwaggerSpecFilter`)
 setResourcePackage(String) | resourcePackage | Sets which package(s) Swagger should scan to pick up resources. If there's more than one package, it can be a list of comma-separated packages.
 setScan(boolean) | scan | When set to `true`, Swagger will build the documentation.
 setPrettyPrint(boolean) | prettyPrint | Sets whether the `swagger.json` will be pretty printed.
