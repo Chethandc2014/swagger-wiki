@@ -133,7 +133,7 @@ The output would be:
 
 It's a common practice to return errors (or other success messages) using HTTP status codes. While the general return type of an operation is defined in the [@ApiOperation](#apioperation), the rest of the return codes should be described using these annotations.
 
-The `@ApiResponse` describes a concrete possible response. It cannot be used directly on the method and needs to be included in the array value of `@ApiResponses` (whether there's one response or more).
+The `@ApiResponse` describes a concrete possible response. It cannot be used directly on the method or class/interface and needs to be included in the array value of `@ApiResponses` (whether there's one response or more).
 
 If the response is accompanied with a body, the body model can be described as well (one model per response).
 
