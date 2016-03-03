@@ -6,7 +6,15 @@ This page introduces the annotations provided by swagger-core. They are grouped 
 
 The documentation for each annotation is meant as an overview of its usage. Each annotation also has links to its javadocs (both on the header and at the end of the overview). The javadocs provide you with additional information about each annotation, especially dealing with some edge cases.
 
-At the very least, `@Api` is required to declare an API resource and `@ApiOperation` is required to declare an API operation. Without having those two combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
+At the very least:
+ 
+`@Api` is required to declare an API resource.
+
+`@javax.ws.rs.Path` is required at class level (since v1.5.8) to have Swagger scan root resoure, in compliance with JAX-RS spec.
+
+`@ApiOperation` is required to declare an API operation.
+  
+Without having those three combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
 
 
 Table of contents:
