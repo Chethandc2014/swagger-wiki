@@ -12,9 +12,7 @@ At the very least:
 
 `@javax.ws.rs.Path` is required at class level (since v1.5.8) to have Swagger scan root resoure, in compliance with JAX-RS spec.
 
-`@ApiOperation` is required to declare an API operation.
-  
-Without having those three combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
+Without having those two combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
 
 
 Table of contents:
@@ -95,7 +93,7 @@ In swagger-core 1.5.X, `description()`, `basePath()`, and `position()` are no lo
 
 ### [@ApiOperation](http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiOperation.html)
 
-The `@ApiOperation` is used to declare a single operation. An operation is considered a unique combination of a path and a HTTP method. Only methods that are annotated with `@ApiOperation` will be scanned and added the Swagger definition.
+The `@ApiOperation` is used to declare a single operation. An operation is considered a unique combination of a path and a HTTP method.
 
 A JAX-RS usage would be:
 ```java
