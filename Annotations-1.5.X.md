@@ -14,6 +14,22 @@ At the very least:
 
 Without having those two combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
 
+The following table summarizes parsing behaviour depending on annotations and `ReaderConfig.scanAllResources` value
+
+Annotations | Result
+--- | ---
+@Api | skip
+@Path | parse
+scanAllResources | parse
+@Api hidden | skip
+@Api @Path hidden | skip
+@Api hidden scanAllResources | skip
+@Api scanAllResources | skip
+@Api @Path | parse
+@Api hidden scanAllResources | skip
+@Path scanAllResources | parse
+subresource | parse
+@Api subresource | parse
 
 Table of contents:
 * [Quick Annotation Overview](#quick-annotation-overview)
