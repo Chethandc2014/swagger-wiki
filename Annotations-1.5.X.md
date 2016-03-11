@@ -343,7 +343,21 @@ The output would be:
       .
   }
 ```
+You can also use `@ApiModel` to implement model composition, by specifying subtypes like:
 
+```
+@ApiModel(value = "Pet", subTypes = {Cat.class})
+public class Pet {
+
+}
+```
+
+An example of this scenario is available in swagger-samples:
+
+https://github.com/swagger-api/swagger-samples/blob/master/java/java-jaxrs/src/main/java/io/swagger/sample/model/Pet.java
+
+
+https://github.com/swagger-api/swagger-samples/blob/master/java/java-jaxrs/src/main/java/io/swagger/sample/model/Vehicle.java
 
 **For further details about this annotation, usage and edge cases, check out the [javadocs](http://docs.swagger.io/swagger-core/current/apidocs/index.html?io/swagger/annotations/ApiModel.html).**
 
