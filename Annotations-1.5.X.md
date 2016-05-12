@@ -12,9 +12,30 @@ At the very least:
 
 `@javax.ws.rs.Path` is required at class level (since v1.5.8) to have Swagger scan root resoure, in compliance with JAX-RS spec.
 
-Without having those two combined, no output will be generated. Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
+Without having those two combined, no output will be generated, unless scanAllResources config option is not set, in which case also @Path annotatied classes with no @Api annotation will be scanned.
+
+
+
+Servlets require `@ApiImplicitParam` to define the method parameters whereas JAX-RS based application can utilize the basic `@XxxxParam` annotations (`@QueryParam`, `@PathParam`...).
 
 The following table summarizes parsing behaviour depending on annotations and `ReaderConfig.scanAllResources` value
+
+Annotations | Result
+--- | ---
+@Api | skip
+@Path | skip
+scanAllResources | skip
+@Api hidden | skip
+@Api @Path hidden | skip
+@Api hidden scanAllResources | skip
+@Api scanAllResources | skip
+@Api @Path | parse
+@Api hidden scanAllResources | skip
+@Path scanAllResources | parse
+subresource | parse
+@Api subresource | parse
+
+**NOTE**: in version 1.5.8 only, @Api annotation is not needed to have class scanned, @Path is sufficient, according to the following table:
 
 Annotations | Result
 --- | ---
