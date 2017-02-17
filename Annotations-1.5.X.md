@@ -261,7 +261,7 @@ The output would be:
     "in": "body",
     "name": "body",
     "description": "Updated user object",
-    "required": false,
+    "required": true,
     "schema": {
       "$ref": "#/definitions/User"
     }
