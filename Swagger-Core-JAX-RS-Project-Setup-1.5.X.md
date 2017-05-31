@@ -83,3 +83,7 @@ The final step is to configure Swagger and initialize it. This is required for S
 1. [[Jersey 2.X|Swagger-Core-Jersey-2.X-Project-Setup-1.5#configure-and-initialize-swagger]]
 1. [[RESTEasy 2.X|Swagger-Core-RestEasy-2.X-Project-Setup-1.5#configure-and-initialize-swagger]]
 1. [[Mule|Swagger-Core-Mule-Project-Setup-1.5#configure-and-initialize-swagger]]
+
+## What's Next?
+
+Now that you have everything hooked up, don't forget to add some [Annotations](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X) to your resources, so that those are added to your API definition.
