@@ -113,3 +113,8 @@ In order for the Swagger to operate properly, you *must* set the base path of th
 In order for Swagger to actually produce the documentation, you *must* set `"scan"` to be `"true"`.
 
 **You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+
+## What's Next?
+
+Now that you have everything hooked up, don't forget to add some [Annotations](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X) to your resources, so that those are added to your API definition.
