@@ -314,3 +314,8 @@ A sample declaration would be:
 You can use any of the properties available with to the [BeanConfig](#using-swaggers-beanconfig) to customize your Swagger configuration.
 
 **You are done with this guide! You should now be able to access the Swagger definition at `/swagger.json` and `/swagger.yaml` at the context root of your application.**
+
+
+## What's Next?
+
+Now that you have everything hooked up, don't forget to add some [Annotations](https://github.com/swagger-api/swagger-core/wiki/Annotations-1.5.X) to your resources, so that those are added to your API definition.
